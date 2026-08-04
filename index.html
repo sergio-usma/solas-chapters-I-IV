@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLAS 1974 · Capítulos I–IV | Guía Exhaustiva para Oficiales</title>
+<meta name="description" content="Análisis académico exhaustivo de los Capítulos I, II-1, II-2, III y IV del Convenio SOLAS 1974: disposiciones generales, construcción, protección contra incendios, salvamento y radiocomunicaciones (GMDSS).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#f4f6fb; --panel:#ffffff; --panel2:#f8fafd; --ink:#101828; --mut:#5b6577;
+  --line:#e4e9f2; --gold:#d9a441; --navy:#0a1830; --navy2:#12233f;
+  --side-ink:#b9c6dc; --side-dim:#7d8ca6;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 10px 30px -14px rgba(16,24,40,.18);
+  --r:14px;
+}
+html[data-theme="dark"]{
+  --bg:#0b1220; --panel:#121b2e; --panel2:#0e1626; --ink:#e7ecf6; --mut:#9aa7bf;
+  --line:#22304a; --gold:#e3b04b; --navy:#0a1424; --navy2:#0f1c33;
+  --side-ink:#b9c6dc; --side-dim:#6e7d99;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+section{scroll-margin-top:84px}
+img,svg{max-width:100%}
+a{color:inherit}
+::selection{background:var(--gold);color:#0a1830}
+
+/* ============ PROGRESS + TOPBAR ============ */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),#f0c66b);z-index:200;transition:width .1s}
+.topbar{position:fixed;top:0;left:0;right:0;height:64px;z-index:150;display:flex;align-items:center;gap:14px;
+  padding:0 18px;background:color-mix(in srgb,var(--navy) 92%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;letter-spacing:.3px;text-decoration:none;white-space:nowrap}
+.brand .anc{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#b8842c);display:grid;place-items:center;font-size:18px}
+.brand small{display:block;font-weight:500;color:var(--side-dim);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.searchwrap{flex:1;max-width:460px;position:relative;margin-left:auto}
+.searchwrap input{width:100%;padding:9px 14px 9px 38px;border-radius:99px;border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:14px;outline:none}
+.searchwrap input::placeholder{color:rgba(255,255,255,.5)}
+.searchwrap input:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+.searchwrap .si{position:absolute;left:13px;top:50%;transform:translateY(-50%);opacity:.7;font-size:14px}
+#results{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--panel);color:var(--ink);border:1px solid var(--line);
+  border-radius:12px;box-shadow:var(--shadow);max-height:340px;overflow:auto;display:none;z-index:300}
+#results button{display:block;width:100%;text-align:left;padding:10px 14px;border:0;background:none;color:inherit;font:inherit;cursor:pointer;border-bottom:1px solid var(--line)}
+#results button:hover{background:var(--panel2)}
+#results .rk{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.iconbtn{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;width:38px;height:38px;
+  border-radius:10px;cursor:pointer;font-size:16px;display:grid;place-items:center;text-decoration:none}
+.iconbtn:hover{border-color:var(--gold)}
+#burger{display:none}
+
+/* ============ SIDEBAR ============ */
+.side{position:fixed;top:64px;left:0;bottom:0;width:284px;overflow-y:auto;background:var(--navy);color:var(--side-ink);
+  padding:18px 14px 60px;z-index:140;border-right:1px solid rgba(255,255,255,.06)}
+.side::-webkit-scrollbar{width:8px}
+.side::-webkit-scrollbar-thumb{background:#26375a;border-radius:8px}
+.side .grp{margin-bottom:6px}
+.side summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:9px;
+  font-family:'Space Grotesk';font-weight:600;font-size:14px;color:#fff}
+.side summary::-webkit-details-marker{display:none}
+.side summary:hover{background:rgba(255,255,255,.06)}
+.dot{width:9px;height:9px;border-radius:3px;flex:none}
+.side details ul{list-style:none;margin:2px 0 8px 22px;border-left:1px solid rgba(255,255,255,.12);padding-left:10px}
+.side a{display:block;padding:6px 10px;font-size:13.2px;color:var(--side-ink);text-decoration:none;border-radius:7px;line-height:1.45}
+.side a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.side a.active{color:#fff;background:color-mix(in srgb,var(--acc,#2f6bff) 30%,transparent);box-shadow:inset 3px 0 0 var(--acc,#2f6bff)}
+.side .top-link{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:9px;font-family:'Space Grotesk';
+  font-weight:600;font-size:14px;color:#fff;text-decoration:none;margin-bottom:2px}
+.side .top-link:hover{background:rgba(255,255,255,.06)}
+#overlay{position:fixed;inset:0;background:rgba(4,8,16,.55);z-index:130;opacity:0;pointer-events:none;transition:.25s}
+body.nav-open #overlay{opacity:1;pointer-events:auto}
+
+/* ============ MAIN ============ */
+main{margin-left:284px;padding-top:64px}
+.wrap{max-width:980px;margin:0 auto;padding:0 28px}
+.sec{padding:56px 0 8px}
+
+/* ============ HERO ============ */
+.hero{position:relative;color:#fff;padding:88px 28px 110px;overflow:hidden;
+  background:radial-gradient(1200px 500px at 85% -10%,rgba(217,164,65,.22),transparent 60%),
+             radial-gradient(900px 500px at -10% 110%,rgba(47,107,255,.25),transparent 60%),
+             linear-gradient(160deg,#0a1830 0%,#122a4e 60%,#0d2140 100%)}
+.hero .wrap{max-width:1040px}
+.hero .kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.25);border-radius:99px;
+  padding:6px 14px;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:#f0d8a0;background:rgba(255,255,255,.05)}
+.hero h1{font-family:'Space Grotesk';font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:22px 0 16px;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#f0c66b,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{max-width:760px;font-size:17.5px;color:#c9d6ea}
+.hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);border-radius:12px;padding:10px 16px;font-size:13.5px}
+.chip b{display:block;font-family:'Space Grotesk';font-size:19px;color:#f0c66b}
+.hero .wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0}
+.hero .wave svg{width:100%;height:70px;display:block}
+
+/* ============ CHAPTER HEAD ============ */
+.ch-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px;border-bottom:3px solid var(--acc);padding-bottom:18px;margin-bottom:26px;position:relative}
+.ch-num{font-family:'Space Grotesk';font-weight:700;font-size:74px;line-height:.9;color:var(--acc);opacity:.16;position:absolute;right:0;top:-34px;font-size:130px;pointer-events:none;user-select:none}
+.ch-kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);font-weight:800}
+.ch-head h2{font-family:'Space Grotesk';font-size:clamp(26px,3.4vw,38px);letter-spacing:-.3px}
+.ch-en{color:var(--mut);font-style:italic;font-size:15px}
+.ch-meta{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;width:100%}
+.ch-meta li{font-size:12.5px;border:1px solid var(--line);background:var(--panel);padding:5px 12px;border-radius:99px;color:var(--mut)}
+.ch-intro{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:var(--r);
+  padding:20px 22px;box-shadow:var(--shadow);margin-bottom:26px}
+
+/* ============ CARDS / REGLAS ============ */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px}
+.sub-t{display:flex;align-items:center;gap:12px;margin:38px 0 16px;scroll-margin-top:90px}
+.sub-t h3{font-family:'Space Grotesk';font-size:21px;letter-spacing:-.2px}
+.sub-t .bar{flex:none;width:34px;height:8px;border-radius:4px;background:var(--acc)}
+.sub-t .ref{font-size:12px;color:var(--mut);border:1px dashed var(--line);border-radius:99px;padding:3px 10px}
+.regla{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;scroll-margin-top:96px}
+.regla-h{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.rn{flex:none;font-family:'Space Grotesk';font-weight:700;font-size:12.5px;color:#fff;background:var(--acc);
+  border-radius:8px;padding:4px 10px;letter-spacing:.4px}
+.regla-h h4{font-size:16.5px;font-family:'Space Grotesk';letter-spacing:.1px}
+.regla-b{padding:16px 22px 20px}
+.regla-b p{margin-bottom:10px}
+.regla-b ul,.regla-b ol{margin:8px 0 12px 22px}
+.regla-b li{margin-bottom:6px}
+.regla-b li::marker{color:var(--acc);font-weight:700}
+.regla-b .txt{font-size:13.5px;color:var(--mut);border-left:3px solid var(--line);padding-left:12px;font-style:italic;margin-bottom:12px}
+strong{font-weight:700}
+.hl{color:var(--acc);font-weight:700}
+
+/* ============ NOTES / GRIDS / TABLES ============ */
+.note{display:flex;gap:14px;background:color-mix(in srgb,var(--acc,#2f6bff) 7%,var(--panel));border:1px solid color-mix(in srgb,var(--acc,#2f6bff) 30%,var(--line));
+  border-radius:var(--r);padding:16px 18px;margin:18px 0}
+.note .ni{font-size:22px;line-height:1}
+.note h5{font-family:'Space Grotesk';margin-bottom:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.mini h5{font-family:'Space Grotesk';font-size:15px;margin-bottom:8px;display:flex;gap:8px;align-items:center}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin:16px 0;background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-family:'Space Grotesk';font-size:13px;letter-spacing:.4px}
+td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:var(--panel2)}
+tbody tr:hover{background:color-mix(in srgb,var(--acc,#2f6bff) 6%,var(--panel))}
+
+/* ============ MISC ============ */
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pill{font-size:12.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--panel);color:var(--mut)}
+.pill.acc{border-color:color-mix(in srgb,var(--acc) 45%,var(--line));color:var(--acc);font-weight:600}
+.mapgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.mapcard{text-decoration:none;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--mc,#2f6bff);
+  border-radius:var(--r);padding:20px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;display:block;color:inherit}
+.mapcard:hover{transform:translateY(-4px);box-shadow:0 16px 34px -14px rgba(16,24,40,.3)}
+.mapcard .mc-n{font-family:'Space Grotesk';font-size:30px;font-weight:700;color:var(--mc)}
+.mapcard h4{font-family:'Space Grotesk';margin:4px 0 6px}
+.mapcard p{font-size:13.5px;color:var(--mut)}
+.gl{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.gl b{color:var(--acc);font-family:'Space Grotesk'}
+.gl p{font-size:13.8px;color:var(--mut);margin-top:3px}
+.glosario{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.chk{list-style:none;margin:8px 0}
+.chk li{padding-left:30px;position:relative;margin-bottom:8px}
+.chk li::before{content:"☐";position:absolute;left:2px;color:var(--acc);font-weight:700;font-size:16px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
+.flow span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:13px;font-weight:600;box-shadow:var(--shadow)}
+.flow i{color:var(--acc);font-style:normal;font-weight:800}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%{box-shadow:0 0 0 4px var(--gold)}100%{box-shadow:0 0 0 0 transparent}}
+footer{margin-top:70px;background:var(--navy);color:#aebcd4;padding:44px 28px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+footer h4{font-family:'Space Grotesk';color:#fff;margin-bottom:8px}
+footer a{color:var(--gold);text-decoration:none}
+footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16px;padding-top:16px;font-size:12.5px;color:#7d8ca6}
+#totop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:12px;border:0;background:var(--gold);color:#0a1830;
+  font-size:20px;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:120}
+#totop.show{opacity:1;pointer-events:auto}
+
+/* ============ RESPONSIVE / PRINT ============ */
+@media(max-width:1024px){
+  .side{transform:translateX(-100%);transition:transform .28s;width:300px}
+  body.nav-open .side{transform:none}
+  main{margin-left:0}
+  #burger{display:grid}
+  .ch-num{display:none}
+}
+@media(max-width:640px){
+  .grid2,.grid3{grid-template-columns:1fr}
+  .hero{padding:60px 18px 90px}
+  .wrap{padding:0 16px}
+  .brand small{display:none}
+}
+@media print{
+  .topbar,.side,#totop,#progress,#burger{display:none!important}
+  main{margin:0;padding-top:0}
+  .regla,.card,.mini{box-shadow:none;break-inside:avoid}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ===================== TOPBAR ===================== -->
+<header class="topbar">
+  <button id="burger" class="iconbtn" aria-label="Menú">☰</button>
+  <a class="brand" href="#inicio">
+    <span class="anc">⚓</span>
+    <span>SOLAS 1974<small>Capítulos I · II-1 · II-2 · III · IV</small></span>
+  </a>
+  <div class="searchwrap">
+    <span class="si">🔍</span>
+    <input id="search" type="search" placeholder="Buscar regla, equipo, término… ( / )" autocomplete="off">
+    <div id="results"></div>
+  </div>
+  <button id="theme" class="iconbtn" aria-label="Cambiar tema">🌙</button>
+  <a class="iconbtn" href="https://www.imo.org" target="_blank" rel="noopener" title="OMI">🌐</a>
+</header>
+
+<div id="overlay"></div>
+
+<!-- ===================== SIDEBAR ===================== -->
+<nav class="side" id="side">
+  <a class="top-link" href="#inicio"><span class="dot" style="background:var(--gold)"></span>Inicio</a>
+  <a class="top-link" href="#introduccion"><span class="dot" style="background:#64748b"></span>Introducción al SOLAS</a>
+  <a class="top-link" href="#mapa"><span class="dot" style="background:#64748b"></span>Mapa de capítulos</a>
+
+  <details class="grp" open style="--acc:#2f6bff"><summary><span class="dot" style="background:#2f6bff"></span>Capítulo I · Generales</summary><ul>
+    <li><a href="#cap1-pa">Parte A · Aplicación, definiciones y exenciones</a></li>
+    <li><a href="#cap1-pb">Parte B · Reconocimientos y certificados</a></li>
+    <li><a href="#cap1-pc">Parte C · Investigación de siniestros</a></li>
+    <li><a href="#cap1-extra">Interacción, enmiendas y conclusión</a></li>
+  </ul></details>
+
+  <details class="grp" open style="--acc:#0ea5a4"><summary><span class="dot" style="background:#0ea5a4"></span>Capítulo II-1 · Construcción</summary><ul>
+    <li><a href="#cap21-a">Parte A · Aplicación y definiciones</a></li>
+    <li><a href="#cap21-a1">Parte A-1 · Estructura del buque</a></li>
+    <li><a href="#cap21-b">Parte B · Estabilidad e integridad estanca</a></li>
+    <li><a href="#cap21-c">Parte C · Maquinaria</a></li>
+    <li><a href="#cap21-d">Parte D · Instalaciones eléctricas</a></li>
+    <li><a href="#cap21-e">Parte E · Espacios UMS</a></li>
+    <li><a href="#cap21-fg">Partes F y G · Alternativas y combustibles</a></li>
+    <li><a href="#cap21-extra">Enmiendas, interacción y conclusión</a></li>
+  </ul></details>
+
+  <details class="grp" open style="--acc:#e5484d"><summary><span class="dot" style="background:#e5484d"></span>Capítulo II-2 · Incendios</summary><ul>
+    <li><a href="#cap22-a">Parte A · Generalidades</a></li>
+    <li><a href="#cap22-b">Parte B · Prevención</a></li>
+    <li><a href="#cap22-c">Parte C · Supresión</a></li>
+    <li><a href="#cap22-d">Parte D · Evacuación</a></li>
+    <li><a href="#cap22-e">Parte E · Requisitos operacionales</a></li>
+    <li><a href="#cap22-f">Parte F · Diseños alternativos</a></li>
+    <li><a href="#cap22-g">Parte G · Requisitos especiales</a></li>
+    <li><a href="#cap22-fss">El Código FSS</a></li>
+    <li><a href="#cap22-extra">Enmiendas, interacción y conclusión</a></li>
+  </ul></details>
+
+  <details class="grp" open style="--acc:#f59f00"><summary><span class="dot" style="background:#f59f00"></span>Capítulo III · Salvamento</summary><ul>
+    <li><a href="#cap3-a">Parte A · Generalidades (Reglas 1–5)</a></li>
+    <li><a href="#cap3-s1">Sección I · Buques de pasaje y de carga (6–20)</a></li>
+    <li><a href="#cap3-s2">Sección II · Buques de pasaje (21–30)</a></li>
+    <li><a href="#cap3-s3">Sección III · Buques de carga (31–33)</a></li>
+    <li><a href="#cap3-s45">Secciones IV–V · LSA, formación y obligaciones (34–37)</a></li>
+    <li><a href="#cap3-extra">Enmiendas, interacción y conclusión</a></li>
+  </ul></details>
+
+  <details class="grp" open style="--acc:#8b5cf6"><summary><span class="dot" style="background:#8b5cf6"></span>Capítulo IV · Radio</summary><ul>
+    <li><a href="#cap4-a">Parte A · Generalidades y requisitos funcionales</a></li>
+    <li><a href="#cap4-b">Parte B · Obligaciones de los Gobiernos</a></li>
+    <li><a href="#cap4-c">Parte C · Requisitos para los buques (6–18)</a></li>
+    <li><a href="#cap4-extra">Enmiendas, interacción y conclusión</a></li>
+  </ul></details>
+
+  <details class="grp" open style="--acc:#059669"><summary><span class="dot" style="background:#059669"></span>Complementos</summary><ul>
+    <li><a href="#comp-hssc">1 · Sistema Armonizado (HSSC)</a></li>
+    <li><a href="#comp-psc">2 · Control del Estado del Puerto (PSC)</a></li>
+    <li><a href="#comp-enmiendas">3 · Enmiendas recientes y futuras</a></li>
+    <li><a href="#comp-codigos">4 · Códigos y manuales asociados</a></li>
+    <li><a href="#comp-resp">5 · Responsabilidades del oficial</a></li>
+    <li><a href="#comp-check">6 · Listas de verificación</a></li>
+    <li><a href="#comp-glosario">7 · Glosario de términos clave</a></li>
+    <li><a href="#comp-tabla">8 · Capítulos ↔ certificados ↔ reconocimientos</a></li>
+    <li><a href="#comp-humano">9 · Factor humano y cultura de seguridad</a></li>
+    <li><a href="#comp-conclusion">10 · Conclusión integradora</a></li>
+  </ul></details>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <span class="kicker">⚓ Convenio Internacional para la Seguridad de la Vida Humana en el Mar</span>
+    <h1>El Convenio <em>SOLAS 1974</em><br>Análisis Exhaustivo de los Capítulos I al IV</h1>
+    <p class="lead">Recurso didáctico completo para la formación de oficiales de la marina mercante: el marco administrativo, la integridad estructural, la protección contra incendios, los dispositivos de salvamento y las radiocomunicaciones del GMDSS — con todas sus reglas, partes, enmiendas y aplicaciones prácticas.</p>
+    <div class="chips">
+      <div class="chip"><b>4+1</b>Pilares analizados (I, II-1, II-2, III, IV)</div>
+      <div class="chip"><b>156+</b>Reglas desglosadas</div>
+      <div class="chip"><b>1974</b>Adoptado · en vigor desde 1980</div>
+      <div class="chip"><b>LSA · FSS · IS · IGF</b>Códigos vinculados</div>
+      <div class="chip"><b>1912</b>Origen: tragedia del Titanic</div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="var(--bg)" d="M0,40 C240,70 480,10 720,35 C960,60 1200,15 1440,40 L1440,70 L0,70 Z"/></svg></div>
+</section>
+
+<!-- ===================== INTRODUCCIÓN ===================== -->
+<section class="sec" id="introduccion">
+  <div class="wrap">
+    <div class="sub-t"><span class="bar" style="background:var(--gold)"></span><h3>Introducción al Convenio</h3></div>
+    <div class="card">
+      <p>El <strong>International Convention for the Safety of Life at Sea (SOLAS)</strong>, conocido en español como <strong>Convenio Internacional para la Seguridad de la Vida Humana en el Mar</strong>, es el tratado internacional más importante en materia de seguridad marítima. Adoptado en <strong>1974</strong> y enmendado continuamente, establece las <span class="hl">normas mínimas de construcción, equipamiento y operación</span> que deben cumplir los buques mercantes de todas las banderas.</p>
+      <p>Su origen se remonta a la <strong>tragedia del Titanic en 1912</strong>, que dio lugar a la primera conferencia SOLAS en <strong>1914</strong>. Desde entonces, el convenio ha evolucionado para incorporar los avances tecnológicos y las lecciones aprendidas de numerosos accidentes, convirtiéndose en el <strong>pilar central de la regulación marítima internacional</strong> junto con el <strong>MARPOL</strong>, el <strong>STCW</strong> y el <strong>MLC</strong>.</p>
+      <p>El SOLAS 1974, que <strong>entró en vigor en 1980</strong>, se estructura en capítulos que abordan aspectos específicos de la seguridad. Originalmente concebido con <strong>12 capítulos</strong>, en la actualidad cuenta con <strong>14</strong>, tras la incorporación del <strong>Capítulo XIII</strong> (Verificación del Cumplimiento) y del <strong>Capítulo XIV</strong> (Medidas de Seguridad para Buques que Operen en Aguas Polares).</p>
+      <div class="note"><span class="ni">🧭</span><div>
+        <h5>Los primeros cuatro capítulos: el núcleo fundamental</h5>
+        <p>Los Capítulos I al IV constituyen el núcleo fundamental del convenio, ya que sientan las bases <strong>administrativas</strong> (Cap. I), <strong>estructurales</strong> (Cap. II-1), de <strong>protección contra incendios</strong> (Cap. II-2), de <strong>salvamento</strong> (Cap. III) y de <strong>comunicaciones de emergencia</strong> (Cap. IV) que toda nave debe poseer.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAPA ===================== -->
+<section class="sec" id="mapa">
+  <div class="wrap">
+    <div class="sub-t"><span class="bar" style="background:var(--gold)"></span><h3>Mapa de capítulos</h3></div>
+    <div class="mapgrid">
+      <a class="mapcard" href="#cap1" style="--mc:#2f6bff"><span class="mc-n">I</span><h4>Disposiciones Generales</h4><p>Marco administrativo: aplicación, definiciones, exenciones, reconocimientos, certificados, control PSC e investigación de siniestros. Reglas 1–21.</p></a>
+      <a class="mapcard" href="#cap21" style="--mc:#0ea5a4"><span class="mc-n">II-1</span><h4>Construcción</h4><p>Subdivisión y estabilidad, maquinaria e instalaciones eléctricas. Integridad física del buque. Partes A–G, Reglas 1–57.</p></a>
+      <a class="mapcard" href="#cap22" style="--mc:#e5484d"><span class="mc-n">II-2</span><h4>Protección contra incendios</h4><p>Prevención, detección y extinción de incendios. Enfoque por «escenario de incendio» + Código FSS. Reglas 1–23.</p></a>
+      <a class="mapcard" href="#cap3" style="--mc:#f59f00"><span class="mc-n">III</span><h4>Dispositivos de salvamento</h4><p>Equipos y medios para preservar la vida tras el abandono del buque, según el Código LSA. Reglas 1–37.</p></a>
+      <a class="mapcard" href="#cap4" style="--mc:#8b5cf6"><span class="mc-n">IV</span><h4>Radiocomunicaciones</h4><p>Sistema Mundial de Socorro y Seguridad Marítimos (GMDSS), áreas A1–A4, equipos, guardias y energía. Reglas 1–18.</p></a>
+      <a class="mapcard" href="#comp-hssc" style="--mc:#059669"><span class="mc-n">+</span><h4>Complementos</h4><p>HSSC, PSC, enmiendas, códigos asociados, responsabilidades del oficial, checklists, glosario y tablas de referencia.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== CAPÍTULO I ================================ -->
+<!-- ================================================================== -->
+<section class="sec ch" id="cap1" style="--acc:#2f6bff">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">I</div>
+      <div>
+        <p class="ch-kicker">Capítulo</p>
+        <h2>Disposiciones Generales</h2>
+        <p class="ch-en">General Provisions</p>
+      </div>
+      <ul class="ch-meta"><li>3 Partes (A · B · C)</li><li>21 Reglas</li><li>Columna vertebral administrativa</li><li>Certificación · PSC · Siniestros</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>El Capítulo I es la <strong>columna vertebral administrativa</strong> del SOLAS y el fundamento jurídico de todo el tratado: sin él, el resto de los capítulos carecerían de un mecanismo efectivo de aplicación, control y actualización. Establece el marco para las <strong>inspecciones, la certificación y el control de los buques</strong>, asegurando que todas las naves cumplan con los estándares de seguridad a lo largo de su vida operativa.</p>
+      <p style="margin-top:8px">Su estructura tripartita refleja un diseño lógico: primero se establecen las <strong>reglas básicas</strong> (a quién se aplica, qué significan los términos, qué excepciones existen); luego se detalla el <strong>sistema de inspecciones y certificados</strong> que garantiza el cumplimiento continuo; y finalmente se regula la <strong>investigación de siniestros</strong> para aprender de los errores y mejorar la seguridad.</p>
+    </div>
+
+    <!-- PARTE A -->
+    <div class="sub-t" id="cap1-pa"><span class="bar"></span><h3>Parte A – Aplicación, Definiciones y Exenciones</h3><span class="ref">Reglas 1 a 5</span></div>
+    <p style="margin-bottom:14px;color:var(--mut)">Esta parte preliminar sienta las bases conceptuales y de alcance. Es fundamental que el oficial comprenda estos conceptos porque determinan si su buque está obligado a cumplir con todo el convenio o si goza de alguna exención.</p>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
+      <p class="txt">«Salvo que se disponga expresamente lo contrario, el presente capítulo se aplica a los buques que realizan viajes internacionales».</p>
+      <ul>
+        <li>El SOLAS <strong>no se aplica</strong> a buques que navegan exclusivamente en aguas interiores o en viajes de cabotaje dentro del mismo país.</li>
+        <li>Cada capítulo puede tener su <strong>propio ámbito de aplicación</strong>: el Capítulo IV se aplica a buques de carga de 300 GT y superior; el Capítulo III a todos los buques, con requisitos adicionales según el tipo.</li>
+        <li><strong>Viaje internacional</strong> (Regla 2): el que va de un país al que se aplica el convenio a un puerto fuera de ese país, o viceversa, incluyendo escalas en puertos de distintos Estados contratantes.</li>
+        <li><strong>Buques nuevos vs. existentes</strong>: buque nuevo es aquel cuya quilla ha sido colocada, o cuya construcción se halla en una fase equivalente, en o después de la fecha de entrada en vigor de una enmienda (para el SOLAS 1974: <span class="hl">25 de mayo de 1980</span>). Los buques existentes cumplen las reglas vigentes en el momento de su construcción, aunque muchas enmiendas son retroactivas para ciertos equipos (p. ej., la obligación de llevar EPIRB).</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 2</span><h4>Definiciones</h4></div><div class="regla-b">
+      <p>Esta regla es el <strong>diccionario oficial del SOLAS</strong>. El oficial debe conocer estas definiciones para interpretar correctamente cualquier otra regla.</p>
+      <ul>
+        <li><strong>Administración</strong>: el gobierno del Estado cuyo pabellón enarbola el buque; máxima autoridad responsable de hacer cumplir el SOLAS en los buques de su bandera.</li>
+        <li><strong>Viaje internacional</strong>: no se considera tal el realizado entre puertos de un mismo Estado, aunque atraviese aguas internacionales.</li>
+        <li><strong>Pasajero</strong>: toda persona a bordo que no sea el capitán, los miembros de la tripulación, ni cualquier otra persona empleada o contratada para cualquier negocio a bordo. Los menores de un año no se cuentan.</li>
+        <li><strong>Buque de pasaje</strong>: el que transporta <span class="hl">más de 12 pasajeros</span>. Definición crítica: activa requisitos mucho más estrictos en los capítulos II-1, II-2 y III.</li>
+        <li><strong>Buque de carga</strong>: cualquier buque que no sea de pasaje.</li>
+        <li><strong>Buque tanque</strong>: buque de carga construido o adaptado para el transporte a granel de líquidos inflamables (implicaciones en II-2 y III).</li>
+        <li><strong>Buque de pesca</strong>: no incluido en el ámbito del SOLAS, aunque algunas disposiciones pueden aplicarse voluntariamente.</li>
+        <li><strong>Buque nuclear</strong>: provisto de planta de propulsión nuclear; tiene capítulo específico (VIII).</li>
+        <li><strong>Buque nuevo</strong>: quilla colocada en o después del 25 de mayo de 1980; para enmiendas posteriores, la referencia es la fecha de entrada en vigor de cada enmienda.</li>
+        <li><strong>Milla náutica</strong>: 1.852 metros o 6.080 pies.</li>
+        <li><strong>Fecha aniversario</strong>: día y mes de cada año correspondiente a la fecha de expiración del certificado; crucial para programar reconocimientos anuales.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Excepciones</h4></div><div class="regla-b">
+      <p>El SOLAS <strong>no se aplica</strong>, aunque realicen viajes internacionales, a:</p>
+      <ul>
+        <li>Buques de <strong>guerra</strong> y de transporte de <strong>tropas</strong> (razones de soberanía nacional; los Estados suelen aplicar normas equivalentes internamente).</li>
+        <li>Buques de carga de <strong>menos de 500 GT</strong> (muchos Estados los regulan por legislación nacional).</li>
+        <li>Buques <strong>sin propulsión mecánica</strong> (gabarras, barcazas, pontones).</li>
+        <li>Buques de <strong>madera de construcción tradicional</strong> (casco y cubierta principal de madera).</li>
+        <li><strong>Yates de recreo</strong> no dedicados al comercio.</li>
+        <li><strong>Buques de pesca</strong> (regulados por otros instrumentos, como el Convenio de Torremolinos).</li>
+      </ul>
+      <div class="note"><span class="ni">⚠️</span><div><h5>Importancia práctica</h5><p>Un yate de alquiler que transporte pasajeros con fines comerciales puede dejar de ser «yate de recreo» y pasar a ser un <strong>buque de pasaje</strong>, con todas las implicaciones que ello conlleva.</p></div></div>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 4</span><h4>Exenciones</h4></div><div class="regla-b">
+      <p>A diferencia de las excepciones (automáticas), las exenciones son <strong>discrecionales</strong> y deben ser concedidas por la Administración.</p>
+      <ul>
+        <li><strong>Por viaje excepcional</strong>: un buque que normalmente no realiza viajes internacionales pero que por una situación imprevista debe hacer uno, puede ser eximido de ciertos requisitos si la Administración lo considera seguro para ese viaje.</li>
+        <li><strong>Por diseño especial</strong>: si las características del buque hacen imposible o irrazonable el cumplimiento de una regla (p. ej., un buque de investigación con formas muy particulares), la Administración puede eximirlo siempre que el nivel de seguridad sea equivalente.</li>
+        <li><strong>Obligación de reportar</strong>: la Administración debe informar a la OMI sobre las exenciones concedidas.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 5</span><h4>Equivalencias (medidas equivalentes)</h4></div><div class="regla-b">
+      <p>Una de las reglas más importantes desde el punto de vista técnico, porque <strong>permite la innovación</strong>.</p>
+      <ul>
+        <li><strong>Principio</strong>: si un buque no puede cumplir una disposición porque los materiales o equipos requeridos no están disponibles, o porque existe una solución técnica más avanzada, la Administración puede aceptar una <strong>solución alternativa</strong>, siempre que se demuestre mediante pruebas que es <em>al menos tan efectiva</em> como la prescrita.</li>
+        <li><strong>Procedimiento</strong>: la Administración comunica a la OMI los detalles de la equivalencia y las pruebas realizadas; la OMI circula la información a los demás Estados contratantes, fomentando la armonización.</li>
+        <li><strong>Ejemplo práctico</strong>: un nuevo material ignífugo no incluido en el Código FTP (Fire Test Procedures) podría aceptarse si supera las pruebas de resistencia al fuego requeridas.</li>
+      </ul>
+    </div></article>
+
+    <!-- PARTE B -->
+    <div class="sub-t" id="cap1-pb"><span class="bar"></span><h3>Parte B – Reconocimientos y Certificados</h3><span class="ref">Reglas 6 a 20</span></div>
+    <p style="margin-bottom:14px;color:var(--mut)">La parte operativa y administrativa más extensa del capítulo. Define el ciclo de vida de los certificados y las inspecciones, y establece el mecanismo de control por el Estado del puerto (PSC). Es el núcleo del cumplimiento del SOLAS.</p>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 6</span><h4>Inspección y reconocimiento (Surveys)</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Autoridades competentes</strong>: las inspecciones las realizan funcionarios de la Administración, que puede delegar en <strong>organizaciones reconocidas</strong> (sociedades de clasificación: Lloyd's Register, DNV, ABS…) o en inspectores designados.</li>
+        <li><strong>Facultades de los inspectores</strong>: exigir reparaciones en el buque y realizar inspecciones si son solicitados por las autoridades del puerto.</li>
+        <li><strong>Deficiencias graves</strong>: si un inspector o sociedad de clasificación determina que el buque no cumple o es inseguro, debe asegurarse de que se tomen medidas correctivas; si no se toman, <strong>retirar el certificado</strong>, notificar a la Administración y, si el buque está en puerto extranjero, también a las autoridades del Estado del puerto.</li>
+      </ul>
+      <div class="note"><span class="ni">📌</span><div><p>Esta regla otorga a los inspectores de las sociedades de clasificación un poder considerable: sus acciones pueden <strong>paralizar un buque</strong>. El oficial debe entender por qué un inspector puede ordenar una reparación inmediata.</p></div></div>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 7</span><h4>Reconocimientos de los buques de pasaje</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Inicial</strong>: antes de que el buque entre en servicio por primera vez; cubre todos los aspectos de la seguridad.</li>
+        <li><strong>De renovación</strong>: cada <span class="hl">12 meses</span> (no 5 años como en carga); base para renovar el Passenger Ship Safety Certificate.</li>
+        <li><strong>Adicional</strong>: tras avería o modificación sustancial que afecte a la seguridad.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 8</span><h4>Reconocimientos de los dispositivos de salvamento y equipos (buques de carga)</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Inicial</strong>: antes de la puesta en servicio.</li>
+        <li><strong>De renovación</strong>: cada <strong>5 años</strong>, para renovar el Cargo Ship Safety Equipment Certificate.</li>
+        <li><strong>Periódico</strong>: entre el <strong>segundo y tercer año</strong> de validez (≈ 2,5 años); más exhaustivo que el anual.</li>
+        <li><strong>Anual</strong>: dentro de los 3 meses anteriores o posteriores a la fecha aniversario.</li>
+        <li><strong>Adicional</strong>: tras averías o modificaciones.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 9</span><h4>Reconocimientos de las instalaciones de radio (buques de carga)</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Inicial</strong>: antes de la puesta en servicio.</li>
+        <li><strong>De renovación</strong>: cada <strong>5 años</strong>, para renovar el Cargo Ship Safety Radio Certificate.</li>
+        <li><strong>Periódico</strong>: entre el segundo y tercer año; inspección de los equipos GMDSS.</li>
+        <li><strong>Adicional</strong>: tras averías o modificaciones.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 10</span><h4>Reconocimientos de la construcción, maquinaria y equipos (buques de carga)</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Inicial</strong>: antes de la puesta en servicio.</li>
+        <li><strong>De renovación</strong>: cada <strong>5 años</strong>, para renovar el Cargo Ship Safety Construction Certificate.</li>
+        <li><strong>Intermedio</strong>: entre el segundo y tercer año.</li>
+        <li><strong>Anual</strong>: dentro de los 3 meses de la fecha aniversario.</li>
+        <li><strong>Adicional</strong>: tras averías o modificaciones.</li>
+        <li><strong>Inspección del fondo</strong>: al menos <span class="hl">dos inspecciones de la parte sumergida en 5 años</span>, con intervalo máximo de 36 meses, en dique seco o mediante inspección subacuática.</li>
+      </ul>
+    </div></article>
+
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Tipo de reconocimiento</th><th>Buques de pasaje</th><th>Carga · Equipo</th><th>Carga · Radio</th><th>Carga · Construcción</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Inicial</strong></td><td>Antes de entrar en servicio</td><td>Antes de puesta en servicio</td><td>Antes de puesta en servicio</td><td>Antes de puesta en servicio</td></tr>
+        <tr><td><strong>Renovación</strong></td><td>Cada 12 meses</td><td>Cada 5 años</td><td>Cada 5 años</td><td>Cada 5 años</td></tr>
+        <tr><td><strong>Periódico / Intermedio</strong></td><td>—</td><td>Entre 2.º y 3.er año</td><td>Entre 2.º y 3.er año</td><td>Entre 2.º y 3.er año</td></tr>
+        <tr><td><strong>Anual</strong></td><td>—</td><td>± 3 meses de la fecha aniversario</td><td>± 3 meses de la fecha aniversario</td><td>± 3 meses de la fecha aniversario</td></tr>
+        <tr><td><strong>Adicional</strong></td><td>Avería / modificación</td><td>Avería / modificación</td><td>Avería / modificación</td><td>Avería / modificación</td></tr>
+        <tr><td><strong>Fondo (carena)</strong></td><td colspan="4">Al menos 2 inspecciones en 5 años · intervalo máximo de 36 meses</td></tr>
+      </tbody>
+    </table></div>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 11</span><h4>Mantenimiento de las condiciones después del reconocimiento</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Obligación continua</strong>: el buque y su equipo deben mantenerse en todo momento en condiciones que cumplan el SOLAS. No basta con pasar la inspección: se debe mantener el estándar.</li>
+        <li><strong>Prohibición de alteraciones</strong>: no se pueden realizar alteraciones sin aprobación de la Administración, salvo para mejorarlas.</li>
+        <li><strong>Obligación de reportar</strong>: si ocurre un accidente o se descubre un defecto que afecte a la seguridad, el capitán o el armador deben informar inmediatamente a la Administración, para que pueda ordenar un reconocimiento adicional.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 12</span><h4>Certificados</h4></div><div class="regla-b">
+      <div class="grid2">
+        <div class="mini"><h5>🛳️ Buques de pasaje</h5><p><strong>Passenger Ship Safety Certificate</strong>: incluye un registro de equipo (Formulario P). Válido por <strong>12 meses</strong>.</p></div>
+        <div class="mini"><h5>🚢 Buques de carga</h5><p><strong>Cargo Ship Safety Construction Certificate</strong> (construcción, maquinaria y estabilidad · Cap. II-1) · <strong>Cargo Ship Safety Equipment Certificate</strong> (salvamento e incendios · Caps. II-2 y III) · <strong>Cargo Ship Safety Radio Certificate</strong> (radio · Cap. IV). Válidos por un máximo de <strong>5 años</strong>.</p></div>
+      </div>
+      <p style="margin-top:10px"><strong>Cargo Ship Safety Certificate</strong>: certificado combinado que agrupa los tres anteriores, opcional pero previsto en el sistema armonizado de reconocimientos.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 13</span><h4>Emisión o refrendo de certificados por otro Gobierno</h4></div><div class="regla-b">
+      <ul>
+        <li>Un Estado contratante puede, a petición de la Administración (Estado de abanderamiento), realizar las inspecciones y emitir o refrendar certificados en su nombre — habitual cuando el buque está en un puerto lejano.</li>
+        <li>El certificado debe indicar claramente que se ha emitido <strong>a petición</strong> del Estado de abanderamiento.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 14</span><h4>Duración y validez de los certificados</h4></div><div class="regla-b">
+      <ul>
+        <li>Passenger Ship Safety Certificate: máximo <strong>12 meses</strong>.</li>
+        <li>Certificados de buque de carga: máximo <strong>5 años</strong>.</li>
+        <li>Certificados de exención: validez no superior a la del certificado al que se refieren.</li>
+        <li><strong>Prórroga</strong>: si un certificado de carga se emite por menos de 5 años, la Administración puede prorrogarlo hasta los 5 años, siempre que se hayan realizado los reconocimientos correspondientes.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 15</span><h4>Forma de los certificados y registro de equipos</h4></div><div class="regla-b">
+      <ul>
+        <li>Deben ajustarse a los <strong>modelos del anexo</strong> del Convenio; idioma inglés, francés o español, o con traducción a uno de estos.</li>
+        <li>Los <strong>registros de equipo</strong> (Formularios P, E, R y C) detallan los equipos del buque (botes, balsas, EPIRB…) y se actualizan con las enmiendas (sistemas de evacuación marina, botes de rescate rápidos, etc.).</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 16</span><h4>Disponibilidad de los certificados</h4></div><div class="regla-b">
+      <p>Deben mantenerse <strong>a bordo y disponibles</strong> para inspección en todo momento. El oficial de guardia debe saber dónde se almacenan y estar preparado para mostrarlos al inspector del Estado del puerto.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 17</span><h4>Aceptación de los certificados</h4></div><div class="regla-b">
+      <p>Los certificados emitidos por un Estado contratante son <strong>aceptados por los demás</strong> como prueba de cumplimiento del SOLAS. Es la base del reconocimiento mutuo y del sistema de control por el Estado del puerto.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 18</span><h4>Certificado de exención</h4></div><div class="regla-b">
+      <p>Si la Administración concede una exención (Regla 4), se emite un <strong>certificado de exención</strong> que especifica sus condiciones y que debe llevarse a bordo junto con los demás certificados.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 19</span><h4>Control – Control por el Estado del Puerto (PSC)</h4></div><div class="regla-b">
+      <p>Una de las reglas más importantes para el oficial: establece los derechos y obligaciones del Estado del puerto.</p>
+      <ul>
+        <li><strong>Derecho de inspección</strong>: el oficial del Estado del puerto (PSCO) puede subir a bordo de un buque extranjero y verificar la validez de los certificados SOLAS.</li>
+        <li><strong>Reconocimiento de certificados</strong>: si son válidos y aparentemente en regla, el PSCO debe aceptarlos, salvo que existan <span class="hl">«indicios claros» (clear grounds)</span> de incumplimiento.</li>
+        <li><strong>Indicios claros</strong>: certificados que no se corresponden con el buque, averías visibles, falta de equipo, condiciones de higiene deficientes, etc.</li>
+        <li><strong>Acción del PSCO</strong>: exigir corrección antes de la salida; <strong>detener el buque</strong> hasta que se subsanen las deficiencias; notificar a la Administración y a la sociedad de clasificación; informar al siguiente puerto si no pueden corregirse en el actual.</li>
+        <li><strong>Procedimiento</strong>: informe escrito de deficiencias; el capitán conoce sus derechos (presentar alegaciones) y obligaciones (corregir).</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 20</span><h4>Privilegios</h4></div><div class="regla-b">
+      <p>Un buque <strong>no puede reclamar los beneficios del convenio</strong> (p. ej., navegar sin ser detenido) si no posee certificados válidos. Un buque sin certificados o con certificados caducados está sujeto a <strong>detención inmediata</strong>.</p>
+    </div></article>
+
+    <!-- PARTE C -->
+    <div class="sub-t" id="cap1-pc"><span class="bar"></span><h3>Parte C – Investigación de Siniestros</h3><span class="ref">Regla 21</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 21</span><h4>Investigación</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Obligación</strong>: cada Estado contratante investiga cualquier accidente que involucre a un buque de su bandera y que haya causado <strong>pérdida de vidas</strong>.</li>
+        <li><strong>Contenido</strong>: determinar las circunstancias del accidente y, en la medida de lo posible, su causa.</li>
+        <li><strong>Informe</strong>: se presenta a la OMI, que lo analiza para extraer lecciones y proponer enmiendas al convenio.</li>
+        <li><strong>Propósito</strong>: base del aprendizaje continuo. Muchas enmiendas del SOLAS surgieron de investigaciones de accidentes (<em>Herald of Free Enterprise</em>, <em>Estonia</em>, <em>Prestige</em>…).</li>
+      </ul>
+    </div></article>
+
+    <!-- INTERACCION / ENMIENDAS -->
+    <div class="sub-t" id="cap1-extra"><span class="bar"></span><h3>Interacción, enmiendas y conclusión del Capítulo I</h3></div>
+    <div class="grid3">
+      <div class="mini"><h5>🔄 Sistema Armonizado (HSSC)</h5><p>El Capítulo I se integra con el HSSC, que sincroniza los intervalos de reconocimientos de SOLAS, MARPOL, Líneas de Carga y otros convenios, reduciendo carga administrativa y costes.</p></div>
+      <div class="mini"><h5>🧾 Código ISM (Cap. IX)</h5><p>El cumplimiento del ISM es necesario para que el Certificado de Gestión de la Seguridad (SMC) sea válido; el SMC es requisito para la emisión de los certificados SOLAS.</p></div>
+      <div class="mini"><h5>🛡️ ISPS (Cap. XI-2)</h5><p>Aunque el Capítulo I no menciona directamente el ISPS, el Certificado Internacional de Protección del Buque (ISSC) se emite en el marco de las inspecciones del Capítulo I.</p></div>
+    </div>
+    <div class="note"><span class="ni">📜</span><div>
+      <h5>Enmiendas recientes</h5>
+      <p><strong>Enmiendas de 2014 (MSC.338(91))</strong>: cambios en los formularios de los certificados para reflejar los nuevos requisitos de II-1 (protección contra ruido), II-2 (equipos de respiración) y III (recuperación de personas del agua). · <strong>Sistema GISIS</strong>: la OMI centraliza la comunicación de exenciones, inspecciones y detenciones para mayor transparencia y seguimiento.</p>
+    </div></div>
+    <div class="card">
+      <h4 style="font-family:'Space Grotesk';margin-bottom:8px">Conclusión del Capítulo I</h4>
+      <p>El Capítulo I no es un simple preámbulo administrativo: es el <strong>sistema nervioso del SOLAS</strong>. Sin él, los demás capítulos no tendrían mecanismo para verificar el cumplimiento, sancionar el incumplimiento o aprender de los errores. El oficial debe dominarlo porque: <strong>define su responsabilidad</strong> (mantener certificados al día y las condiciones del reconocimiento); le da <strong>herramientas para afrontar una inspección PSC</strong> (Reglas 19 y 20: derechos y obligaciones); y le permite entender el <strong>ciclo de vida del buque</strong>, del reconocimiento inicial al de renovación. Es la base sobre la que se asienta toda la pirámide de la seguridad marítima.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== CAPÍTULO II-1 ============================= -->
+<!-- ================================================================== -->
+<section class="sec ch" id="cap21" style="--acc:#0ea5a4">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">II-1</div>
+      <div>
+        <p class="ch-kicker">Capítulo</p>
+        <h2>Construcción – Subdivisión y Estabilidad, Maquinaria e Instalaciones Eléctricas</h2>
+        <p class="ch-en">Construction – Subdivision and Stability, Machinery and Electrical Installations</p>
+      </div>
+      <ul class="ch-meta"><li>7 Partes (A–G)</li><li>Reglas 1–57</li><li>Integridad física del buque</li><li>Códigos IS · IGF</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>El Capítulo II-1 es el <strong>pilar técnico</strong> que garantiza la integridad física del buque. Aborda tres áreas interconectadas: <strong>subdivisión y estabilidad</strong> (capacidad de mantenerse a flote y estable tras una avería), <strong>maquinaria</strong> (fiabilidad de propulsión y auxiliares) e <strong>instalaciones eléctricas</strong> (suministro a sistemas críticos, incluidas fuentes de emergencia).</p>
+      <p style="margin-top:8px">Ha evolucionado significativamente: enmiendas sobre <strong>protección contra el ruido</strong> (en vigor 2014/2018), requisitos para <strong>combustibles de bajo punto de inflamación</strong> (GNL y alternativos) y refuerzo del <strong>acceso a las estructuras</strong> para inspecciones, especialmente en petroleros y graneleros.</p>
+    </div>
+
+    <!-- PARTE A -->
+    <div class="sub-t" id="cap21-a"><span class="bar"></span><h3>Parte A – Aplicación y Definiciones</h3><span class="ref">Reglas 1 a 3</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
+      <p class="txt">«Esta parte se aplica a los buques cuya quilla haya sido colocada, o cuya construcción se halle en una fase equivalente, en o después de la fecha de entrada en vigor de las enmiendas correspondientes».</p>
+      <ul>
+        <li>La aplicación depende de la <strong>fecha de construcción</strong>: las enmiendas no suelen ser retroactivas en su totalidad, aunque algunas sí lo son (p. ej., ciertos casos de ruido).</li>
+        <li><strong>Buques existentes</strong>: cumplen como mínimo los requisitos vigentes al momento de su construcción; si se someten a reparaciones o modificaciones importantes, pueden verse obligados a cumplir requisitos más recientes si la Administración lo considera razonable y factible.</li>
+        <li>Excepciones: buques de guerra, tropas, pesqueros, etc., según el Capítulo I, Regla 3.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 2</span><h4>Definiciones</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Buque de pasaje / carga / tanque</strong>: definiciones del Capítulo I; aquí son clave porque los requisitos de subdivisión y estabilidad son más estrictos para pasaje, y específicos para tanques.</li>
+        <li><strong>Eslora de subdivisión</strong>: el 96 % de la eslora total en la flotación correspondiente al 85 % del puntal de trazado, o la eslora medida desde la proa hasta el eje del timón, si esta última es mayor.</li>
+        <li><strong>Puntal de trazado</strong>: distancia vertical desde la cara superior de la quilla hasta la cara superior del bao de la cubierta de francobordo en el costado.</li>
+        <li><strong>Francobordo de subdivisión</strong>: asignado al buque para los cálculos de subdivisión; puede diferir del francobordo normal.</li>
+        <li><strong>Compartimentado estanco</strong>: división del buque en compartimentos mediante mamparos estancos, de modo que si uno o varios se inundan, el buque siga a flote.</li>
+        <li><strong>Estanqueidad</strong>: capacidad de una estructura para evitar el paso de agua.</li>
+        <li><strong>Cubierta de intemperie</strong>: la cubierta más alta expuesta a la intemperie con medios de cierre estancos en todas sus aberturas.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Exenciones y equivalencias</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Exenciones</strong>: la Administración puede eximir ciertos requisitos si el viaje es de corta duración o si el diseño los hace irrazonables o innecesarios, manteniendo seguridad equivalente.</li>
+        <li><strong>Equivalencias</strong>: soluciones alternativas (materiales, sistemas, disposiciones) al menos tan efectivas como las prescritas.</li>
+      </ul>
+    </div></article>
+
+    <!-- PARTE A-1 -->
+    <div class="sub-t" id="cap21-a1"><span class="bar"></span><h3>Parte A-1 – Estructura del Buque</h3><span class="ref">Reglas 3-1 a 3-12</span></div>
+    <p style="margin-bottom:14px;color:var(--mut)">Añadida por enmiendas posteriores para abordar aspectos de integridad estructural no cubiertos por las partes originales.</p>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-1</span><h4>Protección con revestimientos (Coating)</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Aplicación</strong>: tanques de lastre de buques de carga (incluidos petroleros) y espacios de carga de graneleros.</li>
+        <li><strong>Requisito</strong>: sistema de revestimiento conforme a las normas de la OMI (<strong>PSPC</strong> – Performance Standard for Protective Coatings), para prevenir la corrosión durante la vida útil.</li>
+        <li><strong>Inspección</strong>: el revestimiento se inspecciona periódicamente y se mantiene en buen estado.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-2</span><h4>Disposiciones de remolque (Towing arrangements)</h4></div><div class="regla-b">
+      <ul>
+        <li>Dispositivos de remolque (puntos de amarre, bitas, guías) que permitan un remolque seguro y eficaz en emergencia; ubicación y resistencia adecuadas.</li>
+        <li><strong>Manual de Remolque de Emergencia</strong> (Emergency Towing Booklet): información sobre dispositivos y procedimientos, esencial para que el remolcador conecte el cabo con seguridad.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-3</span><h4>Acceso a las diferentes partes del buque</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Aplicación</strong>: petroleros, graneleros y otros buques de carga de ciertas dimensiones.</li>
+        <li>Acceso seguro a toda la estructura para inspecciones exhaustivas, incluso en zonas difíciles (tanques de lastre, espacios de carga): escaleras, pasarelas, plataformas, aberturas (escotillas), iluminación y ventilación.</li>
+        <li><strong>Manual de acceso a la estructura</strong>: planos de acceso, puntos de inspección y procedimientos.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-4</span><h4>Protección contra el ruido</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Entrada en vigor</strong>: buques nuevos desde el 1 de julio de 2014; buques existentes con contrato de construcción entre 2009 y 2014, bajo ciertas condiciones (2018).</li>
+        <li>Límites de ruido en espacios de trabajo y alojamiento para proteger la salud de la tripulación; medidas de insonorización y aislamiento acústico.</li>
+        <li>Excepciones para buques existentes contratados antes de 2014 que no cumplan.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Reglas 3-5 a 3-12</span><h4>Otras disposiciones estructurales</h4></div><div class="regla-b">
+      <p>Requisitos sobre resistencia de la estructura, prevención de la corrosión e inspección de soldaduras. De carácter técnico, suelen remitir a las normas de las sociedades de clasificación.</p>
+    </div></article>
+
+    <!-- PARTE B -->
+    <div class="sub-t" id="cap21-b"><span class="bar"></span><h3>Parte B – Estabilidad e Integridad Estanca</h3><span class="ref">Reglas 5 a 25</span></div>
+    <p style="margin-bottom:14px;color:var(--mut)">La parte más extensa y crítica del capítulo, especialmente para buques de pasaje: la seguridad contra el hundimiento.</p>
+
+    <div class="mini" style="margin-bottom:16px"><h5>Parte B-1 · Estabilidad en condición intacta (Reglas 5–8)</h5>
+      <ul class="chk">
+        <li><strong>Regla 5</strong> – Estabilidad intacta de buques de pasaje: criterios del Código de Estabilidad Intacta (IS Code); resistir viento y olas sin volcar.</li>
+        <li><strong>Regla 6</strong> – Estabilidad intacta de buques de carga: criterios adaptados; información al capitán para calcular la estabilidad en distintas condiciones (manual de estabilidad).</li>
+        <li><strong>Regla 7</strong> – Información sobre la estabilidad: Manual de Estabilidad con cálculos para todas las condiciones de carga, curvas GZ y valores de GM (altura metacéntrica).</li>
+        <li><strong>Regla 8</strong> – Estabilidad en condiciones de hielo: la acumulación de hielo puede afectar gravemente la estabilidad.</li>
+      </ul>
+    </div>
+
+    <div class="mini" style="margin-bottom:16px"><h5>Parte B-2 · Integridad estanca (Reglas 9–17)</h5>
+      <ul class="chk">
+        <li><strong>Regla 9</strong> – Mamparos estancos: en buques de pasaje se extienden del fondo a la cubierta de intemperie; número y ubicación según eslora y criterio de compartimentos inundables («uno», «dos»…).</li>
+        <li><strong>Regla 10</strong> – Construcción de mamparos estancos: materiales, espesor y método para garantizar la estanqueidad.</li>
+        <li><strong>Regla 11</strong> – Pruebas de estanqueidad (inundación) durante la construcción y periódicamente.</li>
+        <li><strong>Regla 12</strong> – Doble fondo: en toda la eslora de la sala de máquinas y zona de carga de buques de carga no tanques; segunda barrera ante daños de fondo.</li>
+        <li><strong>Reglas 13–17</strong> – Aberturas en mamparos y cubiertas: puertas estancas, escotillas y pasos de tubería con cierres estancos operables desde la cubierta principal y, en algunos casos, desde un punto superior.</li>
+      </ul>
+    </div>
+
+    <div class="mini" style="margin-bottom:16px"><h5>Parte B-3 · Asignación del francobordo de subdivisión (Regla 18)</h5>
+      <p>Buques de pasaje: se asigna un <strong>francobordo de subdivisión</strong> que determina la altura mínima de la cubierta de intemperie sobre la flotación, calculado según el grado de subdivisión (número de compartimentos que pueden inundarse).</p>
+    </div>
+
+    <div class="mini"><h5>Parte B-4 · Gestión de la estabilidad (Reglas 19–25)</h5>
+      <ul class="chk">
+        <li><strong>Regla 19</strong> – Inspecciones periódicas de la estabilidad, especialmente tras cargar/descargar.</li>
+        <li><strong>Regla 20</strong> – Prevención: evitar sobrecarga, controlar la distribución de la carga, mantener cerradas las aberturas estancas.</li>
+        <li><strong>Regla 21</strong> – Simulacros de control de averías: cierre de puertas estancas, operación de bombas de achique, etc.</li>
+        <li><strong>Regla 22</strong> – Manual de estabilidad en avería para el capitán.</li>
+        <li><strong>Reglas 23–25</strong> – Requisitos específicos para buques de pasaje y de carga.</li>
+      </ul>
+    </div>
+
+    <!-- PARTE C -->
+    <div class="sub-t" id="cap21-c"><span class="bar"></span><h3>Parte C – Maquinaria</h3><span class="ref">Reglas 26 a 39</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 26</span><h4>Generalidades</h4></div><div class="regla-b"><p>La maquinaria debe ser de <strong>construcción robusta</strong>, estar bien diseñada y funcionar de forma fiable en todas las condiciones de navegación.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 27</span><h4>Maquinaria principal y auxiliar</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Propulsión</strong>: motores principales, hélices y ejes diseñados para proporcionar la potencia necesaria para una navegación segura.</li>
+        <li><strong>Auxiliares</strong> (bombas de achique, compresores, generadores, refrigeración): redundantes o con capacidad suficiente para mantener la operación si falla una unidad.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 28</span><h4>Maquinaria de emergencia</h4></div><div class="regla-b">
+      <ul>
+        <li>Fuente de energía de emergencia (generador diésel o baterías) para sistemas críticos: gobierno, comunicaciones, iluminación, bombas de incendios.</li>
+        <li>Autonomía mínima: <span class="hl">18 horas</span> en buques de carga · <span class="hl">36 horas</span> en buques de pasaje, a plena carga.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 29</span><h4>Sistemas de gobierno (steering gear)</h4></div><div class="regla-b">
+      <ul>
+        <li>Gobierno <strong>principal</strong> (accionado por energía) y <strong>auxiliar</strong> (manual o de emergencia) para gobernar si el principal falla.</li>
+        <li>Pruebas periódicas en puerto y en el mar.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 30</span><h4>Comunicaciones puente – sala de máquinas</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Telegráfo de órdenes</strong>: medio fiable para transmitir órdenes de maniobra.</li>
+        <li><strong>Indicadores</strong> en el puente: velocidad de la hélice, posición del timón y otros parámetros críticos.</li>
+      </ul>
+    </div></article>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Regla</th><th>Sistema regulado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>31</strong></td><td>Tuberías de vapor y sistemas de presión</td></tr>
+        <tr><td><strong>32</strong></td><td>Protección contra incendios en la sala de máquinas (extintores, sistemas fijos)</td></tr>
+        <tr><td><strong>33</strong></td><td>Sistemas de ventilación</td></tr>
+        <tr><td><strong>34</strong></td><td>Sistemas de combustible y lubricación</td></tr>
+        <tr><td><strong>35</strong></td><td>Sistemas de refrigeración</td></tr>
+        <tr><td><strong>36</strong></td><td>Sistemas de achique (bombas y tuberías)</td></tr>
+        <tr><td><strong>37</strong></td><td>Sistemas de aire comprimido</td></tr>
+        <tr><td><strong>38</strong></td><td>Sistemas de escape</td></tr>
+        <tr><td><strong>39</strong></td><td>Disposiciones especiales para buques de pasaje (redundancia adicional)</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- PARTE D -->
+    <div class="sub-t" id="cap21-d"><span class="bar"></span><h3>Parte D – Instalaciones Eléctricas</h3><span class="ref">Reglas 40 a 45</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 40</span><h4>Generalidades</h4></div><div class="regla-b"><p>Instalaciones eléctricas seguras, fiables y protegidas contra incendios, cortocircuitos y sobrecargas.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 41</span><h4>Fuente principal de energía eléctrica</h4></div><div class="regla-b"><p>Capacidad suficiente para todos los servicios de operación normal (propulsión, gobierno, alumbrado, comunicaciones, bombas). Redundancia: <strong>al menos dos generadores</strong>, de modo que uno pueda asumir la carga si el otro falla.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 42</span><h4>Fuente de energía eléctrica de emergencia</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Ubicación</strong>: fuera de la sala de máquinas principal, para no quedar inutilizada por incendio o inundación.</li>
+        <li><strong>Capacidad</strong>: alimentar los sistemas críticos <strong>18 h</strong> (carga) / <strong>36 h</strong> (pasaje).</li>
+        <li><strong>Arranque automático</strong> en caso de fallo de la fuente principal.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 43</span><h4>Disposiciones especiales para buques de pasaje</h4></div><div class="regla-b"><p>Fuente de emergencia adicional (p. ej., baterías) para sistemas de seguridad — alarmas, iluminación de emergencia, comunicaciones — durante al menos <strong>30 minutos</strong>.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 44</span><h4>Alumbrado de emergencia</h4></div><div class="regla-b"><p>En pasillos, escaleras, puestos de reunión y embarque, sala de máquinas, etc. Autonomía mínima de <strong>3 horas</strong> ante fallo de la fuente principal.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 45</span><h4>Medidas de seguridad eléctrica</h4></div><div class="regla-b">
+      <ul>
+        <li>Protección de circuitos contra cortocircuitos y sobrecargas (fusibles o interruptores automáticos).</li>
+        <li>Conexión a tierra de cascos y estructuras metálicas.</li>
+        <li><strong>Equipos a prueba de explosión</strong> en zonas con riesgo de atmósferas explosivas (salas de bombas de petroleros).</li>
+      </ul>
+    </div></article>
+
+    <!-- PARTE E -->
+    <div class="sub-t" id="cap21-e"><span class="bar"></span><h3>Parte E – Espacios de máquinas sin dotación permanente (UMS)</h3><span class="ref">Reglas 46 a 54</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 46</span><h4>Generalidades</h4></div><div class="regla-b"><p>Para buques que operan sin vigilancia permanente de máquinas (sin oficial de máquinas de guardia en ciertos períodos): sistemas de <strong>control y alarma</strong> que permitan la operación remota y la detección de fallos.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 47</span><h4>Control remoto</h4></div><div class="regla-b"><p>Propulsión, gobierno y sistemas clave controlables <strong>desde el puente</strong>.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 48</span><h4>Alarmas</h4></div><div class="regla-b"><p>De presión, temperatura, nivel de combustible, nivel de agua, incendio… <strong>Visuales y sonoras</strong>, claramente identificadas.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 49</span><h4>Comunicaciones</h4></div><div class="regla-b"><p>Medio fiable de comunicación puente–sala de máquinas, incluso con la sala no tripulada.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 50</span><h4>Acceso</h4></div><div class="regla-b"><p>Acceso seguro a la sala de máquinas en caso de emergencia.</p></div></article>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Regla</th><th>Requisito adicional UMS</th></tr></thead>
+      <tbody>
+        <tr><td><strong>51</strong></td><td>Sistemas de extinción de incendios automáticos</td></tr>
+        <tr><td><strong>52</strong></td><td>Sistemas de ventilación automáticos</td></tr>
+        <tr><td><strong>53</strong></td><td>Sistemas de achique automáticos</td></tr>
+        <tr><td><strong>54</strong></td><td>Disposiciones especiales para buques de pasaje</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- PARTES F-G -->
+    <div class="sub-t" id="cap21-fg"><span class="bar"></span><h3>Partes F y G – Diseños alternativos y combustibles de bajo punto de inflamación</h3><span class="ref">Reglas 55 a 57</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 55</span><h4>Diseños y disposiciones alternativos</h4></div><div class="regla-b">
+      <ul>
+        <li>Permite diseños que no se ajusten exactamente a las reglas, si ofrecen <strong>seguridad equivalente</strong>; la Administración evalúa mediante análisis de riesgos o pruebas.</li>
+        <li>Aplicable a cualquier aspecto del Capítulo II-1 (estructura, maquinaria, eléctrico). También regula el almacenamiento y distribución de combustibles de bajo punto de inflamación.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 56</span><h4>Aplicación – combustibles de bajo punto de inflamación</h4></div><div class="regla-b"><p>Para buques que utilicen combustibles con punto de inflamación <strong>inferior a 60 °C</strong> (GNL, metanol…): cumplimiento del <strong>Código IGF</strong> (Código Internacional de Seguridad para Buques que Utilizan Gases u Otros Combustibles de Bajo Punto de Inflamación).</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 57</span><h4>Requisitos específicos</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Almacenamiento y distribución</strong> diseñados para minimizar fugas, explosiones e incendios.</li>
+        <li><strong>Ventilación</strong> adecuada de los espacios donde se almacenan o utilizan estos combustibles.</li>
+        <li><strong>Detección de gas</strong> en espacios con riesgo de fugas.</li>
+      </ul>
+    </div></article>
+
+    <!-- EXTRA -->
+    <div class="sub-t" id="cap21-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo II-1</h3></div>
+    <div class="grid2">
+      <div class="mini"><h5>📜 Enmiendas recientes</h5><p><strong>Ruido (Regla 3-12)</strong>: buques nuevos desde 2014 y algunos existentes. · <strong>Parte G / Código IGF</strong>: creciente adopción del GNL. · <strong>Acceso a estructuras (3-3)</strong>: preparación de inspecciones de la sociedad de clasificación. · <strong>HSSC</strong>: reconocimientos de construcción sincronizados con otros certificados SOLAS.</p></div>
+      <div class="mini"><h5>🔗 Interacción con otros capítulos y códigos</h5><p><strong>Cap. II-2</strong>: la estabilidad e integridad estanca son clave ante incendios que puedan debilitar la estructura y provocar inundaciones. · <strong>Cap. XII (graneleros)</strong>: resistencia estructural y alarmas de entrada de agua. · <strong>Código IS</strong>: base de las reglas de estabilidad. · <strong>Código IGF</strong>: base de la Parte G.</p></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h4 style="font-family:'Space Grotesk';margin-bottom:8px">Conclusión del Capítulo II-1</h4>
+      <p>El Capítulo II-1 es el <strong>garante de la capacidad de supervivencia física del buque</strong>. El oficial de cubierta (Chief Officer) es responsable directo de la <strong>estabilidad</strong>; el oficial de máquinas (Chief Engineer), de la <strong>maquinaria y sistemas eléctricos</strong>, su redundancia y emergencia. Ambos deben entender los reconocimientos de construcción y prepararse para emergencias: inundación, incendio o fallo de maquinaria (control de averías, achique, fuentes de emergencia). El capítulo no solo exige un diseño seguro, sino una <strong>operación y mantenimiento continuos</strong> a lo largo de la vida útil del buque.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== CAPÍTULO II-2 ============================= -->
+<!-- ================================================================== -->
+<section class="sec ch" id="cap22" style="--acc:#e5484d">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">II-2</div>
+      <div>
+        <p class="ch-kicker">Capítulo</p>
+        <h2>Prevención, Detección y Extinción de Incendios</h2>
+        <p class="ch-en">Fire Protection, Fire Detection and Fire Extinction</p>
+      </div>
+      <ul class="ch-meta"><li>7 Partes (A–G)</li><li>Reglas 1–23</li><li>Código FSS obligatorio</li><li>Revisión integral de 2002</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>Junto con el Capítulo III, uno de los pilares operativos más críticos del SOLAS. Objetivo cuádruple: <strong>1) prevenir</strong> los incendios, <strong>2) detectarlos</strong> rápidamente, <strong>3) contenerlos</strong> y <strong>4) extinguirlos</strong>, garantizando vías de evacuación seguras. Tras incendios trágicos como el <em>Scandinavian Star</em> (1990), el capítulo fue completamente revisado en el año 2000 (en vigor el <strong>1 de julio de 2002</strong>), adoptando un enfoque basado en el <span class="hl">«escenario de incendio»</span>: las reglas siguen la secuencia lógica prevención → detección → supresión → evacuación.</p>
+      <p style="margin-top:8px">Los requisitos técnicos detallados se trasladaron al <strong>Código Internacional de Sistemas de Seguridad contra Incendios (Código FSS)</strong>, de carácter obligatorio, quedando en el Convenio los requisitos funcionales y generales.</p>
+      <div class="flow"><span>🔥 Prevención</span><i>→</i><span>🚨 Detección</span><i>→</i><span>🧱 Contención</span><i>→</i><span>🧯 Extinción</span><i>→</i><span>🏃 Evacuación</span></div>
+    </div>
+
+    <div class="sub-t" id="cap22-a"><span class="bar"></span><h3>Parte A – Generalidades</h3><span class="ref">Reglas 1 a 3</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
+      <p class="txt">«El presente capítulo se aplica a los buques cuya quilla haya sido colocada, o cuya construcción se halle en una fase equivalente, en o después del 1 de julio de 2002».</p>
+      <ul>
+        <li><strong>Buques existentes</strong>: cumplen la versión anterior, pero varias enmiendas son retroactivas:
+          <ul>
+            <li><strong>EEBD</strong> (equipos de escape de emergencia): todos los buques existentes desde el primer reconocimiento posterior al 1 de julio de 2002.</li>
+            <li><strong>Sistemas fijos de extinción de aplicación local</strong>: buques de pasaje ≥ 2.000 GT antes del 1 de octubre de 2005.</li>
+            <li><strong>Aparatos radiotelefónicos portátiles</strong> (dos por equipo de bomberos): primer reconocimiento posterior al 1 de julio de 2018.</li>
+          </ul>
+        </li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 2</span><h4>Objetivos funcionales de seguridad contra incendios</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Prevención</strong>: evitar que se inicie un incendio.</li>
+        <li><strong>Detección y alarma</strong>: detectarlo en fase inicial y dar la alarma.</li>
+        <li><strong>Contención</strong>: confinar el fuego en el espacio de origen.</li>
+        <li><strong>Supresión y extinción</strong>: rápidas y eficaces.</li>
+        <li><strong>Protección de vías de escape</strong> y medios de evacuación frente a fuego y humo.</li>
+        <li><strong>Protección de tripulación y pasajeros</strong> frente a fuego y humo.</li>
+        <li><strong>Protección de la estructura</strong>: evitar el colapso.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Definiciones</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>División clase “A”</strong>: mamparos y cubiertas de materiales incombustibles resistentes al fuego durante 60 o 90 minutos.</li>
+        <li><strong>División clase “B”</strong>: resistentes durante 30 o 15 minutos.</li>
+        <li><strong>División clase “C”</strong>: materiales incombustibles sin resistencia al fuego específica.</li>
+        <li><strong>Incombustible</strong>: material que no arde ni emite vapores inflamables al calentarse.</li>
+        <li><strong>Espacio de categoría especial</strong>: espacio cerrado con vehículos con combustible en sus depósitos.</li>
+        <li><strong>Espacio de carga rodada (ro-ro)</strong>: destinado al transporte de vehículos sobre ruedas.</li>
+        <li><strong>Espacios de alojamiento / máquinas / carga</strong>: camarotes, comedores y salones; propulsión, generadores y calderas; almacenamiento de mercancías, respectivamente.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap22-b"><span class="bar"></span><h3>Parte B – Prevención de Incendios y Explosiones</h3><span class="ref">Reglas 4 a 6</span></div>
+    <p style="margin-bottom:14px;color:var(--mut)">Evitar que se inicie un incendio o explosión, atacando las tres fuentes principales de ignición: chispas, llamas y calor excesivo.</p>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 4</span><h4>Probabilidad de ignición</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Combustible y aceite lubricante</strong>: restricción de líquidos inflamables; tuberías protegidas contra fugas y depósitos ventilados.</li>
+        <li><strong>Superficies calientes</strong>: motores, calderas y similares aislados o protegidos del contacto con materiales combustibles.</li>
+        <li><strong>Chispas y arcos eléctricos</strong>: equipos a prueba de explosión en zonas con atmósferas inflamables (salas de bombas de petroleros).</li>
+        <li><strong>Fumar</strong>: prohibido en zonas con riesgo de incendio.</li>
+        <li><strong>Petroleros</strong>: prohibición de equipos que generen chispas en carga/descarga; <strong>sistemas de inertización</strong> contra atmósferas explosivas en tanques.</li>
+        <li><strong>Graneleros</strong>: medidas contra la autoignición de cargas como el carbón.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 5</span><h4>Potencial de crecimiento del fuego</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Materiales de construcción</strong>: incombustibles en mamparos, cubiertas, forros y aislamientos de alojamientos.</li>
+        <li><strong>Limitación de carga combustible</strong>: muebles, cortinas y alfombras que no propaguen la llama.</li>
+        <li><strong>Tuberías y conductos</strong>: cortafuegos al atravesar mamparos resistentes.</li>
+        <li><strong>Ventilación</strong>: diseñada para evitar la propagación de humo y fuego entre compartimentos.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 6</span><h4>Potencial de generación de humo y toxicidad</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Revestimientos</strong> de paredes, techos y suelos con baja emisión de humo y gases tóxicos — crítico en alojamientos.</li>
+        <li><strong>Pinturas y barnices</strong> restringidos si al arder producen humo denso o gases tóxicos.</li>
+        <li><strong>Muebles y textiles</strong> (tapizados, cortinas, ropa de cama) con normas de resistencia al fuego y baja emisión.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap22-c"><span class="bar"></span><h3>Parte C – Supresión de Incendios</h3><span class="ref">Reglas 7 a 11</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 7</span><h4>Detección y alarma</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Detección automática</strong> (humo, calor, llama) en alojamientos, máquinas y espacios de carga según el tipo de buque.</li>
+        <li><strong>Alarma</strong> audible y visual en el puente y puestos de control.</li>
+        <li><strong>Megafonía</strong> en buques de pasaje para instrucciones.</li>
+        <li><strong>Panel de control centralizado</strong> en el puente que indica la ubicación de la alarma.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 8</span><h4>Control de la propagación del humo</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Compartimentación</strong>: mamparos y cubiertas estancos al humo.</li>
+        <li><strong>Ventilación</strong>: aislar espacios afectados y extraer humo al exterior.</li>
+        <li><strong>Puertas cortafuegos</strong> con cierres automáticos activados en caso de incendio.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 9</span><h4>Contención del fuego</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Divisiones resistentes</strong>: clases “A” y “B” como barreras físicas.</li>
+        <li><strong>Puertas cortafuegos</strong> resistentes 30, 60 o 90 minutos.</li>
+        <li><strong>Cortafuegos en conductos</strong> y tuberías que atraviesan mamparos, con cierre automático.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 10</span><h4>Extinción de incendios</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Sistemas fijos</strong>: CO₂, espuma o agua pulverizada en espacios de máquinas; espuma sobre cubierta en petroleros.</li>
+        <li><strong>Extintores portátiles</strong> en número y tipo adecuados a cada riesgo.</li>
+        <li><strong>Sistema de agua contra incendios</strong>: bombas, tuberías, mangueras y boquillas.</li>
+        <li><strong>Aplicación local</strong> (rociadores) sobre puntos de mayor riesgo en máquinas.</li>
+        <li><strong>Equipos de respiración</strong> para entrar en espacios con humo o gases tóxicos.</li>
+        <li><strong>Conexión internacional de tierra</strong> para que los bomberos del puerto conecten sus mangueras.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 11</span><h4>Integridad estructural</h4></div><div class="regla-b">
+      <ul>
+        <li>El acero y materiales estructurales deben soportar altas temperaturas el tiempo suficiente para evacuar y extinguir.</li>
+        <li><strong>Aislamiento</strong> de mamparos y cubiertas frente al calor excesivo.</li>
+        <li>Posibles sistemas de <strong>refrigeración por agua</strong> de la estructura.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap22-d"><span class="bar"></span><h3>Parte D – Evacuación</h3><span class="ref">Reglas 12 y 13</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 12</span><h4>Notificación de la tripulación y los pasajeros</h4></div><div class="regla-b">
+      <ul>
+        <li>Activación de la <strong>alarma general de emergencia</strong>.</li>
+        <li>Instrucciones claras y tranquilizadoras por <strong>megafonía</strong>.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 13</span><h4>Medios de escape</h4></div><div class="regla-b">
+      <ul>
+        <li>Pasillos, escaleras y salidas <strong>protegidos</strong> contra fuego y humo, con anchura suficiente.</li>
+        <li><strong>Señalización luminosa de baja ubicación</strong> (por si el humo oscurece la parte superior).</li>
+        <li><strong>Iluminación de emergencia</strong> en las vías de escape.</li>
+        <li><strong>EEBD</strong> en alojamientos y espacios de máquinas para escapar de atmósferas con humo.</li>
+        <li><strong>Buques de pasaje</strong>: múltiples vías de escape bien distribuidas y aptas para personas con movilidad reducida.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap22-e"><span class="bar"></span><h3>Parte E – Requisitos Operacionales</h3><span class="ref">Reglas 14 a 16</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 14</span><h4>Disponibilidad operativa y mantenimiento</h4></div><div class="regla-b">
+      <ul>
+        <li>Mantenimiento periódico de detección, alarma y extinción según instrucciones del fabricante.</li>
+        <li>Pruebas periódicas de bombas, extintores y sistemas fijos.</li>
+        <li>Registros detallados y <strong>manual de mantenimiento</strong> contra incendios a bordo.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 15</span><h4>Instrucciones, formación a bordo y simulacros</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Simulacros mensuales</strong>: uso de extintores, mangueras y equipos de respiración.</li>
+        <li><strong>Formación</strong> de todos los tripulantes en equipos y procedimientos de evacuación.</li>
+        <li><strong>Instrucciones</strong> claras a tripulación y pasajeros.</li>
+        <li><strong>Manual de lucha contra incendios</strong> a bordo.</li>
+        <li><strong>Recarga de botellas de aire</strong> de los equipos de respiración tras simulacros, o botellas de repuesto suficientes.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 16</span><h4>Operaciones</h4></div><div class="regla-b">
+      <ul>
+        <li>Procedimientos de <strong>carga/descarga</strong> seguros (p. ej., inertización en petroleros).</li>
+        <li>Cumplimiento del <strong>Código IMDG</strong> para mercancías peligrosas.</li>
+        <li>Procedimientos de seguridad para <strong>operaciones con helicópteros</strong>.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap22-f"><span class="bar"></span><h3>Parte F – Diseños y Disposiciones Alternativos</h3><span class="ref">Regla 17</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 17</span><h4>Diseños alternativos</h4></div><div class="regla-b">
+      <p>Metodología para aprobar diseños alternativos en seguridad contra incendios si demuestran <strong>seguridad equivalente</strong>: propuesta a la Administración, evaluación mediante análisis de riesgos o pruebas según el Código FSS. Aplicable a estructura, detección, extinción, etc.</p>
+    </div></article>
+
+    <div class="sub-t" id="cap22-g"><span class="bar"></span><h3>Parte G – Requisitos Especiales</h3><span class="ref">Reglas 18 a 23</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 18</span><h4>Instalaciones para helicópteros</h4></div><div class="regla-b">
+      <ul>
+        <li>Zona de aterrizaje protegida con <strong>espuma o agua pulverizada</strong>.</li>
+        <li>Extintores portátiles y equipos cerca de la zona.</li>
+        <li>Comunicaciones con el helicóptero y <strong>manual de operaciones</strong>.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 19</span><h4>Transporte de mercancías peligrosas</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Estiba y segregación</strong> conforme al Código IMDG.</li>
+        <li><strong>Detección y extinción</strong> adicionales en los espacios afectados.</li>
+        <li><strong>Equipos de protección personal</strong> para fugas o incendios.</li>
+        <li><strong>Documentación</strong> IMDG a bordo.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 20</span><h4>Protección de espacios de vehículos, categoría especial y ro-ro</h4></div><div class="regla-b">
+      <ul>
+        <li>Detección de incendios en estos espacios.</li>
+        <li>Extinción fija (espuma o agua pulverizada).</li>
+        <li>Ventilación para evacuar humo y gases.</li>
+        <li>Medios de escape adicionales.</li>
+      </ul>
+    </div></article>
+    <div class="grid3">
+      <div class="mini"><h5>Regla 21</h5><p>Medidas en caso de incendio en alojamientos de buques de pasaje: <strong>rociadores automáticos</strong> y materiales incombustibles.</p></div>
+      <div class="mini"><h5>Regla 22</h5><p>Buques de pasaje con <strong>más de 36 pasajeros</strong>: extracción de humo en escaleras y equipos de respiración adicionales.</p></div>
+      <div class="mini"><h5>Regla 23</h5><p>Control de la propagación: <strong>zonas verticales principales</strong> con divisiones clase “A” que impidan la propagación entre cubiertas.</p></div>
+    </div>
+
+    <div class="sub-t" id="cap22-fss"><span class="bar"></span><h3>El Código Internacional de Sistemas de Seguridad contra Incendios (Código FSS)</h3></div>
+    <div class="card">
+      <p>Complemento <strong>obligatorio</strong> del Capítulo II-2: el Convenio fija los requisitos funcionales; el FSS, los técnicos detallados. Consta de <strong>15 capítulos</strong>:</p>
+      <div class="pillrow" style="margin-top:12px">
+        <span class="pill acc">1 · Generalidades</span><span class="pill acc">2 · Conexión internacional de tierra</span><span class="pill acc">3 · Protección del personal</span><span class="pill acc">4 · Extintores portátiles</span><span class="pill acc">5 · Sistemas fijos de gas</span><span class="pill acc">6 · Sistemas fijos de espuma</span><span class="pill acc">7 · Agua pulverizada</span><span class="pill acc">8 · Rociadores automáticos y alarma</span><span class="pill acc">9 · Detección y alarma fijas</span><span class="pill acc">10 · Detección por extracción de muestras</span><span class="pill acc">11 · Iluminación de baja ubicación</span><span class="pill acc">12 · Bombas contra incendios de emergencia</span><span class="pill acc">13 · Medios de escape</span><span class="pill acc">14 · Espuma sobre cubierta (petroleros)</span><span class="pill acc">15 · Sistemas de inertización</span>
+      </div>
+    </div>
+
+    <div class="sub-t" id="cap22-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo II-2</h3></div>
+    <div class="note"><span class="ni">📜</span><div>
+      <h5>Enmiendas de 2014 (MSC.338(91)) y otras</h5>
+      <ul style="margin-left:18px;margin-top:6px">
+        <li><strong>Equipos de respiración</strong>: alarma audible cuando queden menos de <strong>200 litros</strong> de aire en la botella (buques existentes: 1 de julio de 2019).</li>
+        <li><strong>Aparatos radiotelefónicos portátiles</strong>: al menos <strong>dos por equipo de bomberos</strong>, a prueba de explosión (primer reconocimiento posterior al 1 de julio de 2018).</li>
+        <li><strong>Recarga de botellas de aire</strong>: medio de recarga o botellas de repuesto suficientes.</li>
+        <li><strong>Halones</strong>: prohibida la instalación de nuevos sistemas desde 1994; retirada progresiva de los existentes.</li>
+        <li><strong>Inertización</strong>: requisitos ampliados a más tipos de buques y espacios.</li>
+      </ul>
+    </div></div>
+    <div class="grid2">
+      <div class="mini"><h5>🔗 Interacción</h5><p><strong>Cap. I</strong>: los sistemas de incendios se verifican en el Cargo Ship Safety Equipment Certificate. · <strong>Cap. III</strong>: la evacuación por incendio se vincula a botes y balsas. · <strong>Código IMDG</strong>: mercancías peligrosas. · <strong>Código IGF</strong>: combustibles de bajo punto de inflamación.</p></div>
+      <div class="mini"><h5>🧯 Conclusión</h5><p>El Capítulo II-2 es el <strong>escudo protector</strong> contra la amenaza más devastadora a bordo. El oficial debe prevenir, operar los sistemas de extinción, liderar simulacros, garantizar el mantenimiento y planificar la evacuación. No es un conjunto de requisitos técnicos: es un <strong>sistema integrado de gestión del riesgo de incendio</strong>, del diseño a la respuesta a emergencias.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== CAPÍTULO III ============================== -->
+<!-- ================================================================== -->
+<section class="sec ch" id="cap3" style="--acc:#f59f00">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">III</div>
+      <div>
+        <p class="ch-kicker">Capítulo</p>
+        <h2>Dispositivos y Medios de Salvamento</h2>
+        <p class="ch-en">Life-saving Appliances and Arrangements</p>
+      </div>
+      <ul class="ch-meta"><li>5 Partes / 5 Secciones</li><li>Reglas 1–37</li><li>Código LSA</li><li>Supervivencia y abandono</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>El Capítulo III regula todos los equipos y sistemas destinados a <strong>preservar la vida de las personas a bordo en caso de abandono del buque</strong>: evacuar de manera segura, ordenada y rápida, y sobrevivir hasta el rescate. Se aplica a todos los buques, con requisitos adicionales para los de pasaje y de carga, y su contenido se basa en el <strong>Código Internacional de Dispositivos de Salvamento (Código LSA)</strong>, con las especificaciones técnicas de cada equipo.</p>
+    </div>
+
+    <div class="sub-t" id="cap3-a"><span class="bar"></span><h3>Parte A – Generalidades</h3><span class="ref">Reglas 1 a 5</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Ámbito de aplicación</h4></div><div class="regla-b">
+      <p class="txt">«Se aplica a todo buque cuya quilla haya sido colocada, o cuya construcción se halle en una fase equivalente, el 1 de julio de 1998 o posteriormente».</p>
+      <ul>
+        <li><strong>Fase equivalente de construcción</strong>: comienza la construcción identificable de un buque concreto, o el montaje con al menos <strong>50 toneladas</strong> del material estructural estimado, o el <strong>1 %</strong> de dicho total (el menor de ambos).</li>
+        <li><strong>Buques existentes</strong>: cumplen los requisitos anteriores a 1998; al sustituir dispositivos o realizar reparaciones/modificaciones importantes, los nuevos dispositivos cumplen, en lo razonable y factible, el capítulo actualizado.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 2</span><h4>Exenciones</h4></div><div class="regla-b">
+      <ul>
+        <li>Buques que <strong>no se alejen más de 20 millas</strong> de la costa más próxima, si la Administración lo considera razonable.</li>
+        <li><strong>Buques de pasaje en rutas de peregrinación</strong> (p. ej., el Hajj): exenciones si el cumplimiento es imposible en la práctica, conforme a los acuerdos especiales de 1971 y 1973.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Definiciones</h4></div><div class="regla-b">
+      <div class="glosario" style="--acc:#f59f00">
+        <div class="gl"><b>Traje de protección contra la intemperie</b><p>Para tripulaciones de botes de rescate y cuadrillas de sistemas de evacuación marinos.</p></div>
+        <div class="gl"><b>Persona titulada</b><p>Con título de suficiencia en manejo de embarcaciones de supervivencia (STCW).</p></div>
+        <div class="gl"><b>Detección (locating)</b><p>Determinar el punto donde están los supervivientes o la embarcación.</p></div>
+        <div class="gl"><b>Escala de embarco</b><p>Escala en los puestos de embarco para acceder a la embarcación tras la puesta a flote.</p></div>
+        <div class="gl"><b>Puesta a flote por zafada</b><p>Suelta automática (hidrostática) cuando el buque se hunde.</p></div>
+        <div class="gl"><b>Puesta a flote por caída libre</b><p>La embarcación cae al agua con su dotación, sin medios retardadores.</p></div>
+        <div class="gl"><b>Traje de inmersión</b><p>Reduce la pérdida de calor corporal en aguas frías.</p></div>
+        <div class="gl"><b>Dispositivo inflable / inflado</b><p>Cámaras no rígidas llenas de gas; guardado desinflado / guardado inflado y listo.</p></div>
+        <div class="gl"><b>Flotación de navegación con calado mínimo</b><p>Sin carga, quilla a nivel, 10 % de provisiones y combustible; en pasaje, con todas las personas.</p></div>
+        <div class="gl"><b>Sistema de evacuación marino (MES)</b><p>Transfiere rápidamente personas desde la cubierta a una embarcación a flote.</p></div>
+        <div class="gl"><b>Dispositivo innovador</b><p>Características nuevas no regidas por el capítulo/Código, con seguridad igual o superior.</p></div>
+        <div class="gl"><b>Estabilidad positiva</b><p>La embarcación vuelve a su posición original al eliminarse el momento escorante.</p></div>
+        <div class="gl"><b>Bote de rescate</b><p>Salvar personas en peligro y concentrar embarcaciones de supervivencia.</p></div>
+        <div class="gl"><b>Viaje internacional corto</b><p>≤ 200 millas de puerto de refugio; distancia total ida y vuelta ≤ 600 millas.</p></div>
+        <div class="gl"><b>Embarcación de supervivencia</b><p>Preserva la vida desde el abandono del buque.</p></div>
+        <div class="gl"><b>Ayuda térmica</b><p>Saco o traje impermeable de baja conductancia térmica.</p></div>
+      </div>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 4</span><h4>Evaluación, prueba y aprobación</h4></div><div class="regla-b">
+      <ul>
+        <li>Todos los dispositivos prescritos requieren <strong>aprobación de la Administración</strong>.</li>
+        <li>Pruebas conforme a las recomendaciones de la OMI (Código LSA) o <strong>equivalentes</strong> satisfactorias.</li>
+        <li><strong>Dispositivos innovadores</strong>: evaluación específica, demostrando seguridad al menos equivalente.</li>
+        <li>La Administración fija las condiciones de mantenimiento o retirada de la aprobación.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 5</span><h4>Pruebas durante la fabricación</h4></div><div class="regla-b"><p>Los dispositivos se someten durante su fabricación a las pruebas necesarias para responder a la <strong>misma norma que el prototipo aprobado</strong>, garantizando consistencia y calidad.</p></div></article>
+
+    <div class="sub-t" id="cap3-s1"><span class="bar"></span><h3>Parte B · Sección I – Prescripciones para buques de pasaje y de carga</h3><span class="ref">Reglas 6 a 20</span></div>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 6</span><h4>Comunicaciones</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Aparatos radiotelefónicos bidireccionales VHF</strong>: mínimo <strong>3</strong> (buques de pasaje y de carga ≥ 500 GT) y <strong>2</strong> (carga de 300 a 500 GT).</li>
+        <li><strong>Respondedores de radar (SART)</strong>: al menos <strong>uno a cada banda</strong> (≥ 500 GT y pasaje) y al menos <strong>uno</strong> (300–500 GT). Estibados para colocarlos rápidamente en cualquier embarcación de supervivencia (salvo balsas de la Regla III/31.1.4); alternativa: uno en cada embarcación. En botes de caída libre: uno en el bote y otro cerca del puente.</li>
+        <li><strong>Bengalas</strong>: mínimo <strong>12 cohetes lanzabengalas con paracaídas</strong>, estibados en el puente o cerca.</li>
+        <li><strong>Sistema de comunicaciones internas y alarma general de emergencia</strong>: equipo fijo o portátil bidireccional entre puestos de control, reunión y embarque; la alarma convoca a pasajeros y tripulación y se complementa con megafonía.</li>
+        <li><strong>Megafonía en buques de pasaje</strong>: audible sobre el ruido ambiental en todos los espacios, con neutralización controlada desde el puente; buques nuevos (desde 1997): al menos <strong>dos bucles y dos amplificadores independientes</strong>; conectada a la fuente de energía de emergencia.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 7</span><h4>Dispositivos individuales de salvamento</h4></div><div class="regla-b">
+      <div class="grid2">
+        <div class="mini"><h5>🟠 Aros salvavidas</h5>
+          <ul style="margin-left:16px">
+            <li>Disponibles en ambas bandas y cubiertas expuestas; al menos uno en popa; nunca sujetos permanentemente.</li>
+            <li>Rabiza flotante en al menos un aro por banda: longitud = 2× altura de estiba o 30 m, la mayor.</li>
+            <li>La mitad con <strong>luz de encendido automático</strong>; al menos dos además con <strong>señales fumígenas</strong> automáticas, soltables rápidamente desde el puente.</li>
+            <li>Marcados con nombre del buque y puerto de matrícula.</li>
+          </ul>
+        </div>
+        <div class="mini"><h5>🦺 Chalecos y trajes</h5>
+          <ul style="margin-left:16px">
+            <li>Un chaleco por persona; <strong>+10 % para niños</strong> en buques de pasaje; chalecos para guardias (puente, máquinas).</li>
+            <li>Accesibles y con ubicación señalizada; compatibles con botes totalmente cerrados y de caída libre.</li>
+            <li><strong>Trajes de inmersión / protección contra la intemperie</strong>: para tripulantes de botes de rescate y cuadrillas del MES; excepción en climas cálidos.</li>
+          </ul>
+        </div>
+      </div>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 8</span><h4>Cuadro de obligaciones e instrucciones para emergencias</h4></div><div class="regla-b">
+      <ul>
+        <li>Instrucciones claras para pasajeros, en el idioma del Estado de abanderamiento y en inglés.</li>
+        <li>Cuadros de obligaciones en lugares visibles (puente, máquinas, alojamiento), conforme a la Regla 37.</li>
+        <li>Ilustraciones e instrucciones en camarotes: puesto de reunión, comportamiento esencial y colocación de chalecos.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 9</span><h4>Instrucciones de funcionamiento</h4></div><div class="regla-b">
+      <p>Carteles y señales junto a las embarcaciones de supervivencia y sus mandos: finalidad y modo de funcionamiento, instrucciones y advertencias; visibles con alumbrado de emergencia y con los signos recomendados por la OMI.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 10</span><h4>Dotación de la embarcación de supervivencia y supervisión</h4></div><div class="regla-b">
+      <ul>
+        <li>Personal suficiente con formación para reunir y ayudar a los pasajeros.</li>
+        <li>Oficiales de puente o personas tituladas para manejar todas las embarcaciones y medios de puesta a flote.</li>
+        <li>Un <strong>encargado</strong> por embarcación (más patrón suplente en botes salvavidas) con lista de tripulantes asignados.</li>
+        <li>Una persona que sepa <strong>manejar el motor</strong> y hacer pequeños ajustes en cada embarcación motorizada.</li>
+        <li>Distribución equitativa de personal cualificado entre embarcaciones.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 11</span><h4>Reunión y embarco</h4></div><div class="regla-b">
+      <ul>
+        <li>Botes lo más cerca posible de alojamientos y servicios.</li>
+        <li>Puestos de reunión cerca de los de embarco, con <strong>≥ 0,35 m² por persona</strong>.</li>
+        <li>Accesibles, iluminados con energía de emergencia y señalizados; acceso para camillas.</li>
+        <li>Escalas de embarco que lleguen desde la cubierta hasta la flotación en condiciones desfavorables (<strong>asiento 10° y escora 20°</strong>), o dispositivos equivalentes.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 12</span><h4>Puestos de puesta a flote</h4></div><div class="regla-b">
+      <p>Situados para una puesta a flote segura, <strong>alejados de hélices</strong> y partes salientes del casco, en la parte recta del costado y, si están a proa, por detrás del mamparo de colisión.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 13</span><h4>Estiba de las embarcaciones de supervivencia</h4></div><div class="regla-b">
+      <ul>
+        <li>No entorpecer otras embarcaciones; lo más cerca del agua posible (posición de embarco <strong>≥ 2 m</strong> sobre la flotación en condiciones desfavorables, salvo balsas lanzables por la borda).</li>
+        <li>Siempre listas: <strong>dos tripulantes</strong> deben poder prepararlas y ponerlas a flote en <strong>menos de 5 minutos</strong>.</li>
+        <li>Completamente equipadas; protegidas de incendios y explosiones; en petroleros, <strong>no sobre tanques de carga o lavazas</strong>.</li>
+        <li>Botes salvavidas <strong>por delante de la hélice</strong>: distancia mínima = eslora del bote (buques 80–120 m) o 1,5× la eslora del bote (buques ≥ 120 m o pasaje ≥ 80 m).</li>
+        <li>Balsas: boza permanentemente amarrada; <strong>zafada automática (hidrostática)</strong> si el buque se hunde; suelta manual una a una; las de pescante, al alcance de los ganchos.</li>
+      </ul>
+    </div></article>
+
+    <div class="grid2">
+      <div class="mini"><h5>Regla 14 · Estiba de botes de rescate</h5><p>Listos para puesta a flote en un máximo de <strong>5 minutos</strong>; ubicación adecuada para puesta a flote y recuperación; sin entorpecer otras embarcaciones.</p></div>
+      <div class="mini"><h5>Regla 15 · Estiba de sistemas de evacuación marinos</h5><p>Costado libre de aberturas desde el puesto de embarco hasta la flotación; lejos de hélices y salientes; sin interferir con otros dispositivos.</p></div>
+    </div>
+
+    <article class="regla" style="margin-top:16px"><div class="regla-h"><span class="rn">Regla 16</span><h4>Medios de puesta a flote y recuperación de embarcaciones de supervivencia</h4></div><div class="regla-b">
+      <ul>
+        <li>Se requieren dispositivos de puesta a flote, <strong>excepto</strong>: embarcaciones con embarco a <strong>&lt; 4,5 m</strong> sobre la flotación y masa <strong>≤ 185 kg</strong>; las lanzables desde su posición de estiba en condiciones desfavorables (10°/20°); las adicionales al 200 % de la capacidad requerida; y las usadas con un MES.</li>
+        <li>El operario debe poder <strong>observar</strong> la embarcación durante la puesta a flote (y durante la recuperación, en botes).</li>
+        <li><strong>Mecanismo de suelta único</strong> para embarcaciones de tipo análogo; la preparación de una embarcación no entorpece la de otra.</li>
+        <li>Tiras de longitud suficiente para llegar al agua en condiciones desfavorables; zona iluminada con energía de emergencia; protección contra descargas de agua durante el abandono.</li>
+        <li>Aletas estabilizadoras: medios para retraerlas con indicadores en el puente.</li>
+        <li>Botes parcialmente cerrados: nervio con cabos salvavidas que lleguen al agua.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 17</span><h4>Embarco, puesta a flote y recuperación de botes de rescate</h4></div><div class="regla-b">
+      <ul>
+        <li>Embarco y puesta a flote en el menor tiempo posible; si el bote es también salvavidas, cumple las Reglas 11 y 12.</li>
+        <li>Puesta a flote con el buque avanzando hasta <strong>5 nudos</strong>.</li>
+        <li>Recuperación con dotación y equipo completos en <strong>≤ 5 minutos</strong> con mar moderada.</li>
+        <li>Manejo seguro de personas en camilla; estrobos de recuperación para mal tiempo.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 18</span><h4>Aparatos lanzacabos</h4></div><div class="regla-b"><p>Todo buque lleva un aparato lanzacabos que cumpla con el Código LSA.</p></div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 19</span><h4>Formación y ejercicios periódicos para casos de emergencia</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Familiarización</strong>: todo tripulante conoce sus tareas de emergencia antes de iniciar el viaje.</li>
+        <li><strong>Instrucción a pasajeros</strong>: reunión en las 24 h siguientes al embarque (viajes &gt; 24 h); instrucciones inmediatas antes o después de la salida cuando embarquen nuevos pasajeros (anuncio por megafonía).</li>
+        <li><strong>Frecuencia</strong>: al menos un ejercicio de <strong>abandono</strong> y uno de <strong>lucha contra incendios</strong> cada mes; si más del 25 % de la tripulación no participó el mes anterior, ejercicios en las <strong>24 h</strong> siguientes a la salida.</li>
+        <li><strong>Contenido del ejercicio de abandono</strong>: convocatoria por alarma; acudir y prepararse; comprobar indumentaria y chalecos; arriar al menos un bote; arrancar y operar su motor; accionar pescantes de balsas; simular búsqueda y rescate; instrucciones sobre equipos radioeléctricos de salvamento.</li>
+        <li><strong>Puesta a flote</strong>: cada bote salvavidas, al agua y maniobrando al menos <strong>cada 3 meses</strong>; botes de caída libre, cada <strong>6 meses</strong> (12 con autorización); botes de rescate, cada 3 meses.</li>
+        <li><strong>MES</strong>: práctica de procedimientos de despliegue; despliegue completo en el agua de la cuadrilla al menos cada <strong>2 años</strong> (máximo 3).</li>
+        <li><strong>Formación a bordo</strong>: nuevos tripulantes formados en dispositivos de salvamento y extinción en un máximo de <strong>dos semanas</strong> (balsas, hipotermia, uso con mal tiempo…).</li>
+        <li><strong>Registros</strong>: fechas y pormenores de todos los ejercicios en el diario de navegación.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 20</span><h4>Disponibilidad funcional, mantenimiento e inspecciones</h4></div><div class="regla-b">
+      <ul>
+        <li>Antes de salir del puerto y durante todo el viaje, todos los dispositivos en condiciones de servicio y <strong>listos para uso inmediato</strong>.</li>
+        <li>Mantenimiento conforme a las instrucciones de la Regla 36 (o programa planificado aceptado por la Administración); piezas de repuesto y equipo de reparación.</li>
+        <li><strong>Tiras</strong> de los dispositivos de puesta a flote: extremos invertidos cada <strong>30 meses</strong> y renovadas cada <strong>5 años</strong> (o antes si hay deterioro).</li>
+        <li><strong>Inspección semanal</strong>: inspección visual de todas las embarcaciones y dispositivos; funcionamiento de los motores de los botes <strong>≥ 3 minutos</strong>; ensayo del sistema de alarma general.</li>
+        <li><strong>Inspección mensual</strong>: todos los dispositivos con la lista de comprobaciones (Regla 36); verificación de completitud y estado.</li>
+        <li><strong>Balsas, chalecos inflables, MES y botes inflados</strong>: servicio en estación aprobada cada <strong>12 meses</strong> (hasta 17 si la Administración lo permite); despliegue rotatorio de los MES cada <strong>6 años</strong>; reparaciones permanentes en estación aprobada.</li>
+        <li><strong>Dispositivos de puesta a flote y medios de zafada</strong>: examen completo cada <strong>5 años</strong> con prueba dinámica de frenado; el mecanismo de <strong>suelta en carga</strong> de botes salvavidas se prueba cada 5 años con una carga de <strong>1,1 veces</strong> el peso total del bote cargado.</li>
+        <li>Puestos de estiba marcados con símbolos del tipo de dispositivo.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap3-s2"><span class="bar"></span><h3>Parte B · Sección II – Requisitos adicionales para buques de pasaje</h3><span class="ref">Reglas 21 a 30</span></div>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 21</span><h4>Embarcaciones de supervivencia y botes de rescate</h4></div><div class="regla-b">
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Situación</th><th>Requisitos</th></tr></thead>
+        <tbody>
+          <tr><td>Viajes internacionales (no cortos)</td><td>Botes total o parcialmente cerrados: <strong>50 %</strong> del total de personas por banda (la Administración puede sustituir algunos por balsas, nunca por debajo del <strong>37,5 %</strong> en botes) + balsas adicionales con capacidad del <strong>25 %</strong>, distribuidas a ambas bandas.</td></tr>
+          <tr><td>Viajes cortos con compartimentado especial</td><td>Botes: capacidad conjunta ≥ <strong>30 %</strong>, distribuidos equitativamente; capacidad total (botes + balsas) = <strong>100 %</strong>.</td></tr>
+          <tr><td>Viajes cortos sin compartimentado especial</td><td>Igual que viajes no cortos (50 % + 25 %).</td></tr>
+          <tr><td>Buques &lt; 500 GT y &lt; 200 personas</td><td>Solo balsas al <strong>100 %</strong> por banda; si no son trasladables entre bandas, balsas adicionales hasta el <strong>150 %</strong> por banda.</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li>Tiempo de puesta a flote: máximo <span class="hl">30 minutos</span> desde la señal de abandono.</li>
+        <li>Botes de rescate: buques ≥ 500 GT, <strong>uno a cada banda</strong>; &lt; 500 GT, al menos <strong>uno</strong>.</li>
+        <li>Concentración de balsas: ningún bote concentra más de <strong>6 balsas</strong> (9 en viajes cortos con compartimentado especial).</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 22</span><h4>Dispositivos individuales de salvamento (pasaje)</h4></div><div class="regla-b">
+      <div class="grid2">
+        <div class="tbl-wrap" style="margin:0"><table>
+          <thead><tr><th>Eslora del buque</th><th>N.º mínimo de aros</th></tr></thead>
+          <tbody>
+            <tr><td>&lt; 60 m</td><td>8 (al menos 6 con luz)</td></tr>
+            <tr><td>60 – 120 m</td><td>12</td></tr>
+            <tr><td>120 – 180 m</td><td>18</td></tr>
+            <tr><td>180 – 240 m</td><td>24</td></tr>
+            <tr><td>≥ 240 m</td><td>30</td></tr>
+          </tbody>
+        </table></div>
+        <div class="mini" style="margin:0"><h5>Chalecos y trajes</h5><p>Además de uno por persona, <strong>+5 %</strong> del total, estibados en cubierta o puestos de reunión. <strong>Todos los chalecos con luz</strong> (Código LSA). Por cada bote salvavidas: al menos <strong>3 trajes de inmersión</strong> y ayuda térmica para cada persona sin traje; no necesarios en botes totalmente cerrados ni en climas cálidos.</p></div>
+      </div>
+    </div></article>
+
+    <div class="grid2" style="margin-top:16px">
+      <div class="mini"><h5>Regla 23 · Medios de embarco</h5><p>Embarco en botes salvavidas <strong>directamente desde la posición de estiba o desde una cubierta de embarco</strong>, pero no desde ambas. Botes de rescate: embarco y puesta a flote desde la posición de estiba.</p></div>
+      <div class="mini"><h5>Regla 24 · Estiba</h5><p>La altura de estiba se determina considerando la Regla 13.1.2, las disposiciones de embarco en el agua y los requisitos de los dispositivos de puesta a flote.</p></div>
+      <div class="mini"><h5>Regla 25 · Puestos de reunión</h5><p>Cerca de los puestos de embarco; espacio mínimo de <strong>0,35 m² por persona</strong>.</p></div>
+      <div class="mini"><h5>Regla 26 · Buques de pasaje Ro-Ro</h5><p>Balsas con <strong>MES o dispositivos de puesta a flote</strong> aprobados, uniformemente a cada banda; todas con zafada automática y rampa de acceso; <strong>autoadrizables o reversibles</strong>; un <strong>SART por cada cuatro balsas</strong>; al menos un <strong>bote de rescate rápido</strong> con dispositivo aprobado y dos tripulantes formados; medios eficaces para rescatar supervivientes del agua; chalecos en puestos de reunión para no regresar a camarotes.</p></div>
+      <div class="mini"><h5>Regla 27 · Información sobre pasajeros</h5><p>Conteo de todas las personas <strong>antes de la salida</strong>; registro de personas con necesidades especiales; registro de <strong>nombre, sexo y categoría</strong> (adulto/niño/lactante) para SAR; información conservada en tierra y disponible para los servicios de rescate.</p></div>
+      <div class="mini"><h5>Regla 28 · Helicópteros</h5><p>Todos los Ro-Ro de pasaje: <strong>zona de evacuación</strong> aprobada. Ro-Ro de pasaje ≥ 130 m de eslora construidos desde 1999: <strong>zona de aterrizaje</strong>.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="mini"><h5>Regla 29 · Ayuda a la toma de decisiones</h5><p>Sistema de gestión de emergencias en el puente: al menos <strong>planes de emergencia impresos</strong> con estructura uniforme y fácil de usar, cubriendo: incendio, avería, contaminación, actos ilícitos, accidentes del personal, accidentes con la carga y ayuda a otros buques.</p></div>
+      <div class="mini"><h5>Regla 30 · Ejercicios periódicos</h5><p>En buques de pasaje: ejercicio de abandono y de lucha contra incendios <strong>cada semana</strong>; no es necesario que toda la tripulación participe en cada uno, pero cada miembro debe participar al menos <strong>una vez al mes</strong>.</p></div>
+    </div>
+
+    <div class="sub-t" id="cap3-s3"><span class="bar"></span><h3>Parte B · Sección III – Requisitos adicionales para buques de carga</h3><span class="ref">Reglas 31 a 33</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 31</span><h4>Embarcaciones de supervivencia y botes de rescate</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Requisito general</strong>: botes salvavidas <strong>totalmente cerrados</strong> en cada banda con capacidad para el <strong>100 %</strong> de las personas + balsas salvavidas con capacidad para el <strong>100 %</strong>, estibadas de modo que puedan trasladarse de una banda a otra (o capacidad del 100 % en cada banda).</li>
+        <li><strong>Alternativa de caída libre</strong>: bote de caída libre a popa para el 100 % + balsas al 100 % en cada banda.</li>
+        <li><strong>Buques &lt; 85 m (no tanques)</strong>: solo balsas al 100 % por banda; si no son trasladables, hasta el 150 % por banda.</li>
+        <li>Si la distancia horizontal del extremo del buque a la embarcación más cercana supera <strong>100 m</strong>: balsa adicional en proa o popa.</li>
+        <li>Tiempo de puesta a flote: máximo <span class="hl">10 minutos</span> desde la señal de abandono.</li>
+        <li><strong>Quimiqueros y gaseros con cargas tóxicas</strong>: botes con <strong>sistema autónomo de abastecimiento de aire</strong>.</li>
+        <li><strong>Petroleros, quimiqueros y gaseros</strong> con cargas de punto de inflamación ≤ 60 °C: botes salvavidas <strong>protegidos contra incendios</strong>.</li>
+        <li>Todo buque de carga lleva al menos <strong>un bote de rescate</strong>.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 32</span><h4>Dispositivos individuales de salvamento (carga)</h4></div><div class="regla-b">
+      <div class="grid2">
+        <div class="tbl-wrap" style="margin:0"><table>
+          <thead><tr><th>Eslora del buque</th><th>N.º mínimo de aros</th></tr></thead>
+          <tbody>
+            <tr><td>&lt; 100 m</td><td>8</td></tr>
+            <tr><td>100 – 150 m</td><td>10</td></tr>
+            <tr><td>150 – 200 m</td><td>12</td></tr>
+            <tr><td>≥ 200 m</td><td>14</td></tr>
+          </tbody>
+        </table></div>
+        <div class="mini" style="margin:0"><h5>Detalles</h5><p>En petroleros, las luces de los aros se alimentan por <strong>baterías eléctricas</strong>. <strong>Todos los chalecos con luz</strong>. Por cada bote: al menos <strong>3 trajes de inmersión</strong>; si el buque no lleva botes totalmente cerrados al 100 %, trajes para <strong>todas las personas</strong>. Excepción en climas cálidos.</p></div>
+      </div>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 33</span><h4>Medios de embarco y puesta a flote</h4></div><div class="regla-b">
+      <ul>
+        <li>Los botes salvavidas permiten embarco y puesta a flote <strong>directamente desde su posición de estiba</strong>.</li>
+        <li>Buques de carga de <strong>≥ 20.000 GT</strong>: los botes pueden ponerse a flote con el buque avanzando hasta <strong>5 nudos</strong>.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap3-s45"><span class="bar"></span><h3>Secciones IV y V – Código LSA, formación y cuadro de obligaciones</h3><span class="ref">Reglas 34 a 37</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 34</span><h4>Prescripciones aplicables</h4></div><div class="regla-b"><p>Todos los dispositivos y medios de salvamento cumplen las prescripciones aplicables del <strong>Código LSA</strong>.</p></div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 35</span><h4>Manual de formación y medios auxiliares</h4></div><div class="regla-b">
+      <ul>
+        <li>Disponible en <strong>comedores y zonas de recreo</strong> de la tripulación, con instrucciones e ilustraciones sobre todos los aspectos: puesta de chalecos y trajes, reunión, embarco, puesta a flote, suelta, equipos de detección, radiocomunicación, anclas flotantes, motor, recuperación, peligros de la exposición y equipos de rescate.</li>
+        <li>Buques con MES: <strong>medios auxiliares</strong> de formación a bordo sobre su empleo.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 36</span><h4>Instrucciones para el mantenimiento a bordo</h4></div><div class="regla-b">
+      <p>Fácilmente comprensibles e ilustradas, incluyen:</p>
+      <ul>
+        <li>Lista de comprobaciones para las inspecciones mensuales (Regla 20.7).</li>
+        <li>Instrucciones de mantenimiento y reparación.</li>
+        <li>Programa de mantenimiento periódico.</li>
+        <li>Diagrama de puntos de lubricación con lubricantes recomendados.</li>
+        <li>Lista de piezas recambiables y de proveedores de repuestos.</li>
+        <li>Registro para anotar inspecciones y operaciones de mantenimiento.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 37</span><h4>Cuadro de obligaciones e instrucciones para casos de emergencia</h4></div><div class="regla-b">
+      <ul>
+        <li>Detalles del sistema de alarma general y megafonía; medidas de tripulación y pasajeros al sonar la alarma; cómo se dará la <strong>orden de abandono</strong>; procedimientos para localizar y rescatar pasajeros atrapados.</li>
+        <li><strong>Cometidos específicos</strong>: cierre de puertas estancas y contraincendios, válvulas, imbornales y portillos; preparación y puesta a flote de embarcaciones; reunión de pasajeros; equipos de comunicaciones; composición de cuadrillas de lucha contra incendios.</li>
+        <li>Oficiales designados para mantener los dispositivos en buen estado; <strong>sustitutos</strong> de las personas clave.</li>
+        <li>Cometidos con pasajeros: avisar, comprobar abrigo y chalecos, reunirlos, mantener el orden, llevar mantas a las embarcaciones.</li>
+        <li>Se prepara <strong>antes de hacerse a la mar</strong>; se revisa si hay cambios de tripulación; formato aprobado en buques de pasaje.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap3-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo III</h3></div>
+    <div class="note"><span class="ni">📜</span><div>
+      <h5>Enmiendas recientes</h5>
+      <ul style="margin-left:18px;margin-top:6px">
+        <li><strong>Regla III/17-1</strong> (en vigor 01/07/2014): planes y procedimientos de <strong>recuperación de personas del agua</strong>, con identificación del equipo y medidas para minimizar riesgos; buques existentes: primer reconocimiento de equipo posterior.</li>
+        <li><strong>Regla III/20.11</strong>: dispositivos de puesta a flote con examen completo cada 5 años y prueba dinámica de frenado; suelta en carga probada con 1,1× el peso total cada 5 años.</li>
+        <li><strong>Regla III/20.8.2</strong>: despliegue secuencial rotatorio de los MES cada 6 años.</li>
+        <li><strong>Regla III/19.3.3.4</strong>: los botes de caída libre pueden arriarse al agua en lugar de lanzarse, siempre que se lancen por caída libre al menos cada 6 meses.</li>
+        <li><strong>Reglas III/32.2 y III/22.3</strong>: luces en todos los chalecos salvavidas (carga y pasaje), con plazos para buques existentes.</li>
+      </ul>
+    </div></div>
+    <div class="grid2">
+      <div class="mini"><h5>🔗 Interacción</h5><p><strong>Cap. I</strong>: verificación vía Cargo Ship Safety Equipment Certificate (Formulario E). · <strong>Cap. II-2</strong>: evacuación por incendio vinculada a embarco y puesta a flote; simulacros combinados. · <strong>Cap. IV</strong>: SART, AIS-SART, EPIRB y VHF bidireccionales (Regla III/6 y Regla IV/7). · <strong>Cap. V</strong>: señales de socorro y SAR. · <strong>Código LSA</strong> y <strong>STCW</strong>: especificaciones y formación.</p></div>
+      <div class="mini"><h5>🛟 Conclusión</h5><p>El Capítulo III es el <strong>escudo final para la vida humana en el mar</strong>. El oficial de cubierta responde por la preparación de los dispositivos, lidera los simulacros, coordina el embarco y la puesta a flote, conoce las diferencias entre buques de pasaje y de carga, y garantiza la formación continua. No es una lista de equipos: es un <strong>sistema integral de gestión de la supervivencia</strong>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== CAPÍTULO IV =============================== -->
+<!-- ================================================================== -->
+<section class="sec ch" id="cap4" style="--acc:#8b5cf6">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">IV</div>
+      <div>
+        <p class="ch-kicker">Capítulo</p>
+        <h2>Radiocomunicaciones</h2>
+        <p class="ch-en">Radiocommunications · GMDSS</p>
+      </div>
+      <ul class="ch-meta"><li>3 Partes (A–C)</li><li>Reglas 1–18 (+ 4-1 y 5-1)</li><li>GMDSS desde 1992</li><li>Áreas marítimas A1–A4</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>El Capítulo IV garantiza la capacidad de <strong>transmitir y recibir alertas de socorro, comunicaciones de urgencia y seguridad, e información meteorológica y de navegación</strong>. Se basa en el <strong>Sistema Mundial de Socorro y Seguridad Marítimos (GMDSS)</strong>, en vigor desde el <strong>1 de febrero de 1992</strong>, que sustituyó al antiguo sistema Morse (escucha de 500 kHz y 2182 kHz) por un sistema automatizado que utiliza satélites y <strong>llamada selectiva digital (DSC)</strong>, para que cualquier buque en peligro sea detectado y asistido rápidamente, independientemente de su ubicación.</p>
+    </div>
+
+    <div class="sub-t" id="cap4-a"><span class="bar"></span><h3>Parte A – Generalidades</h3><span class="ref">Reglas 1 a 4-1</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
+      <ul>
+        <li>Se aplica a todos los buques a los que se aplica el Convenio y a los <strong>buques de carga de 300 GT y superiores</strong>.</li>
+        <li>No se aplica en los <strong>Grandes Lagos de América del Norte</strong> ni sus aguas conexas (acuerdos bilaterales Canadá–EE. UU.).</li>
+        <li>Ninguna disposición impide que un buque, embarcación de supervivencia o persona en peligro utilice <strong>cualquier medio a su alcance</strong> para llamar la atención, dar su posición y obtener ayuda.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 2</span><h4>Términos y definiciones</h4></div><div class="regla-b">
+      <div class="glosario" style="--acc:#8b5cf6">
+        <div class="gl"><b>AIS-SART</b><p>Transmisor de búsqueda y rescate del SIA; opera en 161,975 y 162,025 MHz transmitiendo la posición del superviviente.</p></div>
+        <div class="gl"><b>Comunicaciones de puente a puente</b><p>Radiocomunicaciones de seguridad entre buques desde la posición normal de gobierno.</p></div>
+        <div class="gl"><b>Escucha radioeléctrica continua</b><p>Escucha no interrumpida salvo breves intervalos por comunicaciones propias o mantenimiento.</p></div>
+        <div class="gl"><b>DSC</b><p>Llamada selectiva digital: códigos digitales para establecer contacto y transferir información (UIT-R).</p></div>
+        <div class="gl"><b>EPIRB</b><p>Radiobaliza de 406 MHz: alerta de socorro vía satélite a un RCC y señales de localización en el siniestro.</p></div>
+        <div class="gl"><b>Radiocomunicaciones generales</b><p>Comunicaciones distintas de socorro, urgencia y seguridad.</p></div>
+        <div class="gl"><b>GMDSS</b><p>Sistema Mundial de Socorro y Seguridad Marítimos; realiza las funciones de la Regla 4.1.1.</p></div>
+        <div class="gl"><b>Identidades GMDSS</b><p>Indicativo de llamada, MMSI, identidad hexadecimal de la EPIRB, identidades del servicio satélite y números de serie.</p></div>
+        <div class="gl"><b>Localización (locating)</b><p>Determinación de la posición de buques, aeronaves, embarcaciones o personas en peligro.</p></div>
+        <div class="gl"><b>MSI</b><p>Información de seguridad marítima: avisos náuticos y meteorológicos, pronósticos y mensajes urgentes.</p></div>
+        <div class="gl"><b>Radar SART</b><p>Respondedor de radar (9,2–9,5 GHz): interrogado por un radar, aparece como serie de puntos en pantalla.</p></div>
+        <div class="gl"><b>Servicio móvil por satélite reconocido</b><p>Servicio por satélite reconocido por la OMI para el GMDSS (Inmarsat, Iridium).</p></div>
+        <div class="gl"><b>Servicio por satélite en 406 MHz</b><p>Cobertura global para detectar EPIRB de 406 MHz (COSPAS-SARSAT).</p></div>
+      </div>
+      <div class="tbl-wrap" style="margin-top:16px"><table>
+        <thead><tr><th>Área marítima</th><th>Definición</th><th>Cobertura típica</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A1</strong></td><td>Cobertura radiotelefónica de al menos una estación costera de <strong>VHF</strong> con alerta DSC continua.</td><td>Hasta 20–30 millas de la costa.</td></tr>
+          <tr><td><strong>A2</strong></td><td>Excluida A1, cobertura de al menos una estación costera de <strong>MF</strong> con alerta DSC continua.</td><td>Hasta 100–150 millas de la costa.</td></tr>
+          <tr><td><strong>A3</strong></td><td>Excluidas A1 y A2, cobertura de un <strong>servicio móvil por satélite reconocido</strong> con alerta continua.</td><td>Aproximadamente entre 70° N y 70° S.</td></tr>
+          <tr><td><strong>A4</strong></td><td>Fuera de A1, A2 y A3.</td><td>Principalmente regiones polares (&gt; 70° N / &lt; 70° S).</td></tr>
+        </tbody>
+      </table></div>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Exenciones</h4></div><div class="regla-b">
+      <ul>
+        <li>La Administración puede conceder exenciones parciales o condicionales de las Reglas 7 a 11 si: el buque <strong>cumple los requisitos funcionales de la Regla 4</strong>, y se ha considerado el efecto de la exención sobre la eficiencia general del servicio de seguridad.</li>
+        <li>Casos: condiciones que hacen irrazonable o innecesaria la aplicación plena (p. ej., navegar siempre dentro de A1), o circunstancias excepcionales para un <strong>viaje único</strong> fuera de las áreas equipadas.</li>
+        <li>Obligación de informar a la OMI a través del sistema <strong>GISIS</strong>.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 4</span><h4>Requisitos funcionales</h4></div><div class="regla-b">
+      <p>El corazón del GMDSS. Todo buque en el mar debe ser capaz de:</p>
+      <ul class="chk">
+        <li>Transmitir alertas de socorro <strong>buque–tierra</strong> por al menos <strong>dos medios independientes</strong> y distintos.</li>
+        <li>Recibir alertas de socorro <strong>tierra–buque</strong>.</li>
+        <li>Transmitir y recibir alertas de socorro <strong>buque–buque</strong>.</li>
+        <li>Transmitir y recibir comunicaciones de <strong>coordinación de búsqueda y rescate</strong>.</li>
+        <li>Transmitir y recibir comunicaciones <strong>en el lugar del siniestro</strong>.</li>
+        <li>Transmitir y recibir <strong>señales para la localización</strong>.</li>
+        <li>Recibir <strong>información de seguridad marítima (MSI)</strong>.</li>
+        <li>Transmitir y recibir comunicaciones de <strong>urgencia y seguridad</strong>.</li>
+        <li>Transmitir y recibir comunicaciones de <strong>puente a puente</strong>.</li>
+        <li>Transmitir y recibir <strong>radiocomunicaciones generales</strong>.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 4-1</span><h4>Proveedores de satélites GMDSS</h4></div><div class="regla-b"><p>El Comité de Seguridad Marítima (MSC) de la OMI determina los criterios, procedimientos y arreglos para la <strong>evaluación, reconocimiento, revisión y supervisión</strong> de los servicios móviles por satélite reconocidos, garantizando fiabilidad y disponibilidad.</p></div></article>
+
+    <div class="sub-t" id="cap4-b"><span class="bar"></span><h3>Parte B – Obligaciones de los Gobiernos Contratantes</h3><span class="ref">Reglas 5 y 5-1</span></div>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 5</span><h4>Provisión de servicios de radiocomunicación</h4></div><div class="regla-b">
+      <ul>
+        <li>Cada Gobierno se compromete a proporcionar, cuando sea práctico y necesario, instalaciones costeras adecuadas para: servicios móviles por satélite reconocidos; servicio por satélite en 406 MHz (COSPAS-SARSAT); servicio móvil marítimo en <strong>VHF 156–174 MHz</strong>; <strong>HF 4.000–27.500 kHz</strong>; y <strong>MF 415–535 kHz y 1.605–4.000 kHz</strong>.</li>
+        <li>Debe proporcionar a la OMI información sobre las instalaciones costeras frente a sus costas y notificar con antelación la retirada de servicios.</li>
+      </ul>
+    </div></article>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 5-1</span><h4>Identidades GMDSS</h4></div><div class="regla-b"><p>Cada Gobierno garantiza arreglos adecuados para <strong>registrar las identidades GMDSS</strong> (MMSI, etc.) y para que la información esté disponible en los centros de coordinación de rescate <strong>las 24 horas</strong>; cuando corresponda, notificación a los registros internacionales (p. ej., sistema MARS de la UIT).</p></div></article>
+
+    <div class="sub-t" id="cap4-c"><span class="bar"></span><h3>Parte C – Requisitos para los buques</h3><span class="ref">Reglas 6 a 18</span></div>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 6</span><h4>Instalaciones de radiocomunicación</h4></div><div class="regla-b">
+      <ul>
+        <li>Instalaciones capaces de cumplir los requisitos funcionales de la Regla 4 durante todo el viaje, conforme a las Reglas 7 a 11 según las áreas navegadas.</li>
+        <li>Ubicación sin <strong>interferencias perjudiciales</strong> (mecánicas, eléctricas…); protección contra agua, temperaturas extremas y condiciones adversas.</li>
+        <li><strong>Iluminación eléctrica permanente</strong>, independiente de las fuentes principal y de emergencia, sobre los controles de radio.</li>
+        <li>Claramente marcadas con las identidades GMDSS.</li>
+        <li>Control de los canales VHF de seguridad (especialmente el <strong>canal 16</strong>) disponible en el puente, cerca del puesto de gobierno, y en las alas del puente.</li>
+        <li><strong>Panel de socorro en buques de pasaje</strong>: botón único (o uno por instalación) que inicia la alerta de socorro con todas las instalaciones requeridas; indicación visual; medios contra activación accidental. Además, <strong>panel de alarma de socorro</strong> con indicación visual y audible de toda alerta recibida y del servicio por el que llegó.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 7</span><h4>Equipo de radio – Generalidades</h4></div><div class="regla-b">
+      <p>Equipo mínimo para <strong>todo buque</strong>, independientemente de las áreas:</p>
+      <ul>
+        <li><strong>Instalación VHF</strong>: DSC en el canal 70 (156,525 MHz), con alerta de socorro iniciable desde el puesto de gobierno, y radiotelefonía en los canales <strong>6, 13 y 16</strong>.</li>
+        <li><strong>Escucha DSC continua</strong> en el canal 70 (instalación separada o combinada).</li>
+        <li><strong>SART o AIS-SART</strong> estibado para uso fácil.</li>
+        <li><strong>Receptor de MSI</strong> para todo el viaje (NAVTEX, EGC…).</li>
+        <li><strong>EPIRB de 406 MHz</strong>: fácilmente accesible; liberable manualmente y transportable por una persona a una embarcación de supervivencia; de <strong>libre flotación</strong> y activación automática al flotar; activable manualmente.</li>
+        <li><strong>Instalación para radiocomunicaciones generales</strong> en 156–174 MHz (puede integrarse en el VHF).</li>
+      </ul>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Tipo de buque</th><th>SART / AIS-SART</th><th>VHF bidireccionales</th></tr></thead>
+        <tbody>
+          <tr><td>Carga de 300 a 500 GT</td><td>Al menos <strong>1</strong></td><td><strong>2</strong></td></tr>
+          <tr><td>Carga ≥ 500 GT y buques de pasaje</td><td>Al menos <strong>1 a cada banda</strong></td><td><strong>3</strong></td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li><strong>Estiba de SART/AIS-SART</strong>: listos para colocarlos en cualquier embarcación de supervivencia (salvo balsas de la Regla III/31.1.4); alternativa: uno en cada embarcación. En botes de caída libre: uno en el bote y otro cerca del puente.</li>
+        <li><strong>Buques de pasaje</strong>: medios de radiocomunicación bidireccional en las frecuencias aeronáuticas <strong>121,5 y 123,1 MHz</strong> desde el puesto de gobierno.</li>
+      </ul>
+    </div></article>
+
+    <div class="grid2">
+      <div class="mini"><h5>Regla 8 · Área A1</h5><p>Además del equipo de la Regla 7, un medio para iniciar <strong>alertas buque–tierra</strong> desde el puesto de gobierno: EPIRB 406 MHz (satélite), MF con DSC, HF con DSC o estación terrena de barco. Puede cumplirse con la EPIRB de la Regla 7 instalada cerca del puente (manteniendo libre flotación) o con una segunda EPIRB.</p></div>
+      <div class="mini"><h5>Regla 9 · Área A2</h5><p>Además de la Regla 7: instalación de radio <strong>MF</strong> con DSC en <strong>2187,5 kHz</strong> y radiotelefonía en <strong>2182 kHz</strong>; escucha DSC continua en 2187,5 kHz; <strong>medio secundario de alerta</strong> (satélite 406 MHz, HF DSC o estación terrena); radiocomunicaciones generales por MF/HF o satélite.</p></div>
+      <div class="mini"><h5>Regla 10 · Área A3</h5><p>Además de la Regla 7: <strong>estación terrena de barco</strong> del servicio móvil por satélite reconocido (transmitir/recibir socorro, urgencia y seguridad; iniciar y recibir llamadas de socorro; escucha de alertas tierra–buque) + instalación <strong>MF</strong> (2187,5 kHz DSC y 2182 kHz radiotelefonía) + escucha DSC continua + medio secundario de alerta + radiocomunicaciones generales.</p></div>
+      <div class="mini"><h5>Regla 11 · Área A4</h5><p>Además de la Regla 7: instalación <strong>MF/HF</strong> capaz de transmitir y recibir en todas las frecuencias de socorro (DSC y radiotelefonía); escucha DSC continua en <strong>2187,5 kHz, 8414,5 kHz</strong> y al menos una de <strong>4207,5 / 6312 / 12577 / 16804,5 kHz</strong>, seleccionable en cualquier momento; medio secundario de alerta vía satélite 406 MHz; radiocomunicaciones generales MF/HF.</p></div>
+    </div>
+
+    <article class="regla" style="margin-top:16px"><div class="regla-h"><span class="rn">Regla 12</span><h4>Guardias de radio</h4></div><div class="regla-b">
+      <p>Todo buque en el mar mantiene escucha radioeléctrica continua:</p>
+      <ul>
+        <li>En <strong>VHF DSC canal 70</strong>.</li>
+        <li>En <strong>MF DSC 2187,5 kHz</strong>, si está equipado con MF.</li>
+        <li>En <strong>MF/HF DSC</strong> (2187,5, 8414,5 y al menos otra de HF), si está equipado con MF/HF.</li>
+        <li>Para <strong>alertas tierra–buque por satélite</strong>, si lleva estación terrena.</li>
+        <li>Para <strong>MSI</strong> en las frecuencias apropiadas al área.</li>
+        <li>Cuando sea practicable, escucha continua en <strong>VHF canal 16</strong> y otras frecuencias de urgencia y seguridad.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 13</span><h4>Fuentes de energía</h4></div><div class="regla-b">
+      <ul>
+        <li>En el mar: suministro eléctrico suficiente para operar las instalaciones de radio y <strong>cargar las baterías de reserva</strong>.</li>
+        <li><strong>Fuente de reserva</strong> para el caso de fallo de las fuentes principal y de emergencia, capaz de operar simultáneamente el VHF y, según corresponda, la instalación MF, MF/HF o la estación terrena, durante: <span class="hl">1 hora</span> si hay fuente de emergencia conforme al Capítulo II-1; <span class="hl">6 horas</span> si no la hay.</li>
+        <li>Independiente de la propulsión y del sistema eléctrico del buque.</li>
+        <li>Baterías recargables: medio de carga automática capaz de recargarlas en <strong>10 horas</strong>; capacidad verificada <strong>cada 12 meses</strong>; instalación que garantice servicio, vida útil, seguridad y temperaturas dentro de especificaciones del fabricante.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 14</span><h4>Normas de funcionamiento</h4></div><div class="regla-b">
+      <p>Todos los equipos deben ser de un <strong>tipo aprobado por la Administración</strong> y cumplir las normas de funcionamiento de la OMI, entre otras:</p>
+      <div class="pillrow">
+        <span class="pill acc">A.694(17) · Requisitos generales</span><span class="pill acc">MSC.511(105) / MSC.515(105) · VHF</span><span class="pill acc">MSC.507(105) / MSC.512(105) / MSC.508(105) · MF y HF</span><span class="pill acc">MSC.513(105) / MSC.306(87) / MSC.434(98) · Estaciones terrenas y EGC</span><span class="pill acc">MSC.517(105) · Sistemas integrados</span><span class="pill acc">A.662(16) / MSC.471(101) · EPIRB</span><span class="pill acc">MSC.510(105) / MSC.246(83) · SART / AIS-SART</span>
+      </div>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 15</span><h4>Requisitos de mantenimiento</h4></div><div class="regla-b">
+      <ul>
+        <li>Diseño que permita <strong>reemplazar fácilmente</strong> las unidades principales, sin recalibraciones complejas; accesibles para inspección y mantenimiento a bordo; manuales, herramientas y repuestos suficientes.</li>
+        <li><strong>Disponibilidad funcional</strong> según el área: A1 y A2 — duplicación de equipos, mantenimiento en tierra o capacidad de mantenimiento electrónico a bordo, o combinación; A3 y A4 — <strong>al menos dos</strong> de esos métodos.</li>
+        <li>El fallo del equipo de radiocomunicaciones generales <strong>no hace al buque no apto</strong> ni motiva su retraso en puerto sin instalaciones de reparación, si mantiene todas las funciones de socorro, urgencia y seguridad.</li>
+        <li><strong>EPIRB</strong>: prueba anual (a bordo o en estación aprobada; en pasaje, dentro de los 3 meses anteriores a la expiración del certificado; en carga, dentro de los 3 meses anteriores a la expiración o ± 3 meses de la fecha aniversario) y <strong>mantenimiento quinquenal</strong> en instalación aprobada.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 16</span><h4>Personal de radio</h4></div><div class="regla-b">
+      <ul>
+        <li>Personal cualificado para comunicaciones de socorro, urgencia y seguridad, titular de los certificados del Reglamento de Radiocomunicaciones (operador GMDSS general, restringido…).</li>
+        <li>Una persona designada como <strong>responsable principal</strong> de las comunicaciones durante incidentes de socorro.</li>
+        <li><strong>Buques de pasaje</strong>: al menos una persona cualificada asignada <strong>exclusivamente</strong> a funciones de comunicaciones durante incidentes de socorro.</li>
+      </ul>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 17</span><h4>Registros de radio</h4></div><div class="regla-b">
+      <p>Registro a bordo de todos los incidentes importantes relacionados con las radiocomunicaciones para la seguridad de la vida humana en el mar: pruebas de equipos, comunicaciones de socorro y urgencia, mensajes MSI, etc.</p>
+    </div></article>
+
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 18</span><h4>Actualización de la posición</h4></div><div class="regla-b">
+      <ul>
+        <li>Los equipos bidireccionales que incluyan automáticamente la posición deben recibirla de un <strong>receptor de navegación</strong> interno o externo (GPS).</li>
+        <li>Si el receptor falla: la posición y la hora de su determinación se actualizan <strong>manualmente cada 4 horas como máximo</strong> mientras el buque navegue, listas para ser transmitidas.</li>
+      </ul>
+    </div></article>
+
+    <div class="sub-t" id="cap4-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo IV</h3></div>
+    <div class="note"><span class="ni">📜</span><div>
+      <h5>Enmiendas recientes</h5>
+      <ul style="margin-left:18px;margin-top:6px">
+        <li><strong>AIS-SART</strong> como alternativa al radar SART, con localización más precisa y rápida.</li>
+        <li>Actualización de <strong>normas de funcionamiento</strong> de equipos GMDSS.</li>
+        <li><strong>Nuevos proveedores de satélites</strong> (p. ej., Iridium) bajo el marco de la Regla 4-1.</li>
+        <li>Refuerzo del <strong>mantenimiento de EPIRB</strong>: pruebas anuales y mantenimiento quinquenal en instalaciones aprobadas.</li>
+      </ul>
+    </div></div>
+    <div class="grid2">
+      <div class="mini"><h5>🔗 Interacción</h5><p><strong>Cap. I</strong>: Cargo Ship Safety Radio Certificate y Formulario R; reconocimientos armonizados. · <strong>Cap. III</strong>: equipos radioeléctricos de salvamento. · <strong>Cap. V</strong>: recepción de MSI y comunicaciones puente a puente. · <strong>STCW</strong>: titulación del personal de radio.</p></div>
+      <div class="mini"><h5>📡 Conclusión</h5><p>El Capítulo IV es el <strong>sistema nervioso de las comunicaciones de emergencia</strong>. El oficial debe activar alertas (EPIRB, DSC), conocer equipos y áreas de cobertura, realizar pruebas y mantenimiento, interpretar las normas de funcionamiento y garantizar la disponibilidad de energía (principal, emergencia y reserva). Es un sistema integrado que salva vidas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================== -->
+<!-- ===================== COMPLEMENTOS ============================== -->
+<!-- ================================================================== -->
+<section class="sec ch" id="complementos" style="--acc:#059669">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">+</div>
+      <div>
+        <p class="ch-kicker">Complementos formativos</p>
+        <h2>Mecanismos transversales, práctica y referencia</h2>
+        <p class="ch-en">HSSC · PSC · Enmiendas · Códigos · Responsabilidades · Checklists · Glosario</p>
+      </div>
+      <ul class="ch-meta"><li>Solo Capítulos I–IV</li><li>Enfoque práctico para oficiales</li></ul>
+    </header>
+
+    <!-- 1. HSSC -->
+    <div class="sub-t" id="comp-hssc"><span class="bar"></span><h3>1 · Sistema Armonizado de Reconocimientos (HSSC)</h3></div>
+    <div class="card">
+      <p>Adoptado por la OMI en 2000 para <strong>sincronizar los intervalos de los reconocimientos</strong> de los certificados exigidos por varios convenios (SOLAS, MARPOL, Líneas de Carga, IBC, IGC…). Su objetivo es reducir la carga administrativa y operativa, evitando inspecciones en fechas diferentes para cada certificado.</p>
+      <div class="grid2" style="margin-top:14px">
+        <div class="mini"><h5>⚙️ Aplicación a los Capítulos I–IV</h5><p>El Capítulo I (Reglas 7 a 10) define los reconocimientos inicial, anual, intermedio, de renovación y adicional; el HSSC armoniza esas fechas con MARPOL y Líneas de Carga. <strong>Ciclo quinquenal</strong>: certificados de carga de máximo 5 años; anuales e intermedios en ventanas comunes (± 3 meses de la fecha aniversario o entre el 2.º y 3.er año). El oficial prepara el buque para <strong>una única ventana de inspección conjunta</strong>.</p></div>
+        <div class="mini"><h5>🧾 Certificados combinados y fechas</h5><p>El <strong>Cargo Ship Safety Certificate</strong> (opcional) reemplaza a los tres certificados individuales y facilita el HSSC: verificar que incluye los registros de equipo (Formularios P, E, R y C) actualizados. La <strong>fecha aniversario</strong> (día y mes de expiración) fija los reconocimientos anuales. Las <strong>inspecciones del fondo</strong> (Regla I/10) se armonizan con la renovación: al menos 2 en 5 años, intervalo máximo de 36 meses, normalmente en dique seco.</p></div>
+      </div>
+    </div>
+
+    <!-- 2. PSC -->
+    <div class="sub-t" id="comp-psc"><span class="bar"></span><h3>2 · Control por el Estado del Puerto (PSC)</h3></div>
+    <div class="card">
+      <p>Mecanismo por el cual los Estados contratantes inspeccionan buques extranjeros en sus puertos para verificar el cumplimiento de las normas internacionales. Base legal: <strong>Regla I/19</strong>. Si los certificados son válidos y aparentemente en regla, el PSCO debe aceptarlos salvo <strong>«indicios claros» (clear grounds)</strong>: certificados caducados o que no corresponden al buque, averías visibles (corrosión, grietas, equipos faltantes), incumplimiento de procedimientos (simulacros no realizados, registros incompletos) o quejas de tripulación/pasajeros.</p>
+      <div class="tbl-wrap" style="margin-top:14px"><table>
+        <thead><tr><th>Capítulo</th><th>Qué inspecciona el PSCO</th></tr></thead>
+        <tbody>
+          <tr><td><strong>I</strong></td><td>Certificados a bordo, válidos y refrendados; cuadro de obligaciones (Regla 37); manuales de estabilidad (II-1) disponibles.</td></tr>
+          <tr><td><strong>II-1</strong></td><td>Integridad estanca (puertas estancas, escotillas, doble fondo); maquinaria y sistemas eléctricos; pruebas registradas de gobierno y fuentes de emergencia.</td></tr>
+          <tr><td><strong>II-2</strong></td><td>Sistemas de detección y extinción; extintores portátiles; sistemas fijos (CO₂, espuma…); equipos de respiración de bomberos; registros de mantenimiento y simulacros; materiales resistentes al fuego.</td></tr>
+          <tr><td><strong>III</strong></td><td>Botes y balsas, chalecos, aros, bengalas, SART, EPIRB: estado, revisiones al día y simulacros de abandono registrados.</td></tr>
+          <tr><td><strong>IV</strong></td><td>Equipos GMDSS operativos; pruebas diarias, semanales y mensuales; mantenimientos de EPIRB y SART al día; registro de radio; pruebas de fuentes de reserva.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="flow"><span>1 · Inspección inicial</span><i>→</i><span>2 · Inspección detallada (si hay indicios)</span><i>→</i><span>3 · Informe de deficiencias</span><i>→</i><span>4 · Corrección / Detención</span><i>→</i><span>5 · Notificación a bandera y clase</span></div>
+      <ul>
+        <li><strong>Deficiencias menores</strong>: corregir antes de la salida; el buque puede navegar.</li>
+        <li><strong>Deficiencias graves</strong>: <strong>detención del buque</strong> hasta su corrección; si no pueden corregirse en el puerto actual, se informa al siguiente puerto de escala.</li>
+        <li><strong>Preparación del buque</strong>: certificados al día y accesibles; registros de inspecciones, mantenimiento y simulacros a mano; equipos de salvamento e incendios listos para uso inmediato; tripulación capaz de demostrar su competencia (usar un extintor, ponerse un chaleco…).</li>
+      </ul>
+    </div>
+
+    <!-- 3. ENMIENDAS -->
+    <div class="sub-t" id="comp-enmiendas"><span class="bar"></span><h3>3 · Enmiendas recientes y futuras</h3></div>
+    <div class="grid2">
+      <div class="mini"><h5>📜 Enmiendas de 2014 (MSC.338/339/340(91))</h5>
+        <ul style="margin-left:16px">
+          <li><strong>Cap. II-1</strong>: protección contra el ruido (Regla 3-12, buques nuevos desde 01/07/2014; existentes con contrato 2009–2014 desde 2018); refuerzo del acceso a estructuras (3-3).</li>
+          <li><strong>Cap. II-2</strong>: alarma audible en equipos de respiración con &lt; 200 L de aire (existentes: 01/07/2019); dos aparatos radiotelefónicos portátiles a prueba de explosión por equipo de bomberos (existentes: primer reconocimiento posterior al 01/07/2018); medio de recarga de botellas de aire o botellas de repuesto.</li>
+          <li><strong>Cap. III</strong>: recuperación de personas del agua (Regla 17-1, desde 01/07/2014); dispositivos de puesta a flote con examen completo cada 5 años, prueba dinámica de frenado y prueba de suelta en carga al 1,1× (Regla 20.11); despliegue rotatorio de MES cada 6 años (Regla 20.8.2).</li>
+          <li><strong>Cap. IV</strong>: actualización de normas de funcionamiento GMDSS; refuerzo del mantenimiento de EPIRB.</li>
+        </ul>
+      </div>
+      <div class="mini"><h5>🔮 2016 y futuras</h5>
+        <ul style="margin-left:16px">
+          <li><strong>Enmiendas de 2016 (MSC.409(97) y conexas)</strong>: Cap. II-1 Parte G — requisitos para combustibles de bajo punto de inflamación (GNL, metanol) con el <strong>Código IGF</strong> obligatorio; actualización de la inertización en petroleros y graneleros (Cap. II-2).</li>
+          <li><strong>Cap. III (en consideración)</strong>: sistemas de localización de supervivientes (dispositivos de localización personal) para facilitar el rescate.</li>
+          <li><strong>Cap. IV</strong>: incorporación de nuevos proveedores de satélites (Iridium) al GMDSS, ampliando opciones de comunicación y alerta.</li>
+          <li><strong>Implicación para el oficial</strong>: mantenerse actualizado; la compañía proporciona información y equipos; planificar con antelación los plazos de cumplimiento de buques existentes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. CÓDIGOS -->
+    <div class="sub-t" id="comp-codigos"><span class="bar"></span><h3>4 · Códigos y manuales asociados</h3></div>
+    <div class="grid3">
+      <div class="mini"><h5>🛟 Código LSA</h5><p>Especificaciones técnicas de todos los dispositivos de salvamento (Cap. III, Reglas 3 y 34): botes, balsas, chalecos, aros, SART, EPIRB, sistemas de evacuación. El oficial lo usa para verificar aprobaciones y pruebas.</p></div>
+      <div class="mini"><h5>🔥 Código FSS</h5><p>Requisitos técnicos de detección, alarma, extinción y ventilación (Cap. II-2). Consulta obligatoria para mantenimiento y pruebas de los sistemas contra incendios.</p></div>
+      <div class="mini"><h5>☣️ Código IMDG</h5><p>Mencionado en Cap. VII, pero el Cap. II-2 (Regla 19) remite a él: embalaje, etiquetado, estiba y segregación de mercancías peligrosas.</p></div>
+      <div class="mini"><h5>🧭 Código ISM</h5><p>Cap. IX, pero el Cap. I exige su cumplimiento para emitir certificados SOLAS: Sistema de Gestión de la Seguridad (SMS) de compañía y buque.</p></div>
+      <div class="mini"><h5>🛡️ Código ISPS</h5><p>Cap. XI-2: niveles de seguridad y Plan de Seguridad del Buque (SSP); su cumplimiento puede verificarse en inspecciones PSC vinculadas al Cap. I.</p></div>
+      <div class="mini"><h5>📚 Manuales obligatorios a bordo</h5><p>Manual de Estabilidad (II-1/7) · Remolque de Emergencia (II-1/3-2) · Acceso a la Estructura (II-1/3-3) · Lucha contra Incendios (II-2/16) · Formación (III/35) · Instrucciones de Mantenimiento (III/36).</p></div>
+    </div>
+
+    <!-- 5. RESPONSABILIDADES -->
+    <div class="sub-t" id="comp-resp"><span class="bar"></span><h3>5 · Responsabilidades prácticas del oficial</h3></div>
+    <div class="grid2">
+      <div class="mini"><h5>🧑‍✈️ Oficial de cubierta (Deck Officer)</h5>
+        <ul style="margin-left:16px">
+          <li><strong>Cap. I</strong>: mantener certificados al día y a bordo; preparar el buque para inspecciones PSC y de clase; llevar registros de inspecciones y mantenimientos.</li>
+          <li><strong>Cap. II-1</strong>: responsable de la estabilidad (cálculo por condición de carga, manual de estabilidad, actuación en avería); conocer disposiciones y manual de remolque; asegurar cierre y prueba de puertas estancas y escotillas.</li>
+          <li><strong>Cap. II-2</strong>: supervisar simulacros de incendio y formación; mantener sistemas de detección y extinción (con máquinas); conocer procedimientos de evacuación.</li>
+          <li><strong>Cap. III</strong>: responsable principal de los dispositivos de salvamento (inspecciones semanales/mensuales, mantenimiento, estaciones aprobadas); organizar y dirigir simulacros de abandono; asegurar que tripulación y pasajeros conocen los procedimientos.</li>
+          <li><strong>Cap. IV</strong>: equipos GMDSS operativos con pruebas registradas; mantener el registro de radio; conocer los procedimientos de socorro y activación de alertas (EPIRB, DSC).</li>
+        </ul>
+      </div>
+      <div class="mini"><h5>⚙️ Oficial de máquinas (Engine Officer)</h5>
+        <ul style="margin-left:16px">
+          <li><strong>Cap. II-1</strong>: responsable de la maquinaria principal y auxiliar, sistemas de gobierno y fuentes de emergencia; pruebas periódicas registradas; conocer los requisitos UMS si proceden.</li>
+          <li><strong>Cap. II-2</strong>: mantener sistemas fijos de extinción (CO₂, espuma, rociadores); asegurar funcionamiento de ventilación y cortafuegos; participar en simulacros y en el mantenimiento de equipos de respiración.</li>
+          <li><strong>Cap. III</strong>: motores de botes salvavidas y de rescate (pruebas semanales y mantenimiento); dispositivos de puesta a flote (pescantes, winches) en buen estado y pruebas dinámicas según requisito.</li>
+          <li><strong>Cap. IV</strong>: fuentes de energía de los equipos de radio (principal, emergencia y reserva); pruebas de baterías y de carga automática.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6. CHECKLISTS -->
+    <div class="sub-t" id="comp-check"><span class="bar"></span><h3>6 · Listas de verificación y procedimientos</h3></div>
+    <div class="grid2">
+      <div class="mini"><h5>🗓️ Inspección semanal (III/20.6)</h5>
+        <ul class="chk"><li>Inspección visual de todas las embarcaciones de supervivencia y botes de rescate.</li><li>Funcionamiento de los motores de los botes durante al menos 3 minutos.</li><li>Ensayo del sistema de alarma general de emergencia.</li></ul>
+      </div>
+      <div class="mini"><h5>📅 Inspección mensual (III/20.7)</h5>
+        <ul class="chk"><li>Todos los dispositivos de salvamento con la lista de comprobaciones (Regla 36).</li><li>Chalecos, aros y bengalas completos y en buen estado.</li><li>Anotación en el diario de navegación.</li></ul>
+      </div>
+      <div class="mini"><h5>🏗️ Dispositivos de puesta a flote (III/20.11)</h5>
+        <ul class="chk"><li>Examen completo cada 5 años.</li><li>Prueba dinámica de frenado del winche.</li><li>Prueba de suelta en carga del bote salvavidas con 1,1× el peso total.</li></ul>
+      </div>
+      <div class="mini"><h5>📡 Pruebas de radio (Cap. IV)</h5>
+        <ul class="chk"><li>Prueba operativa diaria de la EPIRB.</li><li>Prueba semanal del SART.</li><li>Prueba mensual de las baterías de reserva.</li><li>Prueba anual de la EPIRB (estación aprobada).</li><li>Mantenimiento quinquenal de la EPIRB en instalación aprobada.</li></ul>
+      </div>
+      <div class="mini"><h5>🚨 Simulacros (III/19)</h5>
+        <ul class="chk"><li>Abandono y lucha contra incendios mensuales.</li><li>En buques de pasaje: semanales.</li><li>Puesta a flote de botes según periodicidades (3/6 meses).</li><li>Registro de todos los simulacros en el diario de navegación.</li></ul>
+      </div>
+      <div class="mini"><h5>🧾 Preparación PSC</h5>
+        <ul class="chk"><li>Certificados a bordo y válidos.</li><li>Registros de mantenimiento y simulacros al día.</li><li>Equipos de salvamento e incendios listos para uso inmediato.</li><li>Tripulación conocedora de sus tareas de emergencia.</li><li>Manuales y documentación requerida a mano.</li></ul>
+      </div>
+    </div>
+
+    <!-- 7. GLOSARIO -->
+    <div class="sub-t" id="comp-glosario"><span class="bar"></span><h3>7 · Glosario ampliado de términos clave</h3></div>
+    <div class="glosario">
+      <div class="gl"><b>Administración</b><p>El gobierno del Estado de abanderamiento.</p></div>
+      <div class="gl"><b>Viaje internacional</b><p>Viaje entre puertos de diferentes Estados contratantes.</p></div>
+      <div class="gl"><b>Buque de pasaje</b><p>Transporta más de 12 pasajeros.</p></div>
+      <div class="gl"><b>Buque de carga</b><p>Cualquier buque que no sea de pasaje.</p></div>
+      <div class="gl"><b>Buque tanque</b><p>Construido para el transporte de líquidos inflamables a granel.</p></div>
+      <div class="gl"><b>Buque nuclear</b><p>Provisto de planta de propulsión nuclear.</p></div>
+      <div class="gl"><b>Fecha aniversario</b><p>Día y mes correspondiente a la fecha de expiración del certificado.</p></div>
+      <div class="gl"><b>Reconocimiento inicial</b><p>Inspección antes de la puesta en servicio.</p></div>
+      <div class="gl"><b>Reconocimiento de renovación</b><p>Renueva el certificado: cada 5 años en carga, 12 meses en pasaje.</p></div>
+      <div class="gl"><b>Reconocimiento anual</b><p>Dentro de los ± 3 meses de la fecha aniversario.</p></div>
+      <div class="gl"><b>Reconocimiento intermedio</b><p>Entre el segundo y tercer año de validez del certificado.</p></div>
+      <div class="gl"><b>Reconocimiento adicional</b><p>Tras avería o modificación importante.</p></div>
+      <div class="gl"><b>Indicios claros (clear grounds)</b><p>Señales que hacen sospechar incumplimiento durante una inspección PSC.</p></div>
+      <div class="gl"><b>Estanqueidad</b><p>Capacidad de una estructura para evitar el paso de agua.</p></div>
+      <div class="gl"><b>Mamparo estanco</b><p>Divide el buque en compartimentos para evitar la propagación del agua.</p></div>
+      <div class="gl"><b>Doble fondo</b><p>Segunda barrera en la parte inferior del buque ante daños de fondo.</p></div>
+      <div class="gl"><b>Fuente de energía de emergencia</b><p>Generador o baterías que alimentan sistemas críticos si falla la principal.</p></div>
+      <div class="gl"><b>División clase “A”</b><p>Mamparos y cubiertas resistentes al fuego 60 o 90 minutos.</p></div>
+      <div class="gl"><b>División clase “B”</b><p>Mamparos y cubiertas resistentes al fuego 30 o 15 minutos.</p></div>
+      <div class="gl"><b>Incombustible</b><p>Material que no arde ni emite vapores inflamables.</p></div>
+      <div class="gl"><b>Código FSS</b><p>Código Internacional de Sistemas de Seguridad contra Incendios.</p></div>
+      <div class="gl"><b>Código LSA</b><p>Código Internacional de Dispositivos de Salvamento.</p></div>
+      <div class="gl"><b>Sistema de evacuación marino</b><p>Transfiere rápidamente personas a una embarcación de supervivencia.</p></div>
+      <div class="gl"><b>Bote de rescate</b><p>Salva personas en peligro y concentra embarcaciones de supervivencia.</p></div>
+      <div class="gl"><b>Embarcación de supervivencia</b><p>Preserva la vida tras el abandono del buque.</p></div>
+      <div class="gl"><b>EPIRB</b><p>Radiobaliza de localización de siniestros (406 MHz).</p></div>
+      <div class="gl"><b>SART</b><p>Respondedor de radar (9,2–9,5 GHz).</p></div>
+      <div class="gl"><b>AIS-SART</b><p>Transmisor de búsqueda y rescate del Sistema de Identificación Automática.</p></div>
+      <div class="gl"><b>DSC</b><p>Llamada selectiva digital para VHF, MF y HF.</p></div>
+      <div class="gl"><b>GMDSS</b><p>Sistema Mundial de Socorro y Seguridad Marítimos.</p></div>
+      <div class="gl"><b>Área A1</b><p>Cobertura de estación VHF con DSC.</p></div>
+      <div class="gl"><b>Área A2</b><p>Cobertura de estación MF con DSC (excluida A1).</p></div>
+      <div class="gl"><b>Área A3</b><p>Cobertura de servicio móvil por satélite reconocido (excluidas A1 y A2).</p></div>
+      <div class="gl"><b>Área A4</b><p>Fuera de A1, A2 y A3 (principalmente regiones polares).</p></div>
+      <div class="gl"><b>MSI</b><p>Información de seguridad marítima: avisos náuticos y meteorológicos.</p></div>
+    </div>
+
+    <!-- 8. TABLA -->
+    <div class="sub-t" id="comp-tabla"><span class="bar"></span><h3>8 · Correspondencia capítulos ↔ certificados ↔ reconocimientos</h3></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Capítulo</th><th>Certificado asociado</th><th>Reconocimientos requeridos</th><th>Periodicidad</th></tr></thead>
+      <tbody>
+        <tr><td><strong>I</strong> · General</td><td>Todos los certificados SOLAS</td><td>Inspección PSC; renovación; anual; intermedio; adicional</td><td>Variable según certificado</td></tr>
+        <tr><td><strong>II-1</strong> · Construcción</td><td>Cargo Ship Safety Construction Certificate</td><td>Inicial; renovación; intermedio; anual; adicional; fondo (2 en 5 años)</td><td>Renovación: 5 años · intermedio: entre 2.º y 3.er año · anual: ± 3 meses de la fecha aniversario</td></tr>
+        <tr><td><strong>II-2</strong> · Incendios</td><td>Cargo Ship Safety Equipment Certificate (incluye equipos de incendios)</td><td>Inicial; renovación; intermedio; anual; adicional</td><td>Misma periodicidad que el certificado de equipo</td></tr>
+        <tr><td><strong>III</strong> · Salvamento</td><td>Cargo Ship Safety Equipment Certificate (incluye dispositivos de salvamento)</td><td>Inicial; renovación; intermedio; anual; adicional</td><td>Misma periodicidad que el certificado de equipo</td></tr>
+        <tr><td><strong>IV</strong> · Radio</td><td>Cargo Ship Safety Radio Certificate</td><td>Inicial; renovación; periódico; adicional</td><td>Renovación: 5 años · periódico: entre 2.º y 3.er año</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--mut);font-size:14px">Buques de pasaje: Passenger Ship Safety Certificate, válido por 12 meses, con reconocimiento anual de renovación.</p>
+
+    <!-- 9. FACTOR HUMANO -->
+    <div class="sub-t" id="comp-humano"><span class="bar"></span><h3>9 · El factor humano: formación, simulacros y cultura de seguridad</h3></div>
+    <div class="card">
+      <p>El SOLAS no solo exige equipos y sistemas: exige que las <strong>personas estén formadas y preparadas</strong> para utilizarlos eficazmente. El factor humano es el elemento más crítico de la seguridad marítima.</p>
+      <div class="grid3" style="margin-top:14px">
+        <div class="mini"><h5>🎓 Formación obligatoria (III/19)</h5><p>Familiarización de todo tripulante con sus tareas de emergencia <strong>antes del viaje</strong>; formación de nuevos tripulantes en un máximo de <strong>dos semanas</strong>; simulacros mensuales de abandono e incendio (semanales en pasaje), realistas y con toda la tripulación.</p></div>
+        <div class="mini"><h5>📖 Manuales de formación</h5><p>Manual de formación a bordo (III/35) para todos los aspectos de los dispositivos de salvamento; medios auxiliares en buques con MES; manual de lucha contra incendios (II-2/15) como material de instrucción y simulacros.</p></div>
+        <div class="mini"><h5>🤝 Cultura de seguridad</h5><p>Más allá del requisito reglamentario: prevención, preparación y respuesta eficaz como <strong>valores compartidos</strong>; comunicación clara, capacitación continua y retroalimentación tras cada simulacro.</p></div>
+      </div>
+    </div>
+
+    <!-- 10. CONCLUSIÓN -->
+    <div class="sub-t" id="comp-conclusion"><span class="bar"></span><h3>10 · Conclusión integradora y recomendaciones</h3></div>
+    <div class="card">
+      <p>Los Capítulos I al IV del Convenio SOLAS constituyen el <strong>armazón esencial</strong> sobre el que se construye la seguridad marítima moderna. No son compartimentos estancos: se complementan y refuerzan mutuamente.</p>
+      <div class="grid2" style="margin-top:14px">
+        <div class="mini"><h5 style="color:#2f6bff">Capítulo I · Marco</h5><p>La base administrativa y de control: garantiza que buques y equipos sean inspeccionados y certificados periódicamente. Sin él, los demás capítulos no tendrían mecanismo de aplicación.</p></div>
+        <div class="mini"><h5 style="color:#0ea5a4">Capítulo II-1 · Integridad</h5><p>La integridad física del buque: estabilidad, subdivision, maquinaria y sistemas eléctricos fiables.</p></div>
+        <div class="mini"><h5 style="color:#e5484d">Capítulo II-2 · Fuego</h5><p>Aborda la amenaza del fuego con un enfoque integral: prevención, detección, contención, extinción y evacuación.</p></div>
+        <div class="mini"><h5 style="color:#f59f00">Capítulo III · Supervivencia</h5><p>Los medios para abandonar el buque de forma segura y sobrevivir hasta el rescate.</p></div>
+        <div class="mini"><h5 style="color:#8b5cf6">Capítulo IV · Comunicaciones</h5><p>Asegura que, en emergencia, el buque pueda comunicarse con el exterior y recibir asistencia a través del GMDSS.</p></div>
+        <div class="mini"><h5>♾️ Evolución continua</h5><p>Estos capítulos incorporan constantemente las lecciones de los accidentes y los avances tecnológicos; la formación continua de los oficiales es fundamental.</p></div>
+      </div>
+      <div class="note" style="margin-top:18px"><span class="ni">🧭</span><div>
+        <h5>Recomendaciones para la formación de oficiales</h5>
+        <ul style="margin-left:18px;margin-top:6px">
+          <li><strong>Estudiar los capítulos de forma integrada</strong>: entender cómo se relacionan entre sí.</li>
+          <li><strong>Practicar con simulacros y ejercicios</strong>: la teoría debe complementarse con práctica realista.</li>
+          <li><strong>Mantenerse actualizado</strong>: las enmiendas al SOLAS son frecuentes.</li>
+          <li><strong>Conocer los códigos y manuales</strong>: LSA, FSS, ISM, ISPS y los manuales de a bordo.</li>
+          <li><strong>Prepararse para las inspecciones</strong>: el PSC es una realidad cotidiana.</li>
+          <li><strong>Fomentar la cultura de seguridad</strong>: la seguridad no es solo un requisito, es una responsabilidad compartida; el oficial predica con el ejemplo.</li>
+        </ul>
+      </div></div>
+      <p style="margin-top:6px">El conocimiento profundo de estos primeros cuatro capítulos no es solo un requisito regulatorio: es la base de una <strong>cultura de seguridad a bordo</strong> que, en última instancia, protege la vida humana en el mar y el medio ambiente marino.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>⚓ SOLAS 1974 · Capítulos I–IV</h4>
+      <p style="max-width:420px;font-size:14px">Ensayo académico interactivo para la formación de oficiales de la marina mercante: análisis exhaustivo de las disposiciones generales, construcción, protección contra incendios, salvamento y radiocomunicaciones.</p>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <p style="font-size:14px">Organización Marítima Internacional — <a href="https://www.imo.org" target="_blank" rel="noopener">imo.org</a><br>Códigos de referencia: LSA · FSS · IS · IGF · IMDG · ISM · ISPS</p>
+    </div>
+    <div>
+      <h4>Navegación rápida</h4>
+      <p style="font-size:14px"><a href="#cap1">Cap. I</a> · <a href="#cap21">Cap. II-1</a> · <a href="#cap22">Cap. II-2</a> · <a href="#cap3">Cap. III</a> · <a href="#cap4">Cap. IV</a> · <a href="#comp-hssc">Complementos</a></p>
+    </div>
+    <div class="fine">Material didáctico con fines académicos · Basado en el Convenio SOLAS 1974 y sus enmiendas · Verifique siempre los textos consolidados oficiales de la OMI antes de aplicar requisitos reglamentarios. <span id="year"></span></div>
+  </div>
+</footer>
+</main>
+
+<button id="totop" aria-label="Volver arriba">↑</button>
+
+<script>
+(function(){
+  /* ===== Theme ===== */
+  var root=document.documentElement, tbtn=document.getElementById('theme');
+  function setTheme(t){root.setAttribute('data-theme',t);tbtn.textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('solas-theme',t)}catch(e){}}
+  var saved='light';try{saved=localStorage.getItem('solas-theme')||'light'}catch(e){}
+  setTheme(saved);
+  tbtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+
+  /* ===== Mobile nav ===== */
+  var burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
+  function closeNav(){document.body.classList.remove('nav-open')}
+  burger.addEventListener('click',function(){document.body.classList.toggle('nav-open')});
+  overlay.addEventListener('click',closeNav);
+  document.querySelectorAll('.side a').forEach(function(a){a.addEventListener('click',closeNav)});
+
+  /* ===== Progress + totop ===== */
+  var bar=document.getElementById('progress'),totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+    totop.classList.toggle('show',h.scrollTop>600);
+  },{passive:true});
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  /* ===== Scrollspy ===== */
+  var links={};
+  document.querySelectorAll('.side a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var id=en.target.id;
+        Object.values(links).forEach(function(l){l.classList.remove('active')});
+        if(links[id]){links[id].classList.add('active');
+          var d=links[id].closest('details');if(d)d.open=true;}
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('section[id], .sub-t[id]').forEach(function(s){obs.observe(s)});
+
+  /* ===== Search ===== */
+  var inp=document.getElementById('search'),res=document.getElementById('results'),index=[];
+  document.querySelectorAll('h2,h3,h4,.gl b,.chip b').forEach(function(el){
+    var sec=el.closest('section');
+    index.push({el:el,txt:el.textContent.trim(),ctx:sec?(sec.querySelector('.ch-kicker')?sec.querySelector('.ch-kicker').textContent:(sec.id==='inicio'?'Inicio':(sec.querySelector('h2')?sec.querySelector('h2').textContent:'Sección'))):''});
+  });
+  function doSearch(q){
+    res.innerHTML='';
+    if(!q||q.length<2){res.style.display='none';return}
+    var ql=q.toLowerCase(),hits=index.filter(function(i){return i.txt.toLowerCase().indexOf(ql)>-1}).slice(0,12);
+    if(!hits.length){res.innerHTML='<button disabled style="opacity:.6">Sin resultados para «'+q.replace(/</g,'&lt;')+'»</button>';res.style.display='block';return}
+    hits.forEach(function(h){
+      var b=document.createElement('button');
+      b.innerHTML='<span class="rk">'+(h.ctx||'').replace(/</g,'&lt;')+'</span><br>'+h.txt.replace(/</g,'&lt;');
+      b.addEventListener('click',function(){
+        res.style.display='none';inp.value='';
+        h.el.scrollIntoView({behavior:'smooth',block:'center'});
+        h.el.classList.remove('flash');void h.el.offsetWidth;h.el.classList.add('flash');
+      });
+      res.appendChild(b);
+    });
+    res.style.display='block';
+  }
+  inp.addEventListener('input',function(){doSearch(inp.value.trim())});
+  inp.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){res.style.display='none';inp.blur()}
+    if(e.key==='Enter'){var f=res.querySelector('button:not([disabled])');if(f)f.click()}
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.searchwrap'))res.style.display='none'});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/'&&document.activeElement!==inp){e.preventDefault();inp.focus()}
+  });
+
+  /* ===== Year ===== */
+  document.getElementById('year').textContent='© '+new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
