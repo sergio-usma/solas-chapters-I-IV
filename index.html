@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============ TOKENS ============ */
 :root{
   --bg:#f4f6fb; --panel:#ffffff; --panel2:#f8fafd; --ink:#101828; --mut:#5b6577;
   --line:#e4e9f2; --gold:#d9a441; --navy:#0a1830; --navy2:#12233f;
@@ -21,7 +20,6 @@
 html[data-theme="dark"]{
   --bg:#0b1220; --panel:#121b2e; --panel2:#0e1626; --ink:#e7ecf6; --mut:#9aa7bf;
   --line:#22304a; --gold:#e3b04b; --navy:#0a1424; --navy2:#0f1c33;
-  --side-ink:#b9c6dc; --side-dim:#6e7d99;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -32,7 +30,6 @@ img,svg{max-width:100%}
 a{color:inherit}
 ::selection{background:var(--gold);color:#0a1830}
 
-/* ============ PROGRESS + TOPBAR ============ */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),#f0c66b);z-index:200;transition:width .1s}
 .topbar{position:fixed;top:0;left:0;right:0;height:64px;z-index:150;display:flex;align-items:center;gap:14px;
   padding:0 18px;background:color-mix(in srgb,var(--navy) 92%,transparent);backdrop-filter:blur(10px);
@@ -56,7 +53,6 @@ a{color:inherit}
 .iconbtn:hover{border-color:var(--gold)}
 #burger{display:none}
 
-/* ============ SIDEBAR ============ */
 .side{position:fixed;top:64px;left:0;bottom:0;width:284px;overflow-y:auto;background:var(--navy);color:var(--side-ink);
   padding:18px 14px 60px;z-index:140;border-right:1px solid rgba(255,255,255,.06)}
 .side::-webkit-scrollbar{width:8px}
@@ -77,12 +73,10 @@ a{color:inherit}
 #overlay{position:fixed;inset:0;background:rgba(4,8,16,.55);z-index:130;opacity:0;pointer-events:none;transition:.25s}
 body.nav-open #overlay{opacity:1;pointer-events:auto}
 
-/* ============ MAIN ============ */
 main{margin-left:284px;padding-top:64px}
 .wrap{max-width:980px;margin:0 auto;padding:0 28px}
 .sec{padding:56px 0 8px}
 
-/* ============ HERO ============ */
 .hero{position:relative;color:#fff;padding:88px 28px 110px;overflow:hidden;
   background:radial-gradient(1200px 500px at 85% -10%,rgba(217,164,65,.22),transparent 60%),
              radial-gradient(900px 500px at -10% 110%,rgba(47,107,255,.25),transparent 60%),
@@ -92,16 +86,17 @@ main{margin-left:284px;padding-top:64px}
   padding:6px 14px;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:#f0d8a0;background:rgba(255,255,255,.05)}
 .hero h1{font-family:'Space Grotesk';font-size:clamp(34px,5.4vw,60px);line-height:1.08;margin:22px 0 16px;letter-spacing:-.5px}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,#f0c66b,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{max-width:760px;font-size:17.5px;color:#c9d6ea}
+.hero p.lead{max-width:700px;font-size:17.5px;color:#c9d6ea}
 .hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .chip{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);border-radius:12px;padding:10px 16px;font-size:13.5px}
 .chip b{display:block;font-family:'Space Grotesk';font-size:19px;color:#f0c66b}
 .hero .wave{position:absolute;left:0;right:0;bottom:-1px;line-height:0}
 .hero .wave svg{width:100%;height:70px;display:block}
+.hero-art{position:absolute;right:3%;top:16%;width:min(360px,30vw);opacity:.95;pointer-events:none}
+@media(max-width:960px){.hero-art{display:none}}
 
-/* ============ CHAPTER HEAD ============ */
 .ch-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px;border-bottom:3px solid var(--acc);padding-bottom:18px;margin-bottom:26px;position:relative}
-.ch-num{font-family:'Space Grotesk';font-weight:700;font-size:74px;line-height:.9;color:var(--acc);opacity:.16;position:absolute;right:0;top:-34px;font-size:130px;pointer-events:none;user-select:none}
+.ch-num{font-family:'Space Grotesk';font-weight:700;line-height:.9;color:var(--acc);opacity:.16;position:absolute;right:0;top:-34px;font-size:120px;pointer-events:none;user-select:none}
 .ch-kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);font-weight:800}
 .ch-head h2{font-family:'Space Grotesk';font-size:clamp(26px,3.4vw,38px);letter-spacing:-.3px}
 .ch-en{color:var(--mut);font-style:italic;font-size:15px}
@@ -110,7 +105,6 @@ main{margin-left:284px;padding-top:64px}
 .ch-intro{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:var(--r);
   padding:20px 22px;box-shadow:var(--shadow);margin-bottom:26px}
 
-/* ============ CARDS / REGLAS ============ */
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow);margin-bottom:18px}
 .sub-t{display:flex;align-items:center;gap:12px;margin:38px 0 16px;scroll-margin-top:90px}
 .sub-t h3{font-family:'Space Grotesk';font-size:21px;letter-spacing:-.2px}
@@ -130,7 +124,6 @@ main{margin-left:284px;padding-top:64px}
 strong{font-weight:700}
 .hl{color:var(--acc);font-weight:700}
 
-/* ============ NOTES / GRIDS / TABLES ============ */
 .note{display:flex;gap:14px;background:color-mix(in srgb,var(--acc,#2f6bff) 7%,var(--panel));border:1px solid color-mix(in srgb,var(--acc,#2f6bff) 30%,var(--line));
   border-radius:var(--r);padding:16px 18px;margin:18px 0}
 .note .ni{font-size:22px;line-height:1}
@@ -146,7 +139,6 @@ td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
 tbody tr:nth-child(even){background:var(--panel2)}
 tbody tr:hover{background:color-mix(in srgb,var(--acc,#2f6bff) 6%,var(--panel))}
 
-/* ============ MISC ============ */
 .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 .pill{font-size:12.5px;border-radius:99px;padding:5px 13px;border:1px solid var(--line);background:var(--panel);color:var(--mut)}
 .pill.acc{border-color:color-mix(in srgb,var(--acc) 45%,var(--line));color:var(--acc);font-weight:600}
@@ -164,6 +156,30 @@ tbody tr:hover{background:color-mix(in srgb,var(--acc,#2f6bff) 6%,var(--panel))}
 .chk{list-style:none;margin:8px 0}
 .chk li{padding-left:30px;position:relative;margin-bottom:8px}
 .chk li::before{content:"☐";position:absolute;left:2px;color:var(--acc);font-weight:700;font-size:16px}
+
+/* ===== FIGURAS SVG ===== */
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 16px 8px;margin:20px 0}
+.fig svg{width:100%;height:auto;display:block}
+.fig figcaption{font-size:12.5px;color:var(--mut);margin:10px 0 8px;text-align:center}
+.fig text{font-family:'Inter',sans-serif}
+.fig .t{font-size:11px;fill:var(--mut)}
+.fig .h{font-family:'Space Grotesk';font-weight:600;font-size:13px;fill:var(--ink)}
+.fig .ac{stroke:var(--acc);fill:none}
+.fig .acs{fill:var(--acc)}
+.fig .acs2{fill:var(--panel);stroke:var(--acc);stroke-width:3}
+.fig .band{fill:color-mix(in srgb,var(--acc) 16%,transparent);stroke:var(--acc);stroke-width:1.5}
+.fig .ln{stroke:var(--mut);stroke-width:1.5;fill:none}
+.fig .mut{stroke:var(--mut);fill:none}
+.fig .box{fill:var(--panel2);stroke:var(--acc);stroke-width:1.5}
+.fig .boxg{fill:var(--panel2);stroke:var(--gold);stroke-width:2}
+.fig .ar{stroke:var(--mut);stroke-width:2;fill:none}
+.fig .ah{fill:var(--mut)}
+.fig .land{fill:color-mix(in srgb,var(--acc) 34%,var(--panel));stroke:var(--acc);stroke-width:1.5}
+.fig .z1{fill:color-mix(in srgb,var(--acc) 30%,transparent)}
+.fig .z2{fill:color-mix(in srgb,var(--acc) 18%,transparent)}
+.fig .z3{fill:color-mix(in srgb,var(--acc) 8%,transparent)}
+.fig .z4{fill:color-mix(in srgb,var(--mut) 24%,transparent)}
+
 .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}
 .flow span{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:13px;font-weight:600;box-shadow:var(--shadow)}
 .flow i{color:var(--acc);font-style:normal;font-weight:800}
@@ -178,7 +194,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
   font-size:20px;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:120}
 #totop.show{opacity:1;pointer-events:auto}
 
-/* ============ RESPONSIVE / PRINT ============ */
 @media(max-width:1024px){
   .side{transform:translateX(-100%);transition:transform .28s;width:300px}
   body.nav-open .side{transform:none}
@@ -195,7 +210,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 @media print{
   .topbar,.side,#totop,#progress,#burger{display:none!important}
   main{margin:0;padding-top:0}
-  .regla,.card,.mini{box-shadow:none;break-inside:avoid}
+  .regla,.card,.mini,.fig{box-shadow:none;break-inside:avoid}
   body{background:#fff;color:#000}
 }
 </style>
@@ -204,7 +219,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
 <div id="progress"></div>
 
-<!-- ===================== TOPBAR ===================== -->
 <header class="topbar">
   <button id="burger" class="iconbtn" aria-label="Menú">☰</button>
   <a class="brand" href="#inicio">
@@ -222,7 +236,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
 <div id="overlay"></div>
 
-<!-- ===================== SIDEBAR ===================== -->
 <nav class="side" id="side">
   <a class="top-link" href="#inicio"><span class="dot" style="background:var(--gold)"></span>Inicio</a>
   <a class="top-link" href="#introduccion"><span class="dot" style="background:#64748b"></span>Introducción al SOLAS</a>
@@ -292,16 +305,35 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="inicio">
+  <svg class="hero-art" viewBox="0 0 360 300" fill="none" aria-hidden="true">
+    <circle cx="180" cy="150" r="140" stroke="rgba(255,255,255,.22)" stroke-dasharray="4 8"/>
+    <circle cx="180" cy="150" r="110" stroke="rgba(240,198,107,.5)"/>
+    <g stroke="rgba(240,198,107,.85)" stroke-width="2">
+      <line x1="180" y1="16" x2="180" y2="34"/><line x1="180" y1="266" x2="180" y2="284"/>
+      <line x1="46" y1="150" x2="64" y2="150"/><line x1="296" y1="150" x2="314" y2="150"/>
+    </g>
+    <g stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M96 176 L264 176 L240 208 L120 208 Z"/>
+      <path d="M132 176 L132 152 L228 152 L228 176"/>
+      <path d="M150 152 L150 132 L196 132 L196 152"/>
+      <line x1="176" y1="132" x2="176" y2="110"/>
+    </g>
+    <path d="M176 110 l16 6 -16 6" stroke="#f0c66b" stroke-width="3" stroke-linejoin="round"/>
+    <g stroke="#f0c66b" stroke-width="3" stroke-linecap="round">
+      <path d="M84 226 q14 -10 28 0 t28 0 t28 0 t28 0 t28 0 t28 0"/>
+      <path d="M104 246 q14 -10 28 0 t28 0 t28 0 t28 0"/>
+    </g>
+  </svg>
   <div class="wrap">
     <span class="kicker">⚓ Convenio Internacional para la Seguridad de la Vida Humana en el Mar</span>
     <h1>El Convenio <em>SOLAS 1974</em><br>Análisis Exhaustivo de los Capítulos I al IV</h1>
-    <p class="lead">Recurso didáctico completo para la formación de oficiales de la marina mercante: el marco administrativo, la integridad estructural, la protección contra incendios, los dispositivos de salvamento y las radiocomunicaciones del GMDSS — con todas sus reglas, partes, enmiendas y aplicaciones prácticas.</p>
+    <p class="lead">Recurso didáctico completo para la formación de oficiales de la marina mercante: el marco administrativo, la integridad estructural, la protección contra incendios, los dispositivos de salvamento y las radiocomunicaciones del GMDSS — con todas sus reglas en secuencia, enmiendas, diagramas y aplicaciones prácticas.</p>
     <div class="chips">
       <div class="chip"><b>4+1</b>Pilares analizados (I, II-1, II-2, III, IV)</div>
-      <div class="chip"><b>156+</b>Reglas desglosadas</div>
+      <div class="chip"><b>156+</b>Reglas desglosadas en secuencia</div>
       <div class="chip"><b>1974</b>Adoptado · en vigor desde 1980</div>
       <div class="chip"><b>LSA · FSS · IS · IGF</b>Códigos vinculados</div>
-      <div class="chip"><b>1912</b>Origen: tragedia del Titanic</div>
+      <div class="chip"><b>10</b>Diagramas SVG interactivos</div>
     </div>
   </div>
   <div class="wave"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="var(--bg)" d="M0,40 C240,70 480,10 720,35 C960,60 1200,15 1440,40 L1440,70 L0,70 Z"/></svg></div>
@@ -331,7 +363,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       <a class="mapcard" href="#cap1" style="--mc:#2f6bff"><span class="mc-n">I</span><h4>Disposiciones Generales</h4><p>Marco administrativo: aplicación, definiciones, exenciones, reconocimientos, certificados, control PSC e investigación de siniestros. Reglas 1–21.</p></a>
       <a class="mapcard" href="#cap21" style="--mc:#0ea5a4"><span class="mc-n">II-1</span><h4>Construcción</h4><p>Subdivisión y estabilidad, maquinaria e instalaciones eléctricas. Integridad física del buque. Partes A–G, Reglas 1–57.</p></a>
       <a class="mapcard" href="#cap22" style="--mc:#e5484d"><span class="mc-n">II-2</span><h4>Protección contra incendios</h4><p>Prevención, detección y extinción de incendios. Enfoque por «escenario de incendio» + Código FSS. Reglas 1–23.</p></a>
-      <a class="mapcard" href="#cap3" style="--mc:#f59f00"><span class="mc-n">III</span><h4>Dispositivos de salvamento</h4><p>Equipos y medios para preservar la vida tras el abandono del buque, según el Código LSA. Reglas 1–37.</p></a>
+      <a class="mapcard" href="#cap3" style="--mc:#f59f00"><span class="mc-n">III</span><h4>Dispositivos de salvamento</h4><p>Equipos y medios para preservar la vida tras el abandono del buque, según el Código LSA. Reglas 1–37 (+17-1).</p></a>
       <a class="mapcard" href="#cap4" style="--mc:#8b5cf6"><span class="mc-n">IV</span><h4>Radiocomunicaciones</h4><p>Sistema Mundial de Socorro y Seguridad Marítimos (GMDSS), áreas A1–A4, equipos, guardias y energía. Reglas 1–18.</p></a>
       <a class="mapcard" href="#comp-hssc" style="--mc:#059669"><span class="mc-n">+</span><h4>Complementos</h4><p>HSSC, PSC, enmiendas, códigos asociados, responsabilidades del oficial, checklists, glosario y tablas de referencia.</p></a>
     </div>
@@ -483,6 +515,31 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       </tbody>
     </table></div>
 
+    <figure class="fig">
+    <svg viewBox="0 0 760 175" role="img" aria-label="Ciclo quinquenal de reconocimientos">
+      <text x="40" y="34" class="t">BUQUES DE CARGA · CICLO HSSC</text>
+      <text x="716" y="34" text-anchor="end" class="t">BUQUES DE PASAJE: RENOVACIÓN CADA 12 MESES</text>
+      <line x1="40" y1="46" x2="716" y2="46" class="ln" stroke-dasharray="2 6"/>
+      <line x1="40" y1="92" x2="716" y2="92" class="ac" stroke-width="3"/>
+      <circle cx="40" cy="92" r="8" class="acs"/>
+      <text x="40" y="126" text-anchor="middle" class="h">Inicial</text>
+      <text x="40" y="142" text-anchor="middle" class="t">Puesta en servicio</text>
+      <circle cx="175" cy="92" r="6" class="acs2"/>
+      <text x="175" y="126" text-anchor="middle" class="t">Anual · ±3 meses</text>
+      <rect x="265" y="74" width="90" height="36" rx="10" class="band"/>
+      <text x="310" y="128" text-anchor="middle" class="t">Intermedio / Periódico</text>
+      <text x="310" y="142" text-anchor="middle" class="t">2.º–3.er año</text>
+      <circle cx="445" cy="92" r="6" class="acs2"/>
+      <text x="445" y="126" text-anchor="middle" class="t">Anual · ±3 meses</text>
+      <circle cx="580" cy="92" r="6" class="acs2"/>
+      <text x="580" y="126" text-anchor="middle" class="t">Anual · ±3 meses</text>
+      <circle cx="716" cy="92" r="8" class="acs"/>
+      <text x="716" y="126" text-anchor="middle" class="h">Renovación</text>
+      <text x="716" y="142" text-anchor="middle" class="t">5 años</text>
+    </svg>
+    <figcaption>Fig. I-1 · Ciclo quinquenal de reconocimientos y ventanas de inspección (HSSC).</figcaption>
+    </figure>
+
     <article class="regla"><div class="regla-h"><span class="rn">Regla 11</span><h4>Mantenimiento de las condiciones después del reconocimiento</h4></div><div class="regla-b">
       <ul>
         <li><strong>Obligación continua</strong>: el buque y su equipo deben mantenerse en todo momento en condiciones que cumplan el SOLAS. No basta con pasar la inspección: se debe mantener el estándar.</li>
@@ -563,13 +620,13 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     <!-- INTERACCION / ENMIENDAS -->
     <div class="sub-t" id="cap1-extra"><span class="bar"></span><h3>Interacción, enmiendas y conclusión del Capítulo I</h3></div>
     <div class="grid3">
-      <div class="mini"><h5>🔄 Sistema Armonizado (HSSC)</h5><p>El Capítulo I se integra con el HSSC, que sincroniza los intervalos de reconocimientos de SOLAS, MARPOL, Líneas de Carga y otros convenios, reduciendo carga administrativa y costes.</p></div>
+      <div class="mini"><h5>🔄 Sistema Armonizado (HSSC)</h5><p>El Capítulo I se integra con el HSSC, que sincroniza los intervalos de reconocimientos de SOLAS, MARPOL, Líneas de Carga y otros convenios, reduciendo carga administrativa y costes. <em>(Ver Complemento 1)</em>.</p></div>
       <div class="mini"><h5>🧾 Código ISM (Cap. IX)</h5><p>El cumplimiento del ISM es necesario para que el Certificado de Gestión de la Seguridad (SMC) sea válido; el SMC es requisito para la emisión de los certificados SOLAS.</p></div>
       <div class="mini"><h5>🛡️ ISPS (Cap. XI-2)</h5><p>Aunque el Capítulo I no menciona directamente el ISPS, el Certificado Internacional de Protección del Buque (ISSC) se emite en el marco de las inspecciones del Capítulo I.</p></div>
     </div>
     <div class="note"><span class="ni">📜</span><div>
       <h5>Enmiendas recientes</h5>
-      <p><strong>Enmiendas de 2014 (MSC.338(91))</strong>: cambios en los formularios de los certificados para reflejar los nuevos requisitos de II-1 (protección contra ruido), II-2 (equipos de respiración) y III (recuperación de personas del agua). · <strong>Sistema GISIS</strong>: la OMI centraliza la comunicación de exenciones, inspecciones y detenciones para mayor transparencia y seguimiento.</p>
+      <p><strong>Enmiendas de 2014 (MSC.338(91))</strong>: cambios en los formularios de los certificados para reflejar los nuevos requisitos de II-1 (protección contra ruido, Regla 3-12), II-2 (equipos de respiración) y III (recuperación de personas del agua, Regla 17-1). · <strong>Sistema GISIS</strong>: la OMI centraliza la comunicación de exenciones, inspecciones y detenciones para mayor transparencia y seguimiento.</p>
     </div></div>
     <div class="card">
       <h4 style="font-family:'Space Grotesk';margin-bottom:8px">Conclusión del Capítulo I</h4>
@@ -595,7 +652,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
     <div class="ch-intro">
       <p>El Capítulo II-1 es el <strong>pilar técnico</strong> que garantiza la integridad física del buque. Aborda tres áreas interconectadas: <strong>subdivisión y estabilidad</strong> (capacidad de mantenerse a flote y estable tras una avería), <strong>maquinaria</strong> (fiabilidad de propulsión y auxiliares) e <strong>instalaciones eléctricas</strong> (suministro a sistemas críticos, incluidas fuentes de emergencia).</p>
-      <p style="margin-top:8px">Ha evolucionado significativamente: enmiendas sobre <strong>protección contra el ruido</strong> (en vigor 2014/2018), requisitos para <strong>combustibles de bajo punto de inflamación</strong> (GNL y alternativos) y refuerzo del <strong>acceso a las estructuras</strong> para inspecciones, especialmente en petroleros y graneleros.</p>
+      <p style="margin-top:8px">Ha evolucionado significativamente: enmiendas sobre <strong>protección contra el ruido</strong> (Regla 3-12, en vigor 2014/2018), requisitos para <strong>combustibles de bajo punto de inflamación</strong> (GNL y alternativos, Parte G) y refuerzo del <strong>acceso a las estructuras</strong> para inspecciones, especialmente en petroleros y graneleros.</p>
     </div>
 
     <!-- PARTE A -->
@@ -603,7 +660,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
       <p class="txt">«Esta parte se aplica a los buques cuya quilla haya sido colocada, o cuya construcción se halle en una fase equivalente, en o después de la fecha de entrada en vigor de las enmiendas correspondientes».</p>
       <ul>
-        <li>La aplicación depende de la <strong>fecha de construcción</strong>: las enmiendas no suelen ser retroactivas en su totalidad, aunque algunas sí lo son (p. ej., ciertos casos de ruido).</li>
+        <li>La aplicación depende de la <strong>fecha de construcción</strong>: las enmiendas no suelen ser retroactivas en su totalidad, aunque algunas sí lo son (por ejemplo, ciertos casos de protección contra el ruido).</li>
         <li><strong>Buques existentes</strong>: cumplen como mínimo los requisitos vigentes al momento de su construcción; si se someten a reparaciones o modificaciones importantes, pueden verse obligados a cumplir requisitos más recientes si la Administración lo considera razonable y factible.</li>
         <li>Excepciones: buques de guerra, tropas, pesqueros, etc., según el Capítulo I, Regla 3.</li>
       </ul>
@@ -628,7 +685,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
     <!-- PARTE A-1 -->
     <div class="sub-t" id="cap21-a1"><span class="bar"></span><h3>Parte A-1 – Estructura del Buque</h3><span class="ref">Reglas 3-1 a 3-12</span></div>
-    <p style="margin-bottom:14px;color:var(--mut)">Añadida por enmiendas posteriores para abordar aspectos de integridad estructural no cubiertos por las partes originales.</p>
+    <p style="margin-bottom:14px;color:var(--mut)">Añadida en enmiendas posteriores para abordar aspectos de integridad estructural no cubiertos por las partes originales.</p>
     <article class="regla"><div class="regla-h"><span class="rn">Regla 3-1</span><h4>Protección con revestimientos (Coating)</h4></div><div class="regla-b">
       <ul>
         <li><strong>Aplicación</strong>: tanques de lastre de buques de carga (incluidos petroleros) y espacios de carga de graneleros.</li>
@@ -649,15 +706,15 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li><strong>Manual de acceso a la estructura</strong>: planos de acceso, puntos de inspección y procedimientos.</li>
       </ul>
     </div></article>
-    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-4</span><h4>Protección contra el ruido</h4></div><div class="regla-b">
-      <ul>
-        <li><strong>Entrada en vigor</strong>: buques nuevos desde el 1 de julio de 2014; buques existentes con contrato de construcción entre 2009 y 2014, bajo ciertas condiciones (2018).</li>
-        <li>Límites de ruido en espacios de trabajo y alojamiento para proteger la salud de la tripulación; medidas de insonorización y aislamiento acústico.</li>
-        <li>Excepciones para buques existentes contratados antes de 2014 que no cumplan.</li>
-      </ul>
+    <article class="regla"><div class="regla-h"><span class="rn">Reglas 3-4 a 3-11</span><h4>Otras disposiciones estructurales</h4></div><div class="regla-b">
+      <p>Incluyen requisitos sobre <strong>accesorios de cubierta</strong>, <strong>planos de construcción</strong>, resistencia de la estructura, prevención de la corrosión e inspección de soldaduras. Son de carácter técnico y suelen remitir a las normas de las sociedades de clasificación.</p>
     </div></article>
-    <article class="regla"><div class="regla-h"><span class="rn">Reglas 3-5 a 3-12</span><h4>Otras disposiciones estructurales</h4></div><div class="regla-b">
-      <p>Requisitos sobre resistencia de la estructura, prevención de la corrosión e inspección de soldaduras. De carácter técnico, suelen remitir a las normas de las sociedades de clasificación.</p>
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 3-12</span><h4>Protección contra el ruido</h4></div><div class="regla-b">
+      <ul>
+        <li><strong>Entrada en vigor</strong>: buques nuevos cuya quilla se colocó a partir del <span class="hl">1 de julio de 2014</span>; buques existentes con contrato de construcción entre 2009 y 2014, aplicable a partir de <strong>2018</strong>.</li>
+        <li><strong>Requisito</strong>: cumplir los límites de ruido del <strong>Código de Ruido</strong> de la OMI en espacios de trabajo y alojamiento, para proteger la salud de la tripulación; medidas de insonorización y aislamiento acústico.</li>
+        <li><strong>Excepciones</strong>: buques existentes cuya construcción se contrató antes de 2014 y no quede comprendida en la ventana anterior.</li>
+      </ul>
     </div></article>
 
     <!-- PARTE B -->
@@ -682,6 +739,30 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li><strong>Reglas 13–17</strong> – Aberturas en mamparos y cubiertas: puertas estancas, escotillas y pasos de tubería con cierres estancos operables desde la cubierta principal y, en algunos casos, desde un punto superior.</li>
       </ul>
     </div>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Sección transversal del buque">
+      <path d="M70 66 L690 66 L640 246 L130 246 Z" class="ac" stroke-width="3"/>
+      <line x1="136" y1="222" x2="634" y2="222" class="ac" stroke-width="2"/>
+      <line x1="210" y1="66" x2="222" y2="222" class="ac" stroke-width="2" stroke-dasharray="7 5"/>
+      <line x1="330" y1="66" x2="336" y2="222" class="ac" stroke-width="2" stroke-dasharray="7 5"/>
+      <line x1="450" y1="66" x2="450" y2="222" class="ac" stroke-width="2" stroke-dasharray="7 5"/>
+      <line x1="560" y1="66" x2="552" y2="222" class="ac" stroke-width="2" stroke-dasharray="7 5"/>
+      <line x1="20" y1="150" x2="740" y2="150" class="mut" stroke-width="2" stroke-dasharray="12 7"/>
+      <line x1="712" y1="70" x2="712" y2="146" class="mut" stroke-width="2"/>
+      <polygon points="712,66 707,78 717,78" fill="var(--mut)"/>
+      <polygon points="712,150 707,138 717,138" fill="var(--mut)"/>
+      <text x="76" y="30" class="h">Cubierta de intemperie</text>
+      <line x1="150" y1="38" x2="150" y2="62" class="ln"/>
+      <text x="238" y="288" class="h">Mamparos estancos</text>
+      <line x1="300" y1="274" x2="334" y2="232" class="ln"/>
+      <text x="470" y="266" class="h">Doble fondo</text>
+      <line x1="505" y1="252" x2="520" y2="230" class="ln"/>
+      <text x="24" y="140" class="t">Línea de flotación</text>
+      <text x="700" y="112" text-anchor="end" class="t">Francobordo</text>
+    </svg>
+    <figcaption>Fig. II-1-1 · Integridad estanca: subdivisión por mamparos, doble fondo y francobordo (Parte B).</figcaption>
+    </figure>
 
     <div class="mini" style="margin-bottom:16px"><h5>Parte B-3 · Asignación del francobordo de subdivisión (Regla 18)</h5>
       <p>Buques de pasaje: se asigna un <strong>francobordo de subdivisión</strong> que determina la altura mínima de la cubierta de intemperie sobre la flotación, calculado según el grado de subdivisión (número de compartimentos que pueden inundarse).</p>
@@ -797,7 +878,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     <!-- EXTRA -->
     <div class="sub-t" id="cap21-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo II-1</h3></div>
     <div class="grid2">
-      <div class="mini"><h5>📜 Enmiendas recientes</h5><p><strong>Ruido (Regla 3-12)</strong>: buques nuevos desde 2014 y algunos existentes. · <strong>Parte G / Código IGF</strong>: creciente adopción del GNL. · <strong>Acceso a estructuras (3-3)</strong>: preparación de inspecciones de la sociedad de clasificación. · <strong>HSSC</strong>: reconocimientos de construcción sincronizados con otros certificados SOLAS.</p></div>
+      <div class="mini"><h5>📜 Enmiendas recientes</h5><p><strong>Ruido (Regla 3-12, ver Parte A-1)</strong>: buques nuevos desde 2014; existentes con contrato 2009–2014, desde 2018. · <strong>Parte G / Código IGF</strong>: creciente adopción del GNL. · <strong>Acceso a estructuras (3-3)</strong>: preparación de inspecciones de la sociedad de clasificación. · <strong>HSSC</strong>: reconocimientos de construcción sincronizados con otros certificados SOLAS.</p></div>
       <div class="mini"><h5>🔗 Interacción con otros capítulos y códigos</h5><p><strong>Cap. II-2</strong>: la estabilidad e integridad estanca son clave ante incendios que puedan debilitar la estructura y provocar inundaciones. · <strong>Cap. XII (graneleros)</strong>: resistencia estructural y alarmas de entrada de agua. · <strong>Código IS</strong>: base de las reglas de estabilidad. · <strong>Código IGF</strong>: base de la Parte G.</p></div>
     </div>
     <div class="card" style="margin-top:16px">
@@ -823,10 +904,35 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     </header>
 
     <div class="ch-intro">
-      <p>Junto con el Capítulo III, uno de los pilares operativos más críticos del SOLAS. Objetivo cuádruple: <strong>1) prevenir</strong> los incendios, <strong>2) detectarlos</strong> rápidamente, <strong>3) contenerlos</strong> y <strong>4) extinguirlos</strong>, garantizando vías de evacuación seguras. Tras incendios trágicos como el <em>Scandinavian Star</em> (1990), el capítulo fue completamente revisado en el año 2000 (en vigor el <strong>1 de julio de 2002</strong>), adoptando un enfoque basado en el <span class="hl">«escenario de incendio»</span>: las reglas siguen la secuencia lógica prevención → detección → supresión → evacuación.</p>
+      <p>Junto con el Capítulo III, uno de los pilares operativos más críticos del SOLAS. Objetivo cuádruple: <strong>1) prevenir</strong> los incendios, <strong>2) detectarlos</strong> rápidamente, <strong>3) contenerlos</strong> y <strong>4) extinguirlos</strong>, garantizando al mismo tiempo vías de evacuación seguras. Tras incendios trágicos como el <em>Scandinavian Star</em> (1990), el capítulo fue completamente revisado en el año 2000 (en vigor el <strong>1 de julio de 2002</strong>), adoptando un enfoque basado en el <span class="hl">«escenario de incendio»</span>: las reglas siguen la secuencia lógica prevención → detección → supresión → evacuación.</p>
       <p style="margin-top:8px">Los requisitos técnicos detallados se trasladaron al <strong>Código Internacional de Sistemas de Seguridad contra Incendios (Código FSS)</strong>, de carácter obligatorio, quedando en el Convenio los requisitos funcionales y generales.</p>
-      <div class="flow"><span>🔥 Prevención</span><i>→</i><span>🚨 Detección</span><i>→</i><span>🧱 Contención</span><i>→</i><span>🧯 Extinción</span><i>→</i><span>🏃 Evacuación</span></div>
     </div>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 130" role="img" aria-label="Escenario de incendio">
+      <rect x="8" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="74" y="54" text-anchor="middle" font-size="20">🛡️</text>
+      <text x="74" y="78" text-anchor="middle" class="h">Prevención</text>
+      <line x1="140" y1="58" x2="152" y2="58" class="ar"/><polygon points="158,58 148,53 148,63" class="ah"/>
+      <rect x="158" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="224" y="54" text-anchor="middle" font-size="20">🚨</text>
+      <text x="224" y="78" text-anchor="middle" class="h">Detección</text>
+      <line x1="290" y1="58" x2="302" y2="58" class="ar"/><polygon points="308,58 298,53 298,63" class="ah"/>
+      <rect x="308" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="374" y="54" text-anchor="middle" font-size="20">🧱</text>
+      <text x="374" y="78" text-anchor="middle" class="h">Contención</text>
+      <line x1="440" y1="58" x2="452" y2="58" class="ar"/><polygon points="458,58 448,53 448,63" class="ah"/>
+      <rect x="458" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="524" y="54" text-anchor="middle" font-size="20">🧯</text>
+      <text x="524" y="78" text-anchor="middle" class="h">Extinción</text>
+      <line x1="590" y1="58" x2="602" y2="58" class="ar"/><polygon points="608,58 598,53 598,63" class="ah"/>
+      <rect x="608" y="26" width="144" height="64" rx="12" class="box"/>
+      <text x="680" y="54" text-anchor="middle" font-size="20">🏃</text>
+      <text x="680" y="78" text-anchor="middle" class="h">Evacuación</text>
+      <text x="380" y="116" text-anchor="middle" class="t">Enfoque por «escenario de incendio» (revisión de 2000, en vigor 01/07/2002)</text>
+    </svg>
+    <figcaption>Fig. II-2-1 · Secuencia lógica del escenario de incendio que estructura el capítulo.</figcaption>
+    </figure>
 
     <div class="sub-t" id="cap22-a"><span class="bar"></span><h3>Parte A – Generalidades</h3><span class="ref">Reglas 1 a 3</span></div>
     <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Aplicación</h4></div><div class="regla-b">
@@ -921,7 +1027,8 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li><strong>Extintores portátiles</strong> en número y tipo adecuados a cada riesgo.</li>
         <li><strong>Sistema de agua contra incendios</strong>: bombas, tuberías, mangueras y boquillas.</li>
         <li><strong>Aplicación local</strong> (rociadores) sobre puntos de mayor riesgo en máquinas.</li>
-        <li><strong>Equipos de respiración</strong> para entrar en espacios con humo o gases tóxicos.</li>
+        <li><strong>Equipos de respiración</strong> para entrar en espacios con humo o gases tóxicos, con <span class="hl">alarma audible cuando queden menos de 200 litros</span> de aire en la botella (enmienda 2014; buques existentes: 1 de julio de 2019).</li>
+        <li><strong>Aparatos radiotelefónicos portátiles</strong>: al menos <strong>dos por equipo de bomberos</strong>, a prueba de explosión (buques existentes: primer reconocimiento posterior al 1 de julio de 2018).</li>
         <li><strong>Conexión internacional de tierra</strong> para que los bomberos del puerto conecten sus mangueras.</li>
       </ul>
     </div></article>
@@ -1020,11 +1127,11 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
     <div class="sub-t" id="cap22-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo II-2</h3></div>
     <div class="note"><span class="ni">📜</span><div>
-      <h5>Enmiendas de 2014 (MSC.338(91)) y otras</h5>
+      <h5>Enmiendas de 2014 (MSC.338(91)) y otras — ya integradas en sus reglas</h5>
       <ul style="margin-left:18px;margin-top:6px">
-        <li><strong>Equipos de respiración</strong>: alarma audible cuando queden menos de <strong>200 litros</strong> de aire en la botella (buques existentes: 1 de julio de 2019).</li>
-        <li><strong>Aparatos radiotelefónicos portátiles</strong>: al menos <strong>dos por equipo de bomberos</strong>, a prueba de explosión (primer reconocimiento posterior al 1 de julio de 2018).</li>
-        <li><strong>Recarga de botellas de aire</strong>: medio de recarga o botellas de repuesto suficientes.</li>
+        <li><strong>Equipos de respiración (→ Regla 10)</strong>: alarma audible con &lt; 200 L de aire (existentes: 1 de julio de 2019).</li>
+        <li><strong>Radiotelefónicos portátiles (→ Regla 10)</strong>: dos por equipo de bomberos, Ex (primer reconocimiento tras 01/07/2018).</li>
+        <li><strong>Recarga de botellas de aire (→ Regla 15)</strong>: medio de recarga o botellas de repuesto suficientes.</li>
         <li><strong>Halones</strong>: prohibida la instalación de nuevos sistemas desde 1994; retirada progresiva de los existentes.</li>
         <li><strong>Inertización</strong>: requisitos ampliados a más tipos de buques y espacios.</li>
       </ul>
@@ -1048,12 +1155,52 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <h2>Dispositivos y Medios de Salvamento</h2>
         <p class="ch-en">Life-saving Appliances and Arrangements</p>
       </div>
-      <ul class="ch-meta"><li>5 Partes / 5 Secciones</li><li>Reglas 1–37</li><li>Código LSA</li><li>Supervivencia y abandono</li></ul>
+      <ul class="ch-meta"><li>5 Partes / 5 Secciones</li><li>Reglas 1–37 (+17-1)</li><li>Código LSA</li><li>Supervivencia y abandono</li></ul>
     </header>
 
     <div class="ch-intro">
       <p>El Capítulo III regula todos los equipos y sistemas destinados a <strong>preservar la vida de las personas a bordo en caso de abandono del buque</strong>: evacuar de manera segura, ordenada y rápida, y sobrevivir hasta el rescate. Se aplica a todos los buques, con requisitos adicionales para los de pasaje y de carga, y su contenido se basa en el <strong>Código Internacional de Dispositivos de Salvamento (Código LSA)</strong>, con las especificaciones técnicas de cada equipo.</p>
     </div>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 200" role="img" aria-label="Dispositivos de salvamento">
+      <g class="ac" stroke-width="3">
+        <circle cx="70" cy="78" r="34"/><circle cx="70" cy="78" r="14"/>
+        <line x1="70" y1="44" x2="70" y2="64"/><line x1="70" y1="92" x2="70" y2="112"/>
+        <line x1="36" y1="78" x2="56" y2="78"/><line x1="84" y1="78" x2="104" y2="78"/>
+      </g>
+      <text x="70" y="146" text-anchor="middle" class="h">Aro salvavidas</text>
+      <text x="70" y="162" text-anchor="middle" class="t">Luz automática · fumígena</text>
+      <g class="ac" stroke-width="3">
+        <path d="M172 50 l16 -9 9 9 9 -9 16 9 v42 h-16 v24 h-18 v-24 h-16 z"/>
+      </g>
+      <text x="197" y="146" text-anchor="middle" class="h">Chaleco salvavidas</text>
+      <text x="197" y="162" text-anchor="middle" class="t">Con luz · +10 % niños</text>
+      <g class="ac" stroke-width="3">
+        <path d="M282 96 q42 26 84 0 l-9 -20 h-66 z"/><path d="M296 76 v-14 h56 v14"/>
+      </g>
+      <text x="324" y="146" text-anchor="middle" class="h">Bote salvavidas</text>
+      <text x="324" y="162" text-anchor="middle" class="t">Cerrado · caída libre</text>
+      <g class="ac" stroke-width="3">
+        <path d="M420 96 a32 32 0 0 1 64 0"/><line x1="410" y1="96" x2="494" y2="96"/><line x1="452" y1="64" x2="452" y2="50"/>
+      </g>
+      <text x="452" y="146" text-anchor="middle" class="h">Balsa salvavidas</text>
+      <text x="452" y="162" text-anchor="middle" class="t">Zafada hidrostática</text>
+      <g class="ac" stroke-width="3">
+        <rect x="556" y="68" width="26" height="36" rx="6"/><line x1="569" y1="68" x2="569" y2="50"/>
+        <path d="M553 50 a22 22 0 0 1 32 0"/><path d="M545 42 a32 32 0 0 1 48 0"/>
+      </g>
+      <text x="569" y="146" text-anchor="middle" class="h">EPIRB 406 MHz</text>
+      <text x="569" y="162" text-anchor="middle" class="t">Libre flotación</text>
+      <g class="ac" stroke-width="3">
+        <rect x="676" y="74" width="28" height="30" rx="5"/><line x1="690" y1="74" x2="690" y2="48"/>
+        <path d="M672 44 a26 26 0 0 1 36 0"/>
+      </g>
+      <text x="690" y="146" text-anchor="middle" class="h">SART / AIS-SART</text>
+      <text x="690" y="162" text-anchor="middle" class="t">Localización 9 GHz / AIS</text>
+    </svg>
+    <figcaption>Fig. III-1 · Dispositivos de salvamento regulados por el Capítulo III y el Código LSA.</figcaption>
+    </figure>
 
     <div class="sub-t" id="cap3-a"><span class="bar"></span><h3>Parte A – Generalidades</h3><span class="ref">Reglas 1 a 5</span></div>
     <article class="regla"><div class="regla-h"><span class="rn">Regla 1</span><h4>Ámbito de aplicación</h4></div><div class="regla-b">
@@ -1079,7 +1226,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <div class="gl"><b>Puesta a flote por caída libre</b><p>La embarcación cae al agua con su dotación, sin medios retardadores.</p></div>
         <div class="gl"><b>Traje de inmersión</b><p>Reduce la pérdida de calor corporal en aguas frías.</p></div>
         <div class="gl"><b>Dispositivo inflable / inflado</b><p>Cámaras no rígidas llenas de gas; guardado desinflado / guardado inflado y listo.</p></div>
-        <div class="gl"><b>Flotación de navegación con calado mínimo</b><p>Sin carga, quilla a nivel, 10 % de provisiones y combustible; en pasaje, con todas las personas.</p></div>
+        <div class="gl"><b>Flotación con calado mínimo</b><p>Sin carga, quilla a nivel, 10 % de provisiones y combustible; en pasaje, con todas las personas.</p></div>
         <div class="gl"><b>Sistema de evacuación marino (MES)</b><p>Transfiere rápidamente personas desde la cubierta a una embarcación a flote.</p></div>
         <div class="gl"><b>Dispositivo innovador</b><p>Características nuevas no regidas por el capítulo/Código, con seguridad igual o superior.</p></div>
         <div class="gl"><b>Estabilidad positiva</b><p>La embarcación vuelve a su posición original al eliminarse el momento escorante.</p></div>
@@ -1102,6 +1249,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     <div class="sub-t" id="cap3-s1"><span class="bar"></span><h3>Parte B · Sección I – Prescripciones para buques de pasaje y de carga</h3><span class="ref">Reglas 6 a 20</span></div>
 
     <article class="regla"><div class="regla-h"><span class="rn">Regla 6</span><h4>Comunicaciones</h4></div><div class="regla-b">
+      <p class="txt">Aplicación: buques de pasaje y buques de carga de 300 GT y superiores. Para buques construidos antes del 1 de febrero de 1992, los plazos de cumplimiento se extendieron hasta 1995.</p>
       <ul>
         <li><strong>Aparatos radiotelefónicos bidireccionales VHF</strong>: mínimo <strong>3</strong> (buques de pasaje y de carga ≥ 500 GT) y <strong>2</strong> (carga de 300 a 500 GT).</li>
         <li><strong>Respondedores de radar (SART)</strong>: al menos <strong>uno a cada banda</strong> (≥ 500 GT y pasaje) y al menos <strong>uno</strong> (300–500 GT). Estibados para colocarlos rápidamente en cualquier embarcación de supervivencia (salvo balsas de la Regla III/31.1.4); alternativa: uno en cada embarcación. En botes de caída libre: uno en el bote y otro cerca del puente.</li>
@@ -1201,6 +1349,14 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       </ul>
     </div></article>
 
+    <article class="regla"><div class="regla-h"><span class="rn">Regla 17-1</span><h4>Recuperación de personas del agua</h4></div><div class="regla-b">
+      <ul>
+        <li>Todos los buques deben disponer de <strong>planes y procedimientos específicos</strong> para la recuperación de personas del agua.</li>
+        <li>Deben <strong>identificar el equipo</strong> a utilizar y las <strong>medidas para minimizar el riesgo</strong> para el personal que participe en el rescate.</li>
+        <li><strong>En vigor</strong>: 1 de julio de 2014. Buques existentes: cumplimiento en el <strong>primer reconocimiento de equipo de seguridad</strong> posterior a esa fecha.</li>
+      </ul>
+    </div></article>
+
     <article class="regla"><div class="regla-h"><span class="rn">Regla 18</span><h4>Aparatos lanzacabos</h4></div><div class="regla-b"><p>Todo buque lleva un aparato lanzacabos que cumpla con el Código LSA.</p></div></article>
 
     <article class="regla"><div class="regla-h"><span class="rn">Regla 19</span><h4>Formación y ejercicios periódicos para casos de emergencia</h4></div><div class="regla-b">
@@ -1209,7 +1365,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li><strong>Instrucción a pasajeros</strong>: reunión en las 24 h siguientes al embarque (viajes &gt; 24 h); instrucciones inmediatas antes o después de la salida cuando embarquen nuevos pasajeros (anuncio por megafonía).</li>
         <li><strong>Frecuencia</strong>: al menos un ejercicio de <strong>abandono</strong> y uno de <strong>lucha contra incendios</strong> cada mes; si más del 25 % de la tripulación no participó el mes anterior, ejercicios en las <strong>24 h</strong> siguientes a la salida.</li>
         <li><strong>Contenido del ejercicio de abandono</strong>: convocatoria por alarma; acudir y prepararse; comprobar indumentaria y chalecos; arriar al menos un bote; arrancar y operar su motor; accionar pescantes de balsas; simular búsqueda y rescate; instrucciones sobre equipos radioeléctricos de salvamento.</li>
-        <li><strong>Puesta a flote</strong>: cada bote salvavidas, al agua y maniobrando al menos <strong>cada 3 meses</strong>; botes de caída libre, cada <strong>6 meses</strong> (12 con autorización); botes de rescate, cada 3 meses.</li>
+        <li><strong>Puesta a flote</strong>: cada bote salvavidas, al agua y maniobrando al menos <strong>cada 3 meses</strong>; botes de caída libre, cada <strong>6 meses</strong> (12 con autorización; pueden arriarse al agua entre lanzamientos por caída libre); botes de rescate, cada 3 meses.</li>
         <li><strong>MES</strong>: práctica de procedimientos de despliegue; despliegue completo en el agua de la cuadrilla al menos cada <strong>2 años</strong> (máximo 3).</li>
         <li><strong>Formación a bordo</strong>: nuevos tripulantes formados en dispositivos de salvamento y extinción en un máximo de <strong>dos semanas</strong> (balsas, hipotermia, uso con mal tiempo…).</li>
         <li><strong>Registros</strong>: fechas y pormenores de todos los ejercicios en el diario de navegación.</li>
@@ -1228,6 +1384,32 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li>Puestos de estiba marcados con símbolos del tipo de dispositivo.</li>
       </ul>
     </div></article>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 130" role="img" aria-label="Secuencia de abandono">
+      <rect x="8" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="74" y="54" text-anchor="middle" font-size="20">🚨</text>
+      <text x="74" y="78" text-anchor="middle" class="h">Alarma general</text>
+      <line x1="140" y1="58" x2="152" y2="58" class="ar"/><polygon points="158,58 148,53 148,63" class="ah"/>
+      <rect x="158" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="224" y="54" text-anchor="middle" font-size="20">🧑‍🤝‍🧑</text>
+      <text x="224" y="78" text-anchor="middle" class="h">Reunión · 0,35 m²</text>
+      <line x1="290" y1="58" x2="302" y2="58" class="ar"/><polygon points="308,58 298,53 298,63" class="ah"/>
+      <rect x="308" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="374" y="54" text-anchor="middle" font-size="20">🪜</text>
+      <text x="374" y="78" text-anchor="middle" class="h">Embarco</text>
+      <line x1="440" y1="58" x2="452" y2="58" class="ar"/><polygon points="458,58 448,53 448,63" class="ah"/>
+      <rect x="458" y="26" width="132" height="64" rx="12" class="box"/>
+      <text x="524" y="54" text-anchor="middle" font-size="20">🛶</text>
+      <text x="524" y="78" text-anchor="middle" class="h">Puesta a flote</text>
+      <line x1="590" y1="58" x2="602" y2="58" class="ar"/><polygon points="608,58 598,53 598,63" class="ah"/>
+      <rect x="608" y="26" width="144" height="64" rx="12" class="box"/>
+      <text x="680" y="54" text-anchor="middle" font-size="20">🚁</text>
+      <text x="680" y="78" text-anchor="middle" class="h">Rescate (SAR)</text>
+      <text x="380" y="116" text-anchor="middle" class="t">Pasaje: ≤ 30 min · Carga: ≤ 10 min desde la orden de abandono</text>
+    </svg>
+    <figcaption>Fig. III-2 · Secuencia de abandono: de la alarma al rescate.</figcaption>
+    </figure>
 
     <div class="sub-t" id="cap3-s2"><span class="bar"></span><h3>Parte B · Sección II – Requisitos adicionales para buques de pasaje</h3><span class="ref">Reglas 21 a 30</span></div>
 
@@ -1342,13 +1524,13 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
     <div class="sub-t" id="cap3-extra"><span class="bar"></span><h3>Enmiendas, interacción y conclusión del Capítulo III</h3></div>
     <div class="note"><span class="ni">📜</span><div>
-      <h5>Enmiendas recientes</h5>
+      <h5>Enmiendas recientes — integradas en sus reglas</h5>
       <ul style="margin-left:18px;margin-top:6px">
-        <li><strong>Regla III/17-1</strong> (en vigor 01/07/2014): planes y procedimientos de <strong>recuperación de personas del agua</strong>, con identificación del equipo y medidas para minimizar riesgos; buques existentes: primer reconocimiento de equipo posterior.</li>
-        <li><strong>Regla III/20.11</strong>: dispositivos de puesta a flote con examen completo cada 5 años y prueba dinámica de frenado; suelta en carga probada con 1,1× el peso total cada 5 años.</li>
-        <li><strong>Regla III/20.8.2</strong>: despliegue secuencial rotatorio de los MES cada 6 años.</li>
-        <li><strong>Regla III/19.3.3.4</strong>: los botes de caída libre pueden arriarse al agua en lugar de lanzarse, siempre que se lancen por caída libre al menos cada 6 meses.</li>
-        <li><strong>Reglas III/32.2 y III/22.3</strong>: luces en todos los chalecos salvavidas (carga y pasaje), con plazos para buques existentes.</li>
+        <li><strong>Regla III/17-1 (→ ver su artículo en Sección I)</strong>: recuperación de personas del agua, en vigor 01/07/2014.</li>
+        <li><strong>Regla III/20.11 (→ Regla 20)</strong>: dispositivos de puesta a flote con examen completo cada 5 años, prueba dinámica de frenado y suelta en carga al 1,1×.</li>
+        <li><strong>Regla III/20.8.2 (→ Regla 20)</strong>: despliegue secuencial rotatorio de los MES cada 6 años.</li>
+        <li><strong>Regla III/19.3.3.4 (→ Regla 19)</strong>: los botes de caída libre pueden arriarse al agua entre lanzamientos por caída libre (mínimo cada 6 meses).</li>
+        <li><strong>Reglas III/32.2 y III/22.3 (→ Reglas 32 y 22)</strong>: luces en todos los chalecos salvavidas (carga y pasaje), con plazos para buques existentes.</li>
       </ul>
     </div></div>
     <div class="grid2">
@@ -1394,7 +1576,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <div class="gl"><b>DSC</b><p>Llamada selectiva digital: códigos digitales para establecer contacto y transferir información (UIT-R).</p></div>
         <div class="gl"><b>EPIRB</b><p>Radiobaliza de 406 MHz: alerta de socorro vía satélite a un RCC y señales de localización en el siniestro.</p></div>
         <div class="gl"><b>Radiocomunicaciones generales</b><p>Comunicaciones distintas de socorro, urgencia y seguridad.</p></div>
-        <div class="gl"><b>GMDSS</b><p>Sistema Mundial de Socorro y Seguridad Marítimos; realiza las funciones de la Regla 4.1.1.</p></div>
+        <div class="gl"><b>GMDSS</b><p>Sistema Mundial de Socorro y Seguridad Marítimos; realiza las funciones de la Regla 4.</p></div>
         <div class="gl"><b>Identidades GMDSS</b><p>Indicativo de llamada, MMSI, identidad hexadecimal de la EPIRB, identidades del servicio satélite y números de serie.</p></div>
         <div class="gl"><b>Localización (locating)</b><p>Determinación de la posición de buques, aeronaves, embarcaciones o personas en peligro.</p></div>
         <div class="gl"><b>MSI</b><p>Información de seguridad marítima: avisos náuticos y meteorológicos, pronósticos y mensajes urgentes.</p></div>
@@ -1412,6 +1594,37 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         </tbody>
       </table></div>
     </div></article>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 320" role="img" aria-label="Mapa de áreas marítimas GMDSS">
+      <rect x="150" y="0" width="610" height="320" class="z3"/>
+      <rect x="150" y="0" width="610" height="52" class="z4"/>
+      <rect x="150" y="268" width="610" height="52" class="z4"/>
+      <rect x="150" y="52" width="120" height="216" class="z2"/>
+      <rect x="150" y="52" width="52" height="216" class="z1"/>
+      <path d="M0 0 L120 0 L100 60 L132 120 L92 200 L122 320 L0 320 Z" class="land"/>
+      <line x1="150" y1="52" x2="760" y2="52" class="mut" stroke-width="2" stroke-dasharray="10 6"/>
+      <line x1="150" y1="268" x2="760" y2="268" class="mut" stroke-width="2" stroke-dasharray="10 6"/>
+      <text x="752" y="44" text-anchor="end" class="t">70° N</text>
+      <text x="752" y="284" text-anchor="end" class="t">70° S</text>
+      <text x="60" y="150" text-anchor="middle" class="h" transform="rotate(-90 60 150)">TIERRA</text>
+      <g stroke="var(--acc)" stroke-width="3" fill="none">
+        <line x1="118" y1="120" x2="118" y2="86"/><path d="M108 96 l10 -12 10 12"/>
+      </g>
+      <text x="176" y="170" text-anchor="middle" class="h" transform="rotate(-90 176 170)">A1 · VHF DSC</text>
+      <text x="228" y="180" text-anchor="middle" class="h" transform="rotate(-90 228 180)">A2 · MF DSC</text>
+      <text x="470" y="166" text-anchor="middle" class="h">A3 · SATÉLITE RECONOCIDO</text>
+      <text x="470" y="184" text-anchor="middle" class="t">Inmarsat · Iridium (70°N–70°S)</text>
+      <text x="470" y="30" text-anchor="middle" class="h">A4 · POLAR (MF/HF)</text>
+      <text x="470" y="300" text-anchor="middle" class="h">A4 · POLAR (MF/HF)</text>
+      <g class="ac" stroke-width="3">
+        <path d="M430 210 L510 210 L498 228 L442 228 Z"/><path d="M446 210 v-12 h48 v12"/>
+      </g>
+      <text x="176" y="240" class="t">20–30 mn</text>
+      <text x="228" y="240" class="t">100–150 mn</text>
+    </svg>
+    <figcaption>Fig. IV-1 · Áreas marítimas GMDSS A1–A4 y sus coberturas.</figcaption>
+    </figure>
 
     <article class="regla"><div class="regla-h"><span class="rn">Regla 3</span><h4>Exenciones</h4></div><div class="regla-b">
       <ul>
@@ -1436,6 +1649,32 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <li>Transmitir y recibir <strong>radiocomunicaciones generales</strong>.</li>
       </ul>
     </div></article>
+
+    <figure class="fig">
+    <svg viewBox="0 0 760 240" role="img" aria-label="Ruteo de alertas GMDSS">
+      <g class="ac" stroke-width="3"><path d="M60 130 L150 130 L136 152 L74 152 Z"/><path d="M78 130 v-14 h54 v14"/></g>
+      <text x="105" y="176" text-anchor="middle" class="h">BUQUE</text>
+      <circle cx="380" cy="52" r="16" class="acs2"/>
+      <line x1="352" y1="52" x2="336" y2="52" class="ac" stroke-width="3"/>
+      <line x1="408" y1="52" x2="424" y2="52" class="ac" stroke-width="3"/>
+      <text x="380" y="24" text-anchor="middle" class="h">Satélite (406 MHz / SES)</text>
+      <g class="ac" stroke-width="3"><line x1="380" y1="208" x2="380" y2="172"/><path d="M366 208 h28"/><path d="M370 178 l10 -12 10 12"/></g>
+      <text x="380" y="230" text-anchor="middle" class="h">Estación costera (VHF / MF / HF)</text>
+      <rect x="636" y="96" width="110" height="52" rx="10" class="box"/>
+      <text x="691" y="118" text-anchor="middle" class="h">RCC</text>
+      <text x="691" y="134" text-anchor="middle" class="t">Coordinación SAR</text>
+      <path d="M150 116 Q260 62 348 50" class="ar"/><polygon points="352,50 340,45 342,56" class="ah"/>
+      <text x="236" y="72" class="t">Alerta buque–tierra</text>
+      <path d="M400 58 Q540 72 636 102" class="ar"/><polygon points="640,104 628,98 630,108" class="ah"/>
+      <path d="M150 142 Q260 178 356 192" class="ar"/><polygon points="360,192 348,187 350,198" class="ah"/>
+      <text x="236" y="188" class="t">DSC / radiotelefonía</text>
+      <path d="M404 198 Q540 178 636 142" class="ar"/><polygon points="640,140 628,136 630,146" class="ah"/>
+      <path d="M636 122 Q400 118 162 122" class="ar" stroke-dasharray="6 6"/><polygon points="158,122 170,117 170,127" class="ah"/>
+      <text x="400" y="110" text-anchor="middle" class="t">Tierra–buque · coordinación SAR · lugar del siniestro</text>
+    </svg>
+    <figcaption>Fig. IV-2 · Ruteo de una alerta de socorro en el GMDSS.</figcaption>
+    </figure>
+
     <article class="regla"><div class="regla-h"><span class="rn">Regla 4-1</span><h4>Proveedores de satélites GMDSS</h4></div><div class="regla-b"><p>El Comité de Seguridad Marítima (MSC) de la OMI determina los criterios, procedimientos y arreglos para la <strong>evaluación, reconocimiento, revisión y supervisión</strong> de los servicios móviles por satélite reconocidos, garantizando fiabilidad y disponibilidad.</p></div></article>
 
     <div class="sub-t" id="cap4-b"><span class="bar"></span><h3>Parte B – Obligaciones de los Gobiernos Contratantes</h3><span class="ref">Reglas 5 y 5-1</span></div>
@@ -1550,10 +1789,10 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     <div class="note"><span class="ni">📜</span><div>
       <h5>Enmiendas recientes</h5>
       <ul style="margin-left:18px;margin-top:6px">
-        <li><strong>AIS-SART</strong> como alternativa al radar SART, con localización más precisa y rápida.</li>
-        <li>Actualización de <strong>normas de funcionamiento</strong> de equipos GMDSS.</li>
+        <li><strong>AIS-SART</strong> como alternativa al radar SART, con localización más precisa y rápida (→ Regla 7).</li>
+        <li>Actualización de <strong>normas de funcionamiento</strong> de equipos GMDSS (p. ej., MSC.333(90) para VDR, que también afecta a los sistemas de comunicaciones integrados).</li>
         <li><strong>Nuevos proveedores de satélites</strong> (p. ej., Iridium) bajo el marco de la Regla 4-1.</li>
-        <li>Refuerzo del <strong>mantenimiento de EPIRB</strong>: pruebas anuales y mantenimiento quinquenal en instalaciones aprobadas.</li>
+        <li>Refuerzo del <strong>mantenimiento de EPIRB</strong>: pruebas anuales y mantenimiento quinquenal en instalaciones aprobadas (→ Regla 15).</li>
       </ul>
     </div></div>
     <div class="grid2">
@@ -1575,7 +1814,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <h2>Mecanismos transversales, práctica y referencia</h2>
         <p class="ch-en">HSSC · PSC · Enmiendas · Códigos · Responsabilidades · Checklists · Glosario</p>
       </div>
-      <ul class="ch-meta"><li>Solo Capítulos I–IV</li><li>Enfoque práctico para oficiales</li></ul>
+      <ul class="ch-meta"><li>Solo Capítulos I–IV</li><li>Contenido transversal (no regla-específico)</li></ul>
     </header>
 
     <!-- 1. HSSC -->
@@ -1587,6 +1826,25 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <div class="mini"><h5>🧾 Certificados combinados y fechas</h5><p>El <strong>Cargo Ship Safety Certificate</strong> (opcional) reemplaza a los tres certificados individuales y facilita el HSSC: verificar que incluye los registros de equipo (Formularios P, E, R y C) actualizados. La <strong>fecha aniversario</strong> (día y mes de expiración) fija los reconocimientos anuales. Las <strong>inspecciones del fondo</strong> (Regla I/10) se armonizan con la renovación: al menos 2 en 5 años, intervalo máximo de 36 meses, normalmente en dique seco.</p></div>
       </div>
     </div>
+    <figure class="fig">
+    <svg viewBox="0 0 760 260" role="img" aria-label="Ciclo HSSC">
+      <circle cx="380" cy="132" r="96" class="ac" stroke-width="3"/>
+      <circle cx="380" cy="36" r="9" class="acs"/>
+      <text x="380" y="20" text-anchor="middle" class="t">Aniversario · ventana ±3 meses</text>
+      <circle cx="471" cy="102" r="8" class="acs2"/>
+      <text x="492" y="98" class="t">Año 2 · Intermedio</text>
+      <circle cx="436" cy="210" r="8" class="acs2"/>
+      <text x="452" y="230" class="t">Año 3</text>
+      <circle cx="324" cy="210" r="8" class="acs2"/>
+      <text x="308" y="230" text-anchor="end" class="t">Año 4</text>
+      <circle cx="289" cy="102" r="8" class="acs2"/>
+      <text x="268" y="98" text-anchor="end" class="t">Año 5 → Renovación</text>
+      <text x="380" y="120" text-anchor="middle" class="h">Ciclo HSSC</text>
+      <text x="380" y="138" text-anchor="middle" class="t">5 años</text>
+      <text x="380" y="156" text-anchor="middle" class="t">SOLAS · MARPOL · Líneas de Carga</text>
+    </svg>
+    <figcaption>Fig. C-1 · Rueda del ciclo armonizado de reconocimientos (HSSC).</figcaption>
+    </figure>
 
     <!-- 2. PSC -->
     <div class="sub-t" id="comp-psc"><span class="bar"></span><h3>2 · Control por el Estado del Puerto (PSC)</h3></div>
@@ -1595,37 +1853,62 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       <div class="tbl-wrap" style="margin-top:14px"><table>
         <thead><tr><th>Capítulo</th><th>Qué inspecciona el PSCO</th></tr></thead>
         <tbody>
-          <tr><td><strong>I</strong></td><td>Certificados a bordo, válidos y refrendados; cuadro de obligaciones (Regla 37); manuales de estabilidad (II-1) disponibles.</td></tr>
+          <tr><td><strong>I</strong></td><td>Certificados a bordo, válidos y refrendados; cuadro de obligaciones (Regla III/37); manuales de estabilidad (II-1) disponibles.</td></tr>
           <tr><td><strong>II-1</strong></td><td>Integridad estanca (puertas estancas, escotillas, doble fondo); maquinaria y sistemas eléctricos; pruebas registradas de gobierno y fuentes de emergencia.</td></tr>
           <tr><td><strong>II-2</strong></td><td>Sistemas de detección y extinción; extintores portátiles; sistemas fijos (CO₂, espuma…); equipos de respiración de bomberos; registros de mantenimiento y simulacros; materiales resistentes al fuego.</td></tr>
           <tr><td><strong>III</strong></td><td>Botes y balsas, chalecos, aros, bengalas, SART, EPIRB: estado, revisiones al día y simulacros de abandono registrados.</td></tr>
           <tr><td><strong>IV</strong></td><td>Equipos GMDSS operativos; pruebas diarias, semanales y mensuales; mantenimientos de EPIRB y SART al día; registro de radio; pruebas de fuentes de reserva.</td></tr>
         </tbody>
       </table></div>
-      <div class="flow"><span>1 · Inspección inicial</span><i>→</i><span>2 · Inspección detallada (si hay indicios)</span><i>→</i><span>3 · Informe de deficiencias</span><i>→</i><span>4 · Corrección / Detención</span><i>→</i><span>5 · Notificación a bandera y clase</span></div>
       <ul>
         <li><strong>Deficiencias menores</strong>: corregir antes de la salida; el buque puede navegar.</li>
         <li><strong>Deficiencias graves</strong>: <strong>detención del buque</strong> hasta su corrección; si no pueden corregirse en el puerto actual, se informa al siguiente puerto de escala.</li>
         <li><strong>Preparación del buque</strong>: certificados al día y accesibles; registros de inspecciones, mantenimiento y simulacros a mano; equipos de salvamento e incendios listos para uso inmediato; tripulación capaz de demostrar su competencia (usar un extintor, ponerse un chaleco…).</li>
       </ul>
     </div>
+    <figure class="fig">
+    <svg viewBox="0 0 760 230" role="img" aria-label="Procedimiento PSC">
+      <rect x="20" y="30" width="170" height="54" rx="10" class="box"/>
+      <text x="105" y="62" text-anchor="middle" class="h">Inspección inicial</text>
+      <line x1="190" y1="57" x2="236" y2="57" class="ar"/><polygon points="242,57 232,52 232,62" class="ah"/>
+      <polygon points="320,26 396,57 320,88 244,57" class="boxg"/>
+      <text x="320" y="61" text-anchor="middle" class="h">¿Indicios claros?</text>
+      <line x1="396" y1="57" x2="452" y2="57" class="ar"/><polygon points="458,57 448,52 448,62" class="ah"/>
+      <text x="424" y="46" text-anchor="middle" class="t">No</text>
+      <rect x="458" y="30" width="282" height="54" rx="10" class="box"/>
+      <text x="600" y="54" text-anchor="middle" class="h">Certificados aceptados</text>
+      <text x="600" y="70" text-anchor="middle" class="t">Fin de la inspección</text>
+      <line x1="320" y1="88" x2="320" y2="140" class="ar"/><polygon points="320,146 315,136 325,136" class="ah"/>
+      <text x="332" y="116" class="t">Sí</text>
+      <rect x="200" y="146" width="190" height="54" rx="10" class="box"/>
+      <text x="295" y="178" text-anchor="middle" class="h">Inspección detallada</text>
+      <line x1="390" y1="173" x2="426" y2="173" class="ar"/><polygon points="432,173 422,168 422,178" class="ah"/>
+      <rect x="432" y="146" width="140" height="54" rx="10" class="box"/>
+      <text x="502" y="178" text-anchor="middle" class="h">Informe escrito</text>
+      <line x1="572" y1="173" x2="600" y2="173" class="ar"/><polygon points="606,173 596,168 596,178" class="ah"/>
+      <rect x="606" y="146" width="134" height="54" rx="10" class="boxg"/>
+      <text x="673" y="168" text-anchor="middle" class="h">Corrección /</text>
+      <text x="673" y="184" text-anchor="middle" class="h">Detención</text>
+    </svg>
+    <figcaption>Fig. C-2 · Flujograma de una inspección PSC (Regla I/19).</figcaption>
+    </figure>
 
     <!-- 3. ENMIENDAS -->
-    <div class="sub-t" id="comp-enmiendas"><span class="bar"></span><h3>3 · Enmiendas recientes y futuras</h3></div>
+    <div class="sub-t" id="comp-enmiendas"><span class="bar"></span><h3>3 · Enmiendas recientes y futuras (índice cronológico con referencias)</h3></div>
     <div class="grid2">
       <div class="mini"><h5>📜 Enmiendas de 2014 (MSC.338/339/340(91))</h5>
         <ul style="margin-left:16px">
-          <li><strong>Cap. II-1</strong>: protección contra el ruido (Regla 3-12, buques nuevos desde 01/07/2014; existentes con contrato 2009–2014 desde 2018); refuerzo del acceso a estructuras (3-3).</li>
-          <li><strong>Cap. II-2</strong>: alarma audible en equipos de respiración con &lt; 200 L de aire (existentes: 01/07/2019); dos aparatos radiotelefónicos portátiles a prueba de explosión por equipo de bomberos (existentes: primer reconocimiento posterior al 01/07/2018); medio de recarga de botellas de aire o botellas de repuesto.</li>
-          <li><strong>Cap. III</strong>: recuperación de personas del agua (Regla 17-1, desde 01/07/2014); dispositivos de puesta a flote con examen completo cada 5 años, prueba dinámica de frenado y prueba de suelta en carga al 1,1× (Regla 20.11); despliegue rotatorio de MES cada 6 años (Regla 20.8.2).</li>
-          <li><strong>Cap. IV</strong>: actualización de normas de funcionamiento GMDSS; refuerzo del mantenimiento de EPIRB.</li>
+          <li><strong>Cap. II-1</strong>: protección contra el ruido → <em>Regla 3-12</em> (nuevos 01/07/2014; existentes 2009–2014 desde 2018); acceso a estructuras → <em>Regla 3-3</em>.</li>
+          <li><strong>Cap. II-2</strong>: alarma &lt; 200 L en equipos de respiración → <em>Regla 10</em> (existentes 01/07/2019); dos radiotelefónicos portátiles Ex por equipo de bomberos → <em>Regla 10</em> (primer reconocimiento tras 01/07/2018); recarga de botellas → <em>Regla 15</em>.</li>
+          <li><strong>Cap. III</strong>: recuperación de personas del agua → <em>Regla 17-1</em> (01/07/2014); dispositivos de puesta a flote, freno dinámico y suelta 1,1× → <em>Regla 20.11</em>; MES rotatorio 6 años → <em>Regla 20.8.2</em>.</li>
+          <li><strong>Cap. IV</strong>: normas de funcionamiento GMDSS actualizadas; mantenimiento reforzado de EPIRB → <em>Regla 15</em>.</li>
         </ul>
       </div>
       <div class="mini"><h5>🔮 2016 y futuras</h5>
         <ul style="margin-left:16px">
-          <li><strong>Enmiendas de 2016 (MSC.409(97) y conexas)</strong>: Cap. II-1 Parte G — requisitos para combustibles de bajo punto de inflamación (GNL, metanol) con el <strong>Código IGF</strong> obligatorio; actualización de la inertización en petroleros y graneleros (Cap. II-2).</li>
-          <li><strong>Cap. III (en consideración)</strong>: sistemas de localización de supervivientes (dispositivos de localización personal) para facilitar el rescate.</li>
-          <li><strong>Cap. IV</strong>: incorporación de nuevos proveedores de satélites (Iridium) al GMDSS, ampliando opciones de comunicación y alerta.</li>
+          <li><strong>Enmiendas de 2016 (MSC.409(97) y conexas)</strong>: Cap. II-1 Parte G — combustibles de bajo punto de inflamación (GNL, metanol) con el <strong>Código IGF</strong> obligatorio; actualización de la inertización en petroleros y graneleros (Cap. II-2).</li>
+          <li><strong>Cap. III (en consideración)</strong>: sistemas de localización de supervivientes (dispositivos de localización personal).</li>
+          <li><strong>Cap. IV</strong>: incorporación de nuevos proveedores de satélites (Iridium) al GMDSS → <em>Regla 4-1</em>.</li>
           <li><strong>Implicación para el oficial</strong>: mantenerse actualizado; la compañía proporciona información y equipos; planificar con antelación los plazos de cumplimiento de buques existentes.</li>
         </ul>
       </div>
@@ -1639,13 +1922,13 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       <div class="mini"><h5>☣️ Código IMDG</h5><p>Mencionado en Cap. VII, pero el Cap. II-2 (Regla 19) remite a él: embalaje, etiquetado, estiba y segregación de mercancías peligrosas.</p></div>
       <div class="mini"><h5>🧭 Código ISM</h5><p>Cap. IX, pero el Cap. I exige su cumplimiento para emitir certificados SOLAS: Sistema de Gestión de la Seguridad (SMS) de compañía y buque.</p></div>
       <div class="mini"><h5>🛡️ Código ISPS</h5><p>Cap. XI-2: niveles de seguridad y Plan de Seguridad del Buque (SSP); su cumplimiento puede verificarse en inspecciones PSC vinculadas al Cap. I.</p></div>
-      <div class="mini"><h5>📚 Manuales obligatorios a bordo</h5><p>Manual de Estabilidad (II-1/7) · Remolque de Emergencia (II-1/3-2) · Acceso a la Estructura (II-1/3-3) · Lucha contra Incendios (II-2/16) · Formación (III/35) · Instrucciones de Mantenimiento (III/36).</p></div>
+      <div class="mini"><h5>📚 Manuales obligatorios a bordo</h5><p>Manual de Estabilidad (II-1/7) · Remolque de Emergencia (II-1/3-2) · Acceso a la Estructura (II-1/3-3) · Lucha contra Incendios (II-2/15-16) · Formación (III/35) · Instrucciones de Mantenimiento (III/36).</p></div>
     </div>
 
     <!-- 5. RESPONSABILIDADES -->
     <div class="sub-t" id="comp-resp"><span class="bar"></span><h3>5 · Responsabilidades prácticas del oficial</h3></div>
     <div class="grid2">
-      <div class="mini"><h5>🧑‍✈️ Oficial de cubierta (Deck Officer)</h5>
+      <div class="mini"><h5>🧑‍️ Oficial de cubierta (Deck Officer)</h5>
         <ul style="margin-left:16px">
           <li><strong>Cap. I</strong>: mantener certificados al día y a bordo; preparar el buque para inspecciones PSC y de clase; llevar registros de inspecciones y mantenimientos.</li>
           <li><strong>Cap. II-1</strong>: responsable de la estabilidad (cálculo por condición de carga, manual de estabilidad, actuación en avería); conocer disposiciones y manual de remolque; asegurar cierre y prueba de puertas estancas y escotillas.</li>
@@ -1677,7 +1960,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
         <ul class="chk"><li>Examen completo cada 5 años.</li><li>Prueba dinámica de frenado del winche.</li><li>Prueba de suelta en carga del bote salvavidas con 1,1× el peso total.</li></ul>
       </div>
       <div class="mini"><h5>📡 Pruebas de radio (Cap. IV)</h5>
-        <ul class="chk"><li>Prueba operativa diaria de la EPIRB.</li><li>Prueba semanal del SART.</li><li>Prueba mensual de las baterías de reserva.</li><li>Prueba anual de la EPIRB (estación aprobada).</li><li>Mantenimiento quinquenal de la EPIRB en instalación aprobada.</li></ul>
+        <ul class="chk"><li>Prueba operacional de la EPIRB y escucha DSC (diaria).</li><li>Prueba semanal del SART.</li><li>Prueba mensual de las baterías de reserva.</li><li>Prueba anual de la EPIRB (estación aprobada).</li><li>Mantenimiento quinquenal de la EPIRB en instalación aprobada.</li></ul>
       </div>
       <div class="mini"><h5>🚨 Simulacros (III/19)</h5>
         <ul class="chk"><li>Abandono y lucha contra incendios mensuales.</li><li>En buques de pasaje: semanales.</li><li>Puesta a flote de botes según periodicidades (3/6 meses).</li><li>Registro de todos los simulacros en el diario de navegación.</li></ul>
@@ -1758,7 +2041,7 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
       <p>Los Capítulos I al IV del Convenio SOLAS constituyen el <strong>armazón esencial</strong> sobre el que se construye la seguridad marítima moderna. No son compartimentos estancos: se complementan y refuerzan mutuamente.</p>
       <div class="grid2" style="margin-top:14px">
         <div class="mini"><h5 style="color:#2f6bff">Capítulo I · Marco</h5><p>La base administrativa y de control: garantiza que buques y equipos sean inspeccionados y certificados periódicamente. Sin él, los demás capítulos no tendrían mecanismo de aplicación.</p></div>
-        <div class="mini"><h5 style="color:#0ea5a4">Capítulo II-1 · Integridad</h5><p>La integridad física del buque: estabilidad, subdivision, maquinaria y sistemas eléctricos fiables.</p></div>
+        <div class="mini"><h5 style="color:#0ea5a4">Capítulo II-1 · Integridad</h5><p>La integridad física del buque: estabilidad, subdivisión, maquinaria y sistemas eléctricos fiables.</p></div>
         <div class="mini"><h5 style="color:#e5484d">Capítulo II-2 · Fuego</h5><p>Aborda la amenaza del fuego con un enfoque integral: prevención, detección, contención, extinción y evacuación.</p></div>
         <div class="mini"><h5 style="color:#f59f00">Capítulo III · Supervivencia</h5><p>Los medios para abandonar el buque de forma segura y sobrevivir hasta el rescate.</p></div>
         <div class="mini"><h5 style="color:#8b5cf6">Capítulo IV · Comunicaciones</h5><p>Asegura que, en emergencia, el buque pueda comunicarse con el exterior y recibir asistencia a través del GMDSS.</p></div>
@@ -1780,7 +2063,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap">
     <div>
@@ -1804,21 +2086,18 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
 
 <script>
 (function(){
-  /* ===== Theme ===== */
   var root=document.documentElement, tbtn=document.getElementById('theme');
   function setTheme(t){root.setAttribute('data-theme',t);tbtn.textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('solas-theme',t)}catch(e){}}
   var saved='light';try{saved=localStorage.getItem('solas-theme')||'light'}catch(e){}
   setTheme(saved);
   tbtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
 
-  /* ===== Mobile nav ===== */
   var burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
   function closeNav(){document.body.classList.remove('nav-open')}
   burger.addEventListener('click',function(){document.body.classList.toggle('nav-open')});
   overlay.addEventListener('click',closeNav);
   document.querySelectorAll('.side a').forEach(function(a){a.addEventListener('click',closeNav)});
 
-  /* ===== Progress + totop ===== */
   var bar=document.getElementById('progress'),totop=document.getElementById('totop');
   window.addEventListener('scroll',function(){
     var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
@@ -1827,7 +2106,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
   },{passive:true});
   totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 
-  /* ===== Scrollspy ===== */
   var links={};
   document.querySelectorAll('.side a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
   var obs=new IntersectionObserver(function(entries){
@@ -1842,7 +2120,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
   },{rootMargin:'-20% 0px -70% 0px'});
   document.querySelectorAll('section[id], .sub-t[id]').forEach(function(s){obs.observe(s)});
 
-  /* ===== Search ===== */
   var inp=document.getElementById('search'),res=document.getElementById('results'),index=[];
   document.querySelectorAll('h2,h3,h4,.gl b,.chip b').forEach(function(el){
     var sec=el.closest('section');
@@ -1875,7 +2152,6 @@ footer .fine{width:100%;border-top:1px solid rgba(255,255,255,.1);margin-top:16p
     if(e.key==='/'&&document.activeElement!==inp){e.preventDefault();inp.focus()}
   });
 
-  /* ===== Year ===== */
   document.getElementById('year').textContent='© '+new Date().getFullYear();
 })();
 </script>
