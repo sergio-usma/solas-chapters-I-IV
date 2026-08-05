@@ -50,7 +50,7 @@
       padding:0 18px;background:color-mix(in srgb,var(--navy) 92%,transparent);backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
     .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;letter-spacing:.3px;text-decoration:none;white-space:nowrap}
-    .brand .anc{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#b8842c);display:grid;place-items:center;font-size:18px}
+    .brand .anc{width:34px;height:34px;border-radius:9px;background:#fff;display:grid;place-items:center;font-size:18px;object-fit:contain;padding:3px;flex:none}
     .brand small{display:block;font-weight:500;color:var(--side-dim);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
     .searchwrap{flex:1;max-width:460px;position:relative;margin-left:auto}
     .searchwrap input{width:100%;padding:9px 14px 9px 38px;border-radius:99px;border:1px solid rgba(255,255,255,.16);
@@ -208,6 +208,22 @@
       font-size:20px;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:120}
     #totop.show{opacity:1;pointer-events:auto}
 
+    .qz-chip{font-family:'Space Grotesk';font-weight:600;font-size:13.5px;border-radius:99px;padding:9px 18px;
+      border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;box-shadow:var(--shadow)}
+    .qz-chip:hover{border-color:var(--mc,var(--gold))}
+    .qz-chip.active{background:var(--mc,var(--gold));border-color:var(--mc,var(--gold));color:#fff}
+    .qz-opt{display:block;width:100%;text-align:left;padding:13px 16px;border-radius:12px;border:1px solid var(--line);
+      background:var(--panel2);color:var(--ink);font:inherit;font-size:14.5px;cursor:pointer;transition:.15s}
+    .qz-opt:hover:not(:disabled){border-color:var(--acc)}
+    .qz-opt.correct{border-color:#16a34a;background:color-mix(in srgb,#16a34a 16%,var(--panel))}
+    .qz-opt.wrong{border-color:#dc2626;background:color-mix(in srgb,#dc2626 14%,var(--panel))}
+    .qz-opt:disabled{cursor:default;opacity:.92}
+    #quiz-feedback.ok{color:#16a34a}
+    #quiz-feedback.bad{color:#dc2626}
+    .qz-btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:0 18px;
+      height:42px;font:inherit;font-weight:600;font-size:14px;cursor:pointer;box-shadow:var(--shadow)}
+    .qz-btn.primary{background:var(--acc);border-color:transparent;color:#fff}
+
     @media(max-width:1024px){
       .side{transform:translateX(-100%);transition:transform .28s;width:300px}
       body.nav-open .side{transform:none}
@@ -235,9 +251,9 @@
 
 <header class="topbar">
   <button id="burger" class="iconbtn" aria-label="Menú">☰</button>
-  <a class="brand" href="#inicio">
-    <span class="anc">⚓</span>
-    <span>SOLAS 1974<small>Capítulos I · II-1 · II-2 · III · IV</small></span>
+  <a class="brand" href="#inicio" title="Escuela Naval de Cadetes Almirante Padilla · Ciencias Náuticas, especialidad Puente · Asignatura Seguridad Marítima · Curso 1.2 · Grupo No. 1">
+    <img class="anc" src="logo.png" alt="Escuela Naval de Cadetes Almirante Padilla">
+    <span>SOLAS 1974<small>Grupo No. 1 · Seguridad Marítima · Curso 1.2</small></span>
   </a>
   <div class="searchwrap">
     <span class="si">🔍</span>
@@ -255,6 +271,7 @@
   <a class="top-link" href="#introduccion"><span class="dot" style="background:#64748b"></span>Introducción al SOLAS</a>
   <a class="top-link" href="#mapa"><span class="dot" style="background:#64748b"></span>Mapa de capítulos</a>
   <a class="top-link" href="#tabla-cambios"><span class="dot" style="background:#e5484d"></span>Cambios MSC.496(105)</a>
+  <a class="top-link" href="#evaluacion"><span class="dot" style="background:#22c55e"></span>Evaluación de conocimientos</a>
 
   <details class="grp" open style="--acc:#2f6bff"><summary><span class="dot" style="background:#2f6bff"></span>Capítulo I · Generales</summary><ul>
     <li><a href="#cap1-pa">Parte A · Aplicación, definiciones y exenciones</a></li>
@@ -419,6 +436,52 @@
         <tr><td><strong>Capítulo I</strong></td><td>No se modifica directamente el texto del Capítulo I mediante MSC.496(105), pero los modelos de certificados usados conforme al Capítulo I se actualizan a través del Apéndice.</td><td>Se mantiene el Capítulo I, con nota sobre modelos actualizados de certificados.</td></tr>
       </tbody>
     </table></div>
+  </div>
+</section>
+
+<!-- ===================== EVALUACIÓN DE CONOCIMIENTOS ===================== -->
+<section class="sec" id="evaluacion" style="--acc:#22c55e">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-num">✓</div>
+      <div>
+        <p class="ch-kicker">Módulo interactivo</p>
+        <h2>Evalúe los conocimientos adquiridos</h2>
+        <p class="ch-en">Preguntas aleatorias de opción múltiple, capítulo por capítulo</p>
+      </div>
+      <ul class="ch-meta"><li>30 preguntas</li><li>4 opciones cada una</li><li>Selección aleatoria</li><li>Pensado para la exposición en vivo</li></ul>
+    </header>
+
+    <div class="ch-intro">
+      <p>Al cierre de cada capítulo (I → II-1 → II-2 → III → IV), seleccione el capítulo correspondiente y pulse <strong>«Nueva pregunta aleatoria»</strong> para lanzar una pregunta de opción múltiple al público, sin repetir la misma pregunta dos veces seguidas. El marcador registra aciertos y fallos por capítulo durante la sesión, útil para verificar si la audiencia asimiló los contenidos.</p>
+    </div>
+
+    <div class="pillrow" id="quiz-chapters" style="margin:6px 0 22px">
+      <button type="button" class="qz-chip" data-ch="cap1" style="--mc:#2f6bff">I · Generales</button>
+      <button type="button" class="qz-chip" data-ch="cap21" style="--mc:#0ea5a4">II-1 · Construcción</button>
+      <button type="button" class="qz-chip" data-ch="cap22" style="--mc:#e5484d">II-2 · Incendios</button>
+      <button type="button" class="qz-chip" data-ch="cap3" style="--mc:#f59f00">III · Salvamento</button>
+      <button type="button" class="qz-chip" data-ch="cap4" style="--mc:#8b5cf6">IV · Radio</button>
+    </div>
+
+    <div class="card" id="quiz-card">
+      <div id="quiz-empty" style="text-align:center;color:var(--mut);padding:14px 0">
+        <p>Elija un capítulo arriba para comenzar la evaluación.</p>
+      </div>
+      <div id="quiz-body" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+          <span class="pill acc" id="quiz-chapter-label">—</span>
+          <span class="pill" id="quiz-score">Aciertos: 0 / 0</span>
+        </div>
+        <p id="quiz-question" style="font-family:'Space Grotesk';font-size:18px;margin-bottom:16px"></p>
+        <div id="quiz-options" style="display:grid;gap:10px"></div>
+        <div id="quiz-feedback" style="display:none;margin-top:14px;font-size:14.5px"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+          <button type="button" class="qz-btn primary" id="quiz-next">Nueva pregunta aleatoria →</button>
+          <button type="button" class="qz-btn" id="quiz-reset">Reiniciar marcador</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2212,7 +2275,11 @@
     </div>
     <div>
       <h4>Navegación rápida</h4>
-      <p style="font-size:14px"><a href="#cap1">Cap. I</a> · <a href="#cap21">Cap. II-1</a> · <a href="#cap22">Cap. II-2</a> · <a href="#cap3">Cap. III</a> · <a href="#cap4">Cap. IV</a> · <a href="#comp-apendice">Apéndice</a> · <a href="#comp-glosario">Glosario</a></p>
+      <p style="font-size:14px"><a href="#cap1">Cap. I</a> · <a href="#cap21">Cap. II-1</a> · <a href="#cap22">Cap. II-2</a> · <a href="#cap3">Cap. III</a> · <a href="#cap4">Cap. IV</a> · <a href="#evaluacion">Evaluación</a> · <a href="#comp-apendice">Apéndice</a> · <a href="#comp-glosario">Glosario</a></p>
+    </div>
+    <div>
+      <h4>Créditos</h4>
+      <p style="font-size:14px">Escuela Naval de Cadetes Almirante Padilla<br>Programa de Ciencias Náuticas, especialidad Puente<br>Asignatura de Seguridad Marítima · Curso 1.2<br>Grupo No. 1: Sergio Usma, Sebastián Guillem, Ricardo Mercado, Andrés Berdugo y Camilo Amador</p>
     </div>
     <div class="fine">Material didáctico con fines académicos · Basado en el Convenio SOLAS 1974 y sus enmiendas, incluyendo la Resolución MSC.496(105) (en vigor 01/01/2024). Verifique siempre los textos consolidados oficiales de la OMI antes de aplicar requisitos reglamentarios. <span id="year"></span></div>
   </div>
@@ -2290,6 +2357,214 @@
   });
 
   document.getElementById('year').textContent='© '+new Date().getFullYear();
+})();
+
+var QUIZ_BANK = {
+  cap1: [
+    {q:"Según la Regla 2 (Definiciones) del Capítulo I, ¿a partir de cuántos pasajeros se considera que un buque es «buque de pasaje»?",
+     opts:["Más de 6 pasajeros","Más de 12 pasajeros","Más de 25 pasajeros","Más de 50 pasajeros, según el criterio de arqueo bruto"],
+     correct:1,
+     exp:"El Capítulo I define «buque de pasaje» como aquel que transporta más de 12 pasajeros; esta cifra activa requisitos más estrictos en los Capítulos II-1, II-2 y III."},
+    {q:"¿Cuál es la validez máxima del Passenger Ship Safety Certificate según la Regla 14?",
+     opts:["5 años, igual que en buques de carga","24 meses","36 meses","12 meses"],
+     correct:3,
+     exp:"A diferencia de los certificados de carga (hasta 5 años), el certificado de seguridad para buque de pasaje se renueva cada 12 meses (Reglas 7 y 14)."},
+    {q:"¿Qué regla del Capítulo I regula el Control por el Estado del Puerto (PSC)?",
+     opts:["Regla 19","Regla 6","Regla 14","Regla 21"],
+     correct:0,
+     exp:"La Regla 19 establece los derechos del oficial del Estado del puerto (PSCO) para verificar certificados y detener el buque ante «indicios claros» de incumplimiento."},
+    {q:"¿Cada cuánto tiempo debe renovarse el Cargo Ship Safety Construction Certificate de un buque de carga (Regla 10)?",
+     opts:["Cada 12 meses","Entre el segundo y el tercer año de validez","Cada 5 años","Cada 10 años, con inspección intermedia a los 5"],
+     correct:2,
+     exp:"El reconocimiento de renovación de construcción se realiza cada 5 años; el intermedio se ubica entre el 2.º y el 3.er año."},
+    {q:"¿Cuál es la diferencia esencial entre una excepción (Regla 3) y una exención (Regla 4) del Capítulo I?",
+     opts:["Ambas se conceden automáticamente en función del tipo de buque","Las exenciones se aplican de forma automática y las excepciones requieren aprobación",
+       "Las excepciones son automáticas por tipo de buque; las exenciones exigen aprobación discrecional de la Administración",
+       "No existe diferencia real entre ambos conceptos en el texto consolidado del convenio"],
+     correct:2,
+     exp:"Las excepciones (Regla 3) excluyen automáticamente a ciertos tipos de buque; las exenciones (Regla 4) son discrecionales y las concede la Administración caso por caso."},
+    {q:"Según la Regla 2, ¿a cuántos metros equivale una milla náutica?",
+     opts:["1.609 metros","1.852 metros","2.000 metros","1.760 metros"],
+     correct:1,
+     exp:"La milla náutica equivale a 1.852 metros o 6.080 pies, dato clave para cálculos de navegación y zonas marítimas."}
+  ],
+  cap21: [
+    {q:"Según la Regla 44, ¿cuál es la autonomía mínima del alumbrado de emergencia ante un fallo de la fuente principal?",
+     opts:["30 minutos","1 hora","45 minutos","3 horas"],
+     correct:3,
+     exp:"El alumbrado de emergencia en pasillos, escaleras y puestos de reunión debe mantenerse al menos 3 horas tras un fallo de la fuente principal."},
+    {q:"¿Cuántos generadores exige como mínimo la Regla 41 para la fuente principal de energía eléctrica?",
+     opts:["Al menos dos, de modo que uno pueda asumir la carga si el otro falla","Uno solo, sin necesidad de redundancia","Tres, con rotación periódica","No se especifica un número mínimo de generadores"],
+     correct:0,
+     exp:"La Regla 41 exige redundancia: al menos dos generadores, para que la avería de uno no deje al buque sin energía eléctrica."},
+    {q:"El Código IGF (Regla 56) se aplica a buques que emplean combustibles con un punto de inflamación:",
+     opts:["Superior a 60 °C","Inferior a 60 °C","Superior a 100 °C","Exactamente igual a 60 °C"],
+     correct:1,
+     exp:"La Regla 56 remite al Código IGF para combustibles con punto de inflamación inferior a 60 °C, como el GNL o el metanol."},
+    {q:"¿Qué regla del Capítulo II-1 introduce la protección contra el ruido en espacios de trabajo y alojamiento?",
+     opts:["Regla 12","Regla 45","Regla 3-12","Regla 30"],
+     correct:2,
+     exp:"La Regla 3-12, de la Parte A-1, exige cumplir los límites del Código de Ruido de la OMI para proteger la salud de la tripulación."},
+    {q:"¿Desde qué fecha se exige la protección contra el ruido (Regla 3-12) en los buques nuevos?",
+     opts:["1 de enero de 2010","1 de julio de 2002","1 de enero de 2020","1 de julio de 2014"],
+     correct:3,
+     exp:"La Regla 3-12 entró en vigor para buques cuya quilla se colocó a partir del 1 de julio de 2014; algunos buques existentes la aplican desde 2018."},
+    {q:"Según la Regla 12, ¿dónde se exige doble fondo en toda su eslora en buques de carga no tanques?",
+     opts:["En la sala de máquinas y en la zona de carga","Únicamente en la proa del buque","En toda la eslora del buque sin excepción","Solo en buques de pasaje de gran tamaño"],
+     correct:0,
+     exp:"El doble fondo actúa como segunda barrera ante daños de fondo en la sala de máquinas y la zona de carga de los buques de carga no tanques."}
+  ],
+  cap22: [
+    {q:"¿En qué fecha entró en vigor la revisión integral del Capítulo II-2 con el enfoque de «escenario de incendio»?",
+     opts:["1 de julio de 1998","1 de enero de 2010","1 de julio de 2002","1 de enero de 1980"],
+     correct:2,
+     exp:"Tras el incendio del Scandinavian Star (1990), el capítulo se revisó completamente y la nueva versión entró en vigor el 1 de julio de 2002."},
+    {q:"Una división de clase «A-60» debe resistir el fuego durante:",
+     opts:["30 minutos","60 minutos","90 minutos","15 minutos"],
+     correct:1,
+     exp:"Las divisiones clase «A» resisten 60 o 90 minutos según su designación (A-60 o A-90); las clase «B» resisten 15 o 30 minutos."},
+    {q:"Según la Regla 10, ¿con qué reserva de aire debe activarse la alarma audible de los equipos de respiración autónoma?",
+     opts:["Menos de 200 litros","Menos de 50 litros","Menos de 500 litros","Menos de 100 litros"],
+     correct:0,
+     exp:"La enmienda de 2014 exige una alarma audible cuando quedan menos de 200 litros de aire en la botella; aplicable a buques existentes desde el 1 de julio de 2019."},
+    {q:"¿Cuántos aparatos radiotelefónicos portátiles se exigen, como mínimo, por cada equipo de bomberos (Regla 10)?",
+     opts:["Uno","Tres","Cuatro","Dos"],
+     correct:3,
+     exp:"Se exigen al menos dos aparatos radiotelefónicos portátiles a prueba de explosión por cada equipo de bomberos."},
+    {q:"¿Cuántos capítulos componen el Código Internacional de Sistemas de Seguridad contra Incendios (Código FSS)?",
+     opts:["10 capítulos","15 capítulos","12 capítulos","20 capítulos"],
+     correct:1,
+     exp:"El Código FSS, complemento obligatorio del Capítulo II-2, desarrolla los requisitos técnicos en 15 capítulos, desde generalidades hasta sistemas de inertización."},
+    {q:"¿Cuál de las siguientes opciones NO forma parte de la secuencia del «escenario de incendio» que estructura el Capítulo II-2?",
+     opts:["Prevención","Detección","Propulsión","Extinción"],
+     correct:2,
+     exp:"La secuencia lógica del capítulo es prevención → detección → contención → extinción → evacuación; la propulsión no forma parte de este esquema."}
+  ],
+  cap3: [
+    {q:"¿Cuál es el tiempo máximo de puesta a flote de las embarcaciones de supervivencia en un buque de pasaje, desde la señal de abandono (Regla 21)?",
+     opts:["30 minutos","45 minutos","20 minutos","10 minutos"],
+     correct:0,
+     exp:"En buques de pasaje, las embarcaciones de supervivencia deben poder ponerse a flote en un máximo de 30 minutos desde la orden de abandono."},
+    {q:"¿Cuál es el tiempo máximo equivalente exigido en buques de carga (Regla 31)?",
+     opts:["30 minutos","20 minutos","15 minutos","10 minutos"],
+     correct:3,
+     exp:"En buques de carga, el plazo se reduce a un máximo de 10 minutos desde la señal de abandono."},
+    {q:"Según la Regla 19, ¿con qué frecuencia mínima deben realizarse los ejercicios de abandono y de lucha contra incendios en un buque de carga?",
+     opts:["Cada semana","Cada 3 meses","Cada mes","Cada 6 meses"],
+     correct:2,
+     exp:"La Regla 19 exige al menos un ejercicio de abandono y uno de lucha contra incendios cada mes (en buques de pasaje, cada semana según la Regla 30)."},
+    {q:"Con la Resolución MSC.496(105), ¿qué contenido se trasladó de la Regla III/6 al Capítulo IV?",
+     opts:["El número mínimo de aros salvavidas por eslora","Los aparatos radiotelefónicos bidireccionales VHF y los dispositivos de localización SAR (SART/AIS-SART)","La estiba de las balsas salvavidas","Los requisitos de los chalecos salvavidas infantiles"],
+     correct:1,
+     exp:"Los párrafos sobre VHF bidireccional y SART/AIS-SART se reservaron en la Regla III/6 y pasaron a la Regla IV/7."},
+    {q:"¿Cuál es el espacio mínimo por persona exigido en los puestos de reunión (Regla 11)?",
+     opts:["0,35 m² por persona","0,10 m² por persona","1 m² por persona","0,50 m² por persona"],
+     correct:0,
+     exp:"Los puestos de reunión deben ofrecer al menos 0,35 m² por persona, cerca de los puestos de embarco."},
+    {q:"¿Qué documento detalla el sistema de alarma general, la orden de abandono y los cometidos específicos de cada tripulante en una emergencia?",
+     opts:["El Manual de Formación (Regla 35)","El registro radioeléctrico del Capítulo IV","El Manual de Estabilidad del Capítulo II-1","El Cuadro de obligaciones (Regla 37)"],
+     correct:3,
+     exp:"La Regla 37 exige un cuadro de obligaciones con los cometidos de cada tripulante, la orden de abandono y los detalles de la alarma general."}
+  ],
+  cap4: [
+    {q:"¿Desde qué fecha está en vigor el Sistema Mundial de Socorro y Seguridad Marítimos (SMSSM/GMDSS)?",
+     opts:["25 de mayo de 1980","1 de febrero de 1992","1 de julio de 2002","1 de enero de 2024"],
+     correct:1,
+     exp:"El GMDSS entró en vigor el 1 de febrero de 1992, sustituyendo al antiguo sistema Morse por comunicaciones satelitales y LSD/DSC."},
+    {q:"¿Qué zona marítima se define por la cobertura de un servicio móvil por satélite reconocido, excluyendo A1 y A2?",
+     opts:["Zona A1","Zona A2","Zona A3","Zona A4"],
+     correct:2,
+     exp:"La zona A3 corresponde a la cobertura de un servicio móvil por satélite reconocido; la A4 es cualquier zona fuera de A1, A2 y A3."},
+    {q:"¿En qué canal de ondas métricas debe mantenerse la escucha continua de LSD/DSC según la Regla 12?",
+     opts:["Canal 70","Canal 16","Canal 6","Canal 13"],
+     correct:0,
+     exp:"El canal 70 de VHF se reserva para la llamada selectiva digital (LSD/DSC); el canal 16 se usa para escucha directa de voz cuando es posible."},
+    {q:"Según la Regla 15, ¿con qué periodicidad máxima debe darse mantenimiento en tierra a una RLS/EPIRB?",
+     opts:["Cada 2 años","Cada 10 años","Cada 3 años","Cada 5 años"],
+     correct:3,
+     exp:"Las RLS/EPIRB reciben mantenimiento en una instalación aprobada a intervalos que no excedan de 5 años, además de la prueba anual."},
+    {q:"Según la Regla 7, ¿cuántos aparatos radiotelefónicos bidireccionales VHF debe llevar un buque de pasaje o un buque de carga de 500 GT o más?",
+     opts:["1","2","3","4"],
+     correct:2,
+     exp:"Los buques de pasaje y de carga ≥ 500 GT deben llevar 3 aparatos VHF bidireccionales; los de carga entre 300 y 500 GT solo necesitan 2."},
+    {q:"¿Qué resolución sustituyó íntegramente el texto del Capítulo IV, en vigor desde el 1 de enero de 2024?",
+     opts:["MSC.338(91)","MSC.496(105)","MSC.216(82)","El texto original del SOLAS 1974, sin enmiendas posteriores"],
+     correct:1,
+     exp:"La Resolución MSC.496(105), adoptada el 28/04/2022, sustituyó íntegramente el Capítulo IV y entró en vigor el 1 de enero de 2024."}
+  ]
+};
+
+(function(){
+  var chapterNames={cap1:'Capítulo I · Generales',cap21:'Capítulo II-1 · Construcción',cap22:'Capítulo II-2 · Incendios',cap3:'Capítulo III · Salvamento',cap4:'Capítulo IV · Radio'};
+  var chips=document.querySelectorAll('.qz-chip');
+  var emptyEl=document.getElementById('quiz-empty'), bodyEl=document.getElementById('quiz-body');
+  if(!chips.length||!emptyEl) return;
+  var qLabel=document.getElementById('quiz-chapter-label'), scoreEl=document.getElementById('quiz-score');
+  var qText=document.getElementById('quiz-question'), qOpts=document.getElementById('quiz-options');
+  var fb=document.getElementById('quiz-feedback'), nextBtn=document.getElementById('quiz-next'), resetBtn=document.getElementById('quiz-reset');
+  var current=null, currentCh=null, scores={}, lastIndex={};
+
+  function scoreFor(ch){ if(!scores[ch]) scores[ch]={hit:0,total:0}; return scores[ch]; }
+
+  function pickQuestion(ch){
+    var bank=QUIZ_BANK[ch]; if(!bank||!bank.length) return null;
+    var idx=Math.floor(Math.random()*bank.length);
+    if(bank.length>1){ while(idx===lastIndex[ch]){ idx=Math.floor(Math.random()*bank.length); } }
+    lastIndex[ch]=idx;
+    return bank[idx];
+  }
+
+  function updateScore(){
+    var s=scoreFor(currentCh);
+    scoreEl.textContent='Aciertos: '+s.hit+' / '+s.total;
+  }
+
+  function answer(i){
+    var buttons=qOpts.querySelectorAll('.qz-opt');
+    buttons.forEach(function(b,idx){
+      b.disabled=true;
+      if(idx===current.correct) b.classList.add('correct');
+      else if(idx===i) b.classList.add('wrong');
+    });
+    var s=scoreFor(currentCh); s.total++;
+    var ok=(i===current.correct);
+    if(ok) s.hit++;
+    fb.style.display='block';
+    fb.className=ok?'ok':'bad';
+    fb.textContent=(ok?'✅ Correcto. ':'❌ Incorrecto. ')+current.exp;
+    updateScore();
+  }
+
+  function renderQuestion(ch){
+    var q=pickQuestion(ch); if(!q) return;
+    current=q; currentCh=ch;
+    qLabel.textContent=chapterNames[ch];
+    qText.textContent=q.q;
+    qOpts.innerHTML='';
+    q.opts.forEach(function(text,i){
+      var b=document.createElement('button');
+      b.type='button'; b.className='qz-opt'; b.textContent=String.fromCharCode(65+i)+') '+text;
+      b.addEventListener('click',function(){answer(i)});
+      qOpts.appendChild(b);
+    });
+    fb.style.display='none'; fb.className=''; fb.textContent='';
+    updateScore();
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active')});
+      chip.classList.add('active');
+      emptyEl.style.display='none'; bodyEl.style.display='block';
+      renderQuestion(chip.getAttribute('data-ch'));
+    });
+  });
+  nextBtn.addEventListener('click',function(){ if(currentCh) renderQuestion(currentCh) });
+  resetBtn.addEventListener('click',function(){
+    if(!currentCh) return;
+    scores[currentCh]={hit:0,total:0};
+    updateScore();
+  });
 })();
 </script>
 </body>
